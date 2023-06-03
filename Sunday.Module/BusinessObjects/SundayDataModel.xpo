@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAMVW207bQBB9r9R/sPLM+rK+rBc5RpBQhNqiiEvV17F3NrHqS+S1k/D3XSdOIAFaqiJ485w5o50zc1br6GRV5MYCa5VV5XDgmPbgJP78KToDhTdNVcMUL0tZGZpVquOVEsPBrGnmx5a1XC7NpWtW9dSitu1YP79/u0lnWMBgR87+TiZZqRooUxzoUw0juoUkR9UduY63yCNgC11BgfGoVU1VYB1ZD9iOdl52WNzULUZWH+yS40x1wN1cQIOxhFxp0j644160mbgUMZUhswPHI77kkngO5QQwQSKZHzoySALpu5HVk3fFoypvi1LtKXgR1olOwyYZd5+R9QjYI/5J3r9KfCwz4IkImO8QzhgQD0KPgM9D4lMeCp74lPHgiUxdbv2H0smsKj9AahqgpNQJSMhoSjyZcMITjsR10EMZ+BIoe7XU59Del6/2cz+HdzCzCD3gjgcEaZgQjyaUAHf1qkVIQbqhx0G+rZnbIuku6nvv2EURcIdxErip3jHYKQndVC/aRgaB43A38d/azrf38w9wM/Vc9G3PJgH1beIxWxLu+EyvlCUIwk1dsN/UzX38QIm6JwPFpK7SNWhYG/jH5n2Jx7g4X81rVMocQwPmglKTHhl9ethFZmDaR8aozZu2xmGJbVNDfmRM2iTP0q94f1v9wnKYhKFwmO8JZtuorRpZ2yPW541yUApVt4Drdjfd6FTo1lBmq76vDXTTyj3oGotqgYfEDXrIHelnMr4r0xmUUxR6Zl28Gc1zPUR6MnOsm+yDe3uhjegCS6y1vUZVUWDZqN6jT+A98hhVNtWfXzJthYOK/dy6bIw5NniqVJVm0OiVbWueSawLrto872x2hjNYZFWtXSRB+0NfsMOM/nGxDv5c4t/lTHnK4ggAAA==" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="4fc82ea6-8712-4f6c-ab4f-fab384b336f9">
+      <xpObject Id="2f870614-5f9f-4129-aebe-f7581f6b6f53" name="Customer" baseClass="XPObject" userFileName="Customer" designerFileName="Customer.Designer" className="Customer" virtualName="Customer">
+        <fields>
+          <generalXpObjectHasFields Id="751b6122-8864-4d2d-a4ec-c99fba47e7de">
+            <field Id="69bd6751-977a-4a84-a598-5298d9b52796" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4a5ca2bc-b14c-4b31-a5e5-22a5fd963e81">
+            <field Id="c6ef2216-872c-4fb9-9b9e-31e4ef65fa27" name="Phone" virtualColumnType="Phone" logicalType="Phone" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="4702f3d8-c1b9-4fb3-967c-88864fbd5f2f">
+      <xpObject Id="d84a914a-e28b-42b2-a934-ad82af3849af" name="Phone" baseClass="XPObject" userFileName="Phone" designerFileName="Phone.Designer" className="Phone" virtualName="Phone">
+        <fields>
+          <generalXpObjectHasFields Id="34dc5f69-5544-4ebe-8d79-a0a93745bdf4">
+            <field Id="3ed69179-63cc-4a0c-83c9-90e7a61193b5" name="Number" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="a7d66cd3-31a3-4be2-8dbd-d897f487b44c">
+            <field Id="243e5040-6250-470f-9157-ad7bead3c3a0" name="Type" virtualColumnType="Sunday.Module.BusinessObjects.Enums.PhoneEnum" logicalType="Sunday.Module.BusinessObjects.Enums.PhoneEnum" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+  <externalTypes>
+    <dataBaseObjectModelHasExternalTypes Id="8d4430af-34d9-49f7-8a96-9d9feadb8b07">
+      <externalType Id="82298d3d-35b1-456b-8717-1c4d1522aa61" name="PhoneEnum" namespace="Sunday.Module.BusinessObjects.Enums" />
+    </dataBaseObjectModelHasExternalTypes>
+  </externalTypes>
+</dataBaseObjectModel>

@@ -1,12 +1,54 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Sunday">
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" ImageName="BO_Customer" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" ImageName="Electronics_PhoneAndroid" />
   </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="Customers" ViewId="Customer_ListView" IsNewNode="True" />
+    </Items>
+  </NavigationItems>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="22.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.6.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="Customer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Customer" RelativeSize="6.262626262626263">
+              <LayoutItem Id="Name" RelativeSize="51.61290322580645" />
+              <LayoutItem Id="Phone" RelativeSize="48.38709677419355" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="93.73737373737374">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Phone_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Phone" RelativeSize="6.262626262626263">
+              <LayoutItem Id="Number" RelativeSize="51.61290322580645" />
+              <LayoutItem Id="Type" RelativeSize="48.38709677419355" />
+            </LayoutGroup>
+            <LayoutGroup Id="XPObject" RelativeSize="93.73737373737374">
+              <LayoutItem Id="Oid" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>

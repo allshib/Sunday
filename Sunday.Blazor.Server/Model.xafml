@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application>
+<Application PreferredLanguage="ru" Company="Sunday">
   <NavigationItems NavigationStyle="Accordion">
     <Items>
       <Item Id="Default">
@@ -15,6 +15,10 @@
       </Item>
     </Items>
   </NavigationItems>
-  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
-  </Views>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="22.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor" />
 </Application>

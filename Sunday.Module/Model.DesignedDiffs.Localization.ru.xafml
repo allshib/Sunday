@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" Caption="Заказчик">
+      <OwnMembers>
+        <Member Name="Name" Caption="Наименование" />
+        <Member Name="Phone" Caption="Телефон" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" Caption="Телефон">
+      <OwnMembers>
+        <Member Name="Number" Caption="Номер" />
+        <Member Name="Type" Caption="Тип" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views>
+    <DetailView Id="Customer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="XPObject" Caption="Oid" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Phone_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="XPObject" Caption="Oid" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
