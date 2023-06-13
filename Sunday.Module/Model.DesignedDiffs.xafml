@@ -2,12 +2,18 @@
 <Application Title="Sunday">
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.BaseTree" ImageName="TipOverTree_Right" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" ImageName="BO_Customer" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" ImageName="Electronics_PhoneAndroid" />
   </BOModel>
   <NavigationItems>
     <Items>
-      <Item Id="Customers" ViewId="Customer_ListView" IsNewNode="True" />
+      <Item Id="Items_WorkItems" ImageName="BO_Position_v92" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Customers" ViewId="Customer_ListView" IsNewNode="True" />
+          <Item Id="TestTree" ViewId="BaseTree_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
     </Items>
   </NavigationItems>
   <Options>
@@ -20,15 +26,37 @@
   </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="BaseTree_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="9.379727685325264">
+            <LayoutGroup Id="BaseTree" RelativeSize="100">
+              <LayoutItem Id="Name" RelativeSize="51.61290322580645" />
+              <LayoutItem Id="CreateDate" RelativeSize="48.38709677419355" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="90.62027231467474">
+            <LayoutGroup Id="BaseTreeCollection" Index="0" RelativeSize="100">
+              <LayoutItem Id="BaseTreeCollection" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Children" Removed="True" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="Customer_DetailView">
+      <Items>
+        <StaticText Id="WarningText" IsNewNode="True" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="Customer" RelativeSize="6.262626262626263">
-              <LayoutItem Id="Name" RelativeSize="51.61290322580645" />
-              <LayoutItem Id="Phone" RelativeSize="48.38709677419355" />
+            <LayoutGroup Id="Customer" RelativeSize="9.365079365079366">
+              <LayoutItem Id="Name" RelativeSize="54.23728813559322" />
+              <LayoutItem Id="Phone" RelativeSize="45.76271186440678" />
             </LayoutGroup>
-            <LayoutGroup Id="XPObject" RelativeSize="93.73737373737374">
+            <LayoutGroup Id="XPObject" RelativeSize="90.63492063492063" Index="1">
+              <LayoutItem Id="WarningText" ViewItem="WarningText" Index="0" RelativeSize="100" IsNewNode="True" />
               <LayoutItem Id="Oid" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>

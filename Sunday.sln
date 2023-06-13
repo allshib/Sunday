@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunday.Win", "Sunday.Win\Su
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunday.Blazor.Server", "Sunday.Blazor.Server\Sunday.Blazor.Server.csproj", "{C4558B8C-2CD4-44FA-9032-04FFEA8C5350}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorComponents", "BlazorComponents\BlazorComponents.csproj", "{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,8 +36,17 @@ Global
 		{C4558B8C-2CD4-44FA-9032-04FFEA8C5350}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{C4558B8C-2CD4-44FA-9032-04FFEA8C5350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4558B8C-2CD4-44FA-9032-04FFEA8C5350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51D08800-CB64-498E-95FB-16DD07317A23}
 	EndGlobalSection
 EndGlobal

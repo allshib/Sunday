@@ -18,5 +18,26 @@
         <elementListCompartment Id="c6fa5f00-3882-4e90-b3c6-88a4e2e644bd" absoluteBounds="11.39, 3.9307487227519351, 1.4700000000000002, 0.2770996168255806" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
+    <xpObjectShape Id="8eac8c37-0d17-4a13-8658-4694a754100a" absoluteBounds="7, 1.375, 1.5, 2.10439782867829">
+      <xpObjectMoniker Id="49e61588-9c6c-47aa-9d16-be4529cf57e1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12bdd5e8-c18e-4575-9674-7a909a2c51d2" absoluteBounds="7.0150000000000006, 1.685, 1.4700000000000002, 0.90942385047674179" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1a8ed3a2-bd90-4adf-863d-69031a64b64d" absoluteBounds="7.015, 2.6044238504767421, 1.4700000000000002, 0.2770996168255806" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d17b8f44-b314-4987-9710-2f1e46c360be" absoluteBounds="7.015, 2.8915234673023225, 1.4700000000000002, 0.48787436137596751" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </xpObjectShape>
+    <aggregationConnector Id="ded4ff27-a596-4830-be01-5fef2d630391" edgePoints="[(7.53192307692308 : 3.47939782867829); (7.53192307692308 : 3.72939782867829); (7.97846153846154 : 3.72939782867829); (7.97846153846154 : 3.47939782867829)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <aggregationMoniker Id="515dda53-d73b-40b3-861e-cd742b68a06a" />
+      <relativeChildShapes />
+      <nodes>
+        <xpObjectShapeMoniker Id="8eac8c37-0d17-4a13-8658-4694a754100a" />
+        <xpObjectShapeMoniker Id="8eac8c37-0d17-4a13-8658-4694a754100a" />
+      </nodes>
+      <sourceCollectionField>
+        <associationConnectorReferencesSourceCollectionField Id="d93638fc-1afa-4d28-bac4-1bd327d9ae67">
+          <collectionFieldMoniker Id="f35a8d50-9c42-4568-a320-fa7d0ffc7765" />
+        </associationConnectorReferencesSourceCollectionField>
+      </sourceCollectionField>
+    </aggregationConnector>
   </nestedChildShapes>
 </visualDesignerDiagram>

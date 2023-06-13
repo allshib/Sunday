@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
   <BOModel>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.BaseTree">
+      <OwnMembers>
+        <Member Name="BaseTreeCollection" Caption="Дети" />
+        <Member Name="Children" Caption="Дети" />
+        <Member Name="CreateDate" Caption="Дата создания" />
+        <Member Name="Name" Caption="Наименование" />
+        <Member Name="Parent" Caption="Родитель" />
+      </OwnMembers>
+    </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" Caption="Заказчик">
       <OwnMembers>
         <Member Name="Name" Caption="Наименование" />
@@ -14,8 +23,25 @@
       </OwnMembers>
     </Class>
   </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="Sunday.Module.BusinessObjects.Enums.PhoneEnum">
+        <LocalizationItem Name="Mobile" Value="Мобильный" />
+        <LocalizationItem Name="None" Value="Не задано" />
+        <LocalizationItem Name="Work" Value="Рабочий" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems>
+    <Items>
+      <Item Id="Items_WorkItems" Caption="Рабочие элементы" />
+    </Items>
+  </NavigationItems>
   <Views>
     <DetailView Id="Customer_DetailView">
+      <Items>
+        <StaticText Id="WarningText" Text="Важная надпись!" Caption="WarningText(8)" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">

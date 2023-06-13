@@ -20,5 +20,7 @@
     <SchemaModule Name="SchedulerModuleBase" Version="22.2.6.0" IsNewNode="True" />
     <SchemaModule Name="SystemModule" Version="22.2.6.0" IsNewNode="True" />
   </SchemaModules>
-  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor" />
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
+    <ListView Id="BaseTree_ListView" DataAccessMode="Client" />
+  </Views>
 </Application>

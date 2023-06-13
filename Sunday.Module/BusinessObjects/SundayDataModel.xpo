@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAMVW207bQBB9r9R/sPLM+rK+rBc5RpBQhNqiiEvV17F3NrHqS+S1k/D3XSdOIAFaqiJ485w5o50zc1br6GRV5MYCa5VV5XDgmPbgJP78KToDhTdNVcMUL0tZGZpVquOVEsPBrGnmx5a1XC7NpWtW9dSitu1YP79/u0lnWMBgR87+TiZZqRooUxzoUw0juoUkR9UduY63yCNgC11BgfGoVU1VYB1ZD9iOdl52WNzULUZWH+yS40x1wN1cQIOxhFxp0j644160mbgUMZUhswPHI77kkngO5QQwQSKZHzoySALpu5HVk3fFoypvi1LtKXgR1olOwyYZd5+R9QjYI/5J3r9KfCwz4IkImO8QzhgQD0KPgM9D4lMeCp74lPHgiUxdbv2H0smsKj9AahqgpNQJSMhoSjyZcMITjsR10EMZ+BIoe7XU59Del6/2cz+HdzCzCD3gjgcEaZgQjyaUAHf1qkVIQbqhx0G+rZnbIuku6nvv2EURcIdxErip3jHYKQndVC/aRgaB43A38d/azrf38w9wM/Vc9G3PJgH1beIxWxLu+EyvlCUIwk1dsN/UzX38QIm6JwPFpK7SNWhYG/jH5n2Jx7g4X81rVMocQwPmglKTHhl9ethFZmDaR8aozZu2xmGJbVNDfmRM2iTP0q94f1v9wnKYhKFwmO8JZtuorRpZ2yPW541yUApVt4Drdjfd6FTo1lBmq76vDXTTyj3oGotqgYfEDXrIHelnMr4r0xmUUxR6Zl28Gc1zPUR6MnOsm+yDe3uhjegCS6y1vUZVUWDZqN6jT+A98hhVNtWfXzJthYOK/dy6bIw5NniqVJVm0OiVbWueSawLrto872x2hjNYZFWtXSRB+0NfsMOM/nGxDv5c4t/lTHnK4ggAAA==" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAMVXbW/bNhD+PmD/wfDn0CIpvhayi9buiqJbETTpsK98OcbCZMkQpST996Nsx42ddOtQw/kgQHzuDrzn7iFPKl7fr6rRLbSxbOrpmEzw+PXs11+KtybCVde05gY+1KEZJa86vrqPfjpedt36VZbd3d1N7vJJ095kFGOS/fXH71duCSsz3juX/+2Myjp2pnYwTruORsW1sRXEYcvN+gF5BDxAn8wKZvM+ds0K2iL7hu3d3tUDNuvaHopst9gbF2UcgC9rbzqYBVPF5HQI7n3f96X/4Gc0KIkFYYgHHRAjVCMDFlCQXJEgrAg8L7Kd8z543lT9qo4HDL4LJ8PAYWucDa9F9gg4cPw3ev+X4mOaQlsvJCdIS2kQM4ohw7VCnGrlteVUavGEZgrPfoLp5bKpX4CqExAoJQIpSR1iwWqkrQaUE2AQBA+Gyh+m+hy60+UP63lXhzOI2StmNGEGAVUWMWopMjpPrfaKmpArpk04rZj7lR0O6rl7nIMXmkiNRO5Sjw12SOUuNRqDNIIQnVt+ajlff12/gJopy4FjhpGgHCMmcUCacJlaKi0Yn7vc4LOqeRgi1y2cR9BMgyBcKaSdSH2WxiDt09G2wNLN5QKXQE4q6EvTQt2dv82BOhA450ha6xHjgSATSBpD2mguE+V0hE8t6JeZRNZxpxiVyGmbBq4WebqolUFEU0c9dd46e2qm8xZSOov0nJ+vJNwqjHNEsSRJwlSkcYQ1Is44qlhuc//0Tv6ZA7xbf3Mphm8+8Jdt4zbgKNvCf24/EGcLuH13v24hxkkqkZncUjqhF6OdeTqsJmKCL0bzvur6FqY19F1rqovRZW+r0n2Er9fN31BPrVKeSM68xBjSrCmyhy02+80rEyPEoQGf+311izc+pQahvN/ltYWu+nAAfYZVcwvHjlv02HeerqjZl9otTX0DPtVsWG9L81wORarMGtqufOHcvpNG8R5qaJO85s1qlS6nuNPoE/jAeQGxvEmvv5VJCkcRh7ZN2AIq6OBNjI0rTZda9hDzjGET8KmvqkFmb2FpbsumTSoKJukjHbBjS/rzyI5+PWb/ABB1J0OjDAAA" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" name="SundayDataModel" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
   <classes>
     <dataBaseObjectModelHasClasses Id="4fc82ea6-8712-4f6c-ab4f-fab384b336f9">
       <xpObject Id="2f870614-5f9f-4129-aebe-f7581f6b6f53" name="Customer" baseClass="XPObject" userFileName="Customer" designerFileName="Customer.Designer" className="Customer" virtualName="Customer">
@@ -23,6 +23,31 @@
             <field Id="243e5040-6250-470f-9157-ad7bead3c3a0" name="Type" virtualColumnType="Sunday.Module.BusinessObjects.Enums.PhoneEnum" logicalType="Sunday.Module.BusinessObjects.Enums.PhoneEnum" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="d0f50394-cefe-49f7-bfa5-45eeb918124e">
+      <xpObject Id="49e61588-9c6c-47aa-9d16-be4529cf57e1" name="BaseTree" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="BaseTree" designerFileName="BaseTree.Designer" className="BaseTree" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="BaseTree">
+        <fields>
+          <generalXpObjectHasFields Id="66c78d2b-9793-43dd-bc09-a8fc3dc14339">
+            <field Id="f2ce6035-7bbd-45f1-af1e-f9a957d16ad8" name="Parent" virtualColumnType="BaseTree" logicalType="BaseTree" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f72d99cc-fc95-4124-85ea-c8de44ee7737">
+            <field Id="bc5c8427-c9bf-4963-878a-192c2d2cdbcb" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="95694713-3e40-4cc0-b35b-7521f677481f">
+            <field Id="715b8003-2071-4726-9b09-1cac2843b3df" name="CreateDate" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <aggrTarget>
+          <aggregation Id="515dda53-d73b-40b3-861e-cd742b68a06a" sourceCollectionName="BaseTreeCollection" name="BaseTreeReferencesBaseTree" targetFieldName="Parent">
+            <xpObjectMoniker Id="49e61588-9c6c-47aa-9d16-be4529cf57e1" />
+          </aggregation>
+        </aggrTarget>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="214d5e48-1cbf-4a36-b2e2-120315b94599">
+            <collectionField Id="f35a8d50-9c42-4568-a320-fa7d0ffc7765" name="BaseTreeCollection" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
       </xpObject>
     </dataBaseObjectModelHasClasses>
   </classes>
