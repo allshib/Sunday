@@ -1,17 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Sunday">
+  <ActionDesign>
+    <Actions>
+      <Action Id="SearchAddressAction" ImageName="EnableSearch" PaintStyle="CaptionAndImage" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="SearchAddressCategory" IsNewNode="True" />
+    </ActionToContainerMapping>
+  </ActionDesign>
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" ImageName="BO_Address">
+      <OwnMembers>
+        <Member Name="Lat" AllowEdit="False" />
+        <Member Name="Lon" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.BaseTree" ImageName="TipOverTree_Right" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" ImageName="BO_Customer" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" ImageName="Electronics_PhoneAndroid" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayStreet" ImageName="Action_Search_Object_FindObjectByID" />
   </BOModel>
   <NavigationItems>
     <Items>
-      <Item Id="Items_WorkItems" ImageName="BO_Position_v92" IsNewNode="True">
+      <Item Id="Items_WorkItems" ImageName="BO_Position_v92" Index="1" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="Customers" ViewId="Customer_ListView" IsNewNode="True" />
           <Item Id="TestTree" ViewId="BaseTree_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="ReferenceBooks" ImageName="Lookup&amp;Reference" Index="2" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Addresses" ViewId="AddressBase_ListView" IsNewNode="True" />
+          <Item Id="Cities" ViewId="City_ListView" IsNewNode="True" />
+          <Item Id="Countries" ViewId="SundayCountry_ListView" IsNewNode="True" />
+          <Item Id="Localities" ViewId="Locality_ListView" IsNewNode="True" />
+          <Item Id="Regions" ViewId="SundayRegion_ListView" IsNewNode="True" />
+          <Item Id="Streets" ViewId="SundayStreet_ListView" IsNewNode="True" />
         </Items>
       </Item>
     </Items>
@@ -25,6 +50,56 @@
     <SchemaModule Name="SystemModule" Version="22.2.6.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
+    <DetailView Id="AddressBase_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="SearchAddressAction" PaintStyle="CaptionAndImage" ActionContainer="SearchAddressCategory" IsNewNode="True" />
+        <PropertyEditor Id="Street.HouseNumber" PropertyName="Street.HouseNumber" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AddressBase" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="AddressBase_col2" RelativeSize="100" Index="0">
+                <LayoutItem Id="FastAddressString" RelativeSize="3.7166085946573753" Index="0" Removed="True" />
+                <LayoutGroup Id="Search" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="28.49462365591398" ImageName="Action_Search_Object_FindObjectByID" IsNewNode="True">
+                  <LayoutItem Id="FastAddressString" ViewItem="FastAddressString" Index="0" RelativeSize="25.396825396825395" IsNewNode="True" />
+                  <LayoutGroup Id="Auto01b8b0a1-f998-4c2f-9b41-3e276bcda88b" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="47.61904761904762" IsNewNode="True">
+                    <LayoutGroup Id="Auto6619bb4b-5b80-405f-864a-9aca478b27f8" ShowCaption="False" Index="0" RelativeSize="49.904580152671755" IsNewNode="True">
+                      <LayoutItem Id="Lat" ViewItem="Lat" Index="0" RelativeSize="50" IsNewNode="True" />
+                      <LayoutItem Id="Lon" ViewItem="Lon" Index="1" RelativeSize="50" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Autoff5d662e-64e2-4d98-be67-f148039f8b24" ShowCaption="False" Index="1" RelativeSize="50.095419847328245" IsNewNode="True">
+                      <LayoutItem Id="Item3" Index="0" RelativeSize="50" IsNewNode="True" />
+                      <LayoutItem Id="Item4" Index="1" RelativeSize="50" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                  <LayoutItem Id="SearchAddressAction" ViewItem="SearchAddressAction" Index="2" RelativeSize="26.984126984126984" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="GeneralInfo" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="71.50537634408602" ImageName="Actions_Info" IsNewNode="True">
+                  <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="8.743169398907105" IsNewNode="True" />
+                  <LayoutItem Id="Country" ViewItem="Country" Index="1" RelativeSize="6.557377049180328" IsNewNode="True" />
+                  <LayoutItem Id="Region" ViewItem="Region" Index="2" RelativeSize="6.557377049180328" IsNewNode="True" />
+                  <LayoutItem Id="Street" ViewItem="Street" Index="3" RelativeSize="6.557377049180328" IsNewNode="True" />
+                  <LayoutItem Id="Street.HouseNumber" ViewItem="Street.HouseNumber" Index="4" RelativeSize="6.557377049180328" IsNewNode="True" />
+                  <LayoutItem Id="Locality" ViewItem="Locality" Index="5" RelativeSize="6.557377049180328" IsNewNode="True" />
+                  <LayoutItem Id="ZIP" ViewItem="ZIP" Index="6" RelativeSize="58.46994535519126" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Lat" Index="1" RelativeSize="2.7874564459930316" Removed="True" />
+                <LayoutItem Id="Lon" Index="2" RelativeSize="2.7874564459930316" Removed="True" />
+                <LayoutItem Id="Name" RelativeSize="3.870967741935484" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AddressBase_col1" RelativeSize="72.94685990338164" Removed="True">
+                <LayoutItem Id="Country" RelativeSize="2.7874564459930316" Index="1" Removed="True" />
+                <LayoutItem Id="Region" RelativeSize="2.7874564459930316" Index="2" Removed="True" />
+                <LayoutItem Id="Street" RelativeSize="2.7874564459930316" Index="3" Removed="True" />
+                <LayoutItem Id="Locality" RelativeSize="2.7874564459930316" Index="4" Removed="True" />
+                <LayoutItem Id="ZIP" Index="5" RelativeSize="85.1335656213705" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
     <DetailView Id="BaseTree_DetailView">
       <Layout>
@@ -53,11 +128,6 @@
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
             <LayoutGroup Id="Customer" RelativeSize="9.365079365079366">
               <LayoutItem Id="Name" RelativeSize="54.23728813559322" />
-              <LayoutItem Id="Phone" RelativeSize="45.76271186440678" />
-            </LayoutGroup>
-            <LayoutGroup Id="XPObject" RelativeSize="90.63492063492063" Index="1">
-              <LayoutItem Id="WarningText" ViewItem="WarningText" Index="0" RelativeSize="100" IsNewNode="True" />
-              <LayoutItem Id="Oid" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
@@ -68,11 +138,7 @@
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
             <LayoutGroup Id="Phone" RelativeSize="6.262626262626263">
-              <LayoutItem Id="Number" RelativeSize="51.61290322580645" />
               <LayoutItem Id="Type" RelativeSize="48.38709677419355" />
-            </LayoutGroup>
-            <LayoutGroup Id="XPObject" RelativeSize="93.73737373737374">
-              <LayoutItem Id="Oid" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>

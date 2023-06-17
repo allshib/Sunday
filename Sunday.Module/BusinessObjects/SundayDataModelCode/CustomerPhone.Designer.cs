@@ -15,11 +15,12 @@ using System.ComponentModel;
 using System.Reflection;
 namespace Sunday.Module.BusinessObjects.SundayDataModel {
 
-    public partial class Phone : DevExpress.Persistent.BaseImpl.PhoneNumber {
-        Sunday.Module.BusinessObjects.Enums.PhoneEnum fType;
-        public Sunday.Module.BusinessObjects.Enums.PhoneEnum Type {
-            get { return fType; }
-            set { SetPropertyValue<Sunday.Module.BusinessObjects.Enums.PhoneEnum>(nameof(Type), ref fType, value); }
+    public partial class CustomerPhone : Phone {
+        Customer fCustomer;
+        [Association(@"CustomerPhoneReferencesCustomer")]
+        public Customer Customer {
+            get { return fCustomer; }
+            set { SetPropertyValue<Customer>(nameof(Customer), ref fCustomer, value); }
         }
     }
 

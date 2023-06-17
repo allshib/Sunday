@@ -22,5 +22,24 @@
   </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
     <ListView Id="BaseTree_ListView" DataAccessMode="Client" />
+    <DetailView Id="Customer_DetailView">
+      <Items>
+        <ButtonDetailViewItemBlazor Id="MyButton" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Customer" RelativeSize="8.925869894099849" />
+            <LayoutGroup Id="XPObject" RelativeSize="91.07413010590015">
+              <LayoutGroup Id="Auto0523f55f-d782-4aba-bbcd-a97be364ccf9" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="4.485049833887043" IsNewNode="True">
+                <LayoutItem Id="MyButton" ViewItem="MyButton" Index="0" RelativeSize="49.952696310312206" IsNewNode="True" />
+                <LayoutItem Id="Item1" Index="1" RelativeSize="50.047303689687794" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="WarningText" Index="1" RelativeSize="95.51495016611295" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>

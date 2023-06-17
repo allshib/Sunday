@@ -15,19 +15,20 @@ using System.ComponentModel;
 using System.Reflection;
 namespace Sunday.Module.BusinessObjects.SundayDataModel {
 
-    public partial class Customer : DevExpress.Persistent.BaseImpl.BaseObject {
+    public partial class Locality : DevExpress.Persistent.BaseImpl.BaseObject {
         string fName;
         public string Name {
             get { return fName; }
             set { SetPropertyValue<string>(nameof(Name), ref fName, value); }
         }
-        AddressBase fAddress;
-        public AddressBase Address {
-            get { return fAddress; }
-            set { SetPropertyValue<AddressBase>(nameof(Address), ref fAddress, value); }
+        PrimaryGeographicalUnit fPGUnit;
+        [Association(@"LocalityReferencesPrimaryGeographicalUnit")]
+        public PrimaryGeographicalUnit PGUnit {
+            get { return fPGUnit; }
+            set { SetPropertyValue<PrimaryGeographicalUnit>(nameof(PGUnit), ref fPGUnit, value); }
         }
-        [Association(@"CustomerPhoneReferencesCustomer"), Aggregated]
-        public XPCollection<CustomerPhone> CustomerPhones { get { return GetCollection<CustomerPhone>(nameof(CustomerPhones)); } }
+        [Association(@"StreetReferencesLocality")]
+        public XPCollection<SundayStreet> Streets { get { return GetCollection<SundayStreet>(nameof(Streets)); } }
     }
 
 }

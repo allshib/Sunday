@@ -15,11 +15,17 @@ using System.ComponentModel;
 using System.Reflection;
 namespace Sunday.Module.BusinessObjects.SundayDataModel {
 
-    public partial class Phone : DevExpress.Persistent.BaseImpl.PhoneNumber {
-        Sunday.Module.BusinessObjects.Enums.PhoneEnum fType;
-        public Sunday.Module.BusinessObjects.Enums.PhoneEnum Type {
-            get { return fType; }
-            set { SetPropertyValue<Sunday.Module.BusinessObjects.Enums.PhoneEnum>(nameof(Type), ref fType, value); }
+    public partial class SundayRegion : PrimaryGeographicalUnit {
+        SundayCountry fCountry;
+        [Association(@"RegionReferencesCountry")]
+        public SundayCountry Country {
+            get { return fCountry; }
+            set { SetPropertyValue<SundayCountry>(nameof(Country), ref fCountry, value); }
+        }
+        int fRegionID;
+        public int RegionID {
+            get { return fRegionID; }
+            set { SetPropertyValue<int>(nameof(RegionID), ref fRegionID, value); }
         }
     }
 
