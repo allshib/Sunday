@@ -19,14 +19,13 @@ namespace Nominatim.Entities
 
         }
 
-        public NominatimAdress GetAdressData(string quary)
-        {
-            var t = GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1").FirstOrDefault();
-            return t;
-        }
+        public NominatimAdress? GetAdressData(string quary)
+        => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1").FirstOrDefault();
+
+        
 
 
-        private List<T> GetObjects<T>(string url)
+        private List<T>? GetObjects<T>(string url)
         {
             //var webr = WebRequest.Create(url);
             //webr.Headers.Add("User-Agent: Other");

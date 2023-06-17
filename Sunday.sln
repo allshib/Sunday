@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunday.Blazor.Server", "Sun
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorComponents", "BlazorComponents\BlazorComponents.csproj", "{A0FFA6A4-DEA1-4017-B4E8-AC3C28FCA70D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SundayNominatim", "SundayNominatim\SundayNominatim.csproj", "{BFE07363-7A5C-406C-A146-F584D7D6D077}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SundayNominatim", "SundayNominatim\SundayNominatim.csproj", "{BFE07363-7A5C-406C-A146-F584D7D6D077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SundayTests", "SundayTests\SundayTests.csproj", "{F36F1552-CDBD-4178-B2BF-765AA049F102}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,12 @@ Global
 		{BFE07363-7A5C-406C-A146-F584D7D6D077}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
 		{BFE07363-7A5C-406C-A146-F584D7D6D077}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFE07363-7A5C-406C-A146-F584D7D6D077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36F1552-CDBD-4178-B2BF-765AA049F102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36F1552-CDBD-4178-B2BF-765AA049F102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36F1552-CDBD-4178-B2BF-765AA049F102}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36F1552-CDBD-4178-B2BF-765AA049F102}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{F36F1552-CDBD-4178-B2BF-765AA049F102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36F1552-CDBD-4178-B2BF-765AA049F102}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

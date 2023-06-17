@@ -1,13 +1,17 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.Persistent.BaseImpl;
+using DevExpress.XtraSpreadsheet.DocumentFormats.Xlsb;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Nominatim.Entities;
 using Sunday.Module.BusinessObjects.SundayDataModel;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using City = Sunday.Module.BusinessObjects.SundayDataModel.City;
+using NomAdress = Nominatim.Entities.Address;
 
 namespace Sunday.Module.Entities {
     public static class SundayAddressEx {
@@ -25,53 +29,83 @@ namespace Sunday.Module.Entities {
             address.Lon = Convert.ToDouble(nominatimAddress.lon);
 
             SundayCountry country=null;
-            if (!String.IsNullOrEmpty(nominatimAddress?.address?.country)) {
-                country = address.Session.FindObject<SundayCountry>(CriteriaOperator.Parse("Name = ?", nominatimAddress.address.country));
-                if (country == null) {
-                    country = new SundayCountry(address.Session);
-                    country.Name = nominatimAddress.address.country;
-                }
-                address.Country = country;
-            }
+            if (!String.IsNullOrEmpty(nominatimAddress?.address?.country)) 
+                country = FillCountry(address, nominatimAddress.address);
+            
             SundayRegion region=null;
             if (!String.IsNullOrEmpty(nominatimAddress?.address?.state)) {
-                region = address.Session.FindObject<SundayRegion>(CriteriaOperator.Parse("Name = ?", nominatimAddress.address.state));
-                if (region == null) {
-                    region = new SundayRegion(address.Session);
-                    region.Name = nominatimAddress.address.state;
-                }
-                if(country != null) 
-                    region.Country = address.Country;   
+                region = FillRegion(address, nominatimAddress.address);
+                if (country != null)
+                    region.Country = address.Country;
 
-                address.Region = region;
             }
 
             Locality loc=null;
             if (!String.IsNullOrEmpty(nominatimAddress?.address?.city)) {
-                loc = address.Session.FindObject<Locality>(CriteriaOperator.Parse("Name = ?", nominatimAddress.address.city));
-                if (loc == null) {
-                    loc = new City(address.Session);
-                    loc.Name = nominatimAddress.address.city;
-                }
+                loc = FillLoc(address, nominatimAddress.address);
                 if (region != null) loc.PGUnit = region;
-                else if(country !=null) loc.PGUnit = address.Country;
-                address.Locality = loc;
+                else if (country != null) loc.PGUnit = address.Country;
             }
 
             if (!String.IsNullOrEmpty(nominatimAddress?.address?.road)) {
-                var street = address.Session.FindObject<SundayStreet>(CriteriaOperator.Parse("Name = ?", nominatimAddress.address.road));
-                if (street == null) {
-                    street = new SundayStreet(address.Session);
-                    street.Name = nominatimAddress.address.road;
-                    street.HouseNumber = nominatimAddress.address.house_number;
-                }
+                var street = FillStreet(address, nominatimAddress.address);
                 if (loc != null) street.Locacity = loc;
-                address.Street = street;
             }
 
-            if(!String.IsNullOrEmpty(nominatimAddress.address.postcode))
+            if (!String.IsNullOrEmpty(nominatimAddress.address.postcode))
                 address.ZIP = Convert.ToInt32(nominatimAddress.address.postcode);
 
+        }
+
+
+        private static SundayRegion FillRegion(this AddressBase address, NomAdress nominatimAddress) {
+            var region = address.Session.FindObject<SundayRegion>(CriteriaOperator.Parse("Name = ?", nominatimAddress.state));
+            if (region == null) {
+                region = new SundayRegion(address.Session);
+                region.Name = nominatimAddress.state;
+            }
+            
+            address.Region = region;
+            return region;
+        }
+
+
+
+        private static SundayCountry FillCountry(this AddressBase address, NomAdress nominatimAddress) {
+            var country = address.Session.FindObject<SundayCountry>(CriteriaOperator.Parse("Name = ?", nominatimAddress.country));
+            if (country == null) {
+                country = new SundayCountry(address.Session);
+                country.Name = nominatimAddress.country;
+            }
+            address.Country = country;
+
+            return country;
+        }
+
+
+
+
+        private static Locality FillLoc(this AddressBase address, NomAdress nominatimAddress) {
+            var loc = address.Session.FindObject<Locality>(CriteriaOperator.Parse("Name = ?", nominatimAddress.city));
+            if (loc == null) {
+                loc = new City(address.Session);
+                loc.Name = nominatimAddress.city;
+            }
+            address.Locality = loc;
+            return loc;
+        }
+
+
+        private static SundayStreet FillStreet(this AddressBase address, NomAdress nominatimAddress) {
+            var street = address.Session.FindObject<SundayStreet>(CriteriaOperator.Parse("Name = ?", nominatimAddress.road));
+            if (street == null) {
+                street = new SundayStreet(address.Session);
+                street.Name = nominatimAddress.road;
+                street.HouseNumber = nominatimAddress.house_number;
+            }
+            address.Street = street;
+
+            return street;
         }
     }
 }
