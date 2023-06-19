@@ -1,4 +1,5 @@
 ﻿using DevExpress.Data.Filtering;
+using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.XtraSpreadsheet.DocumentFormats.Xlsb;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -7,6 +8,7 @@ using Sunday.Module.BusinessObjects.SundayDataModel;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +27,12 @@ namespace Sunday.Module.Entities {
 
             if (String.IsNullOrEmpty(nominatimAddress.lat)) return;
 
-            address.Lat = Convert.ToDouble(nominatimAddress.lat);
-            address.Lon = Convert.ToDouble(nominatimAddress.lon);
+            //double temp;
+            address.Lat = Convert.ToDouble(nominatimAddress.lat, CultureInfo.InvariantCulture);
+            address.Lon = Convert.ToDouble(nominatimAddress.lon, CultureInfo.InvariantCulture);
+
+            //address.Lat = Double.TryParse(nominatimAddress.lat, out temp) ? temp : address.Lat;
+            //address.Lon = Double.TryParse(nominatimAddress.lon, out temp) ? temp : address.Lon;
 
             SundayCountry country=null;
             if (!String.IsNullOrEmpty(nominatimAddress?.address?.country)) 

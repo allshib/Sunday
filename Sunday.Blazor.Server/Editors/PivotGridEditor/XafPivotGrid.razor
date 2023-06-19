@@ -1,0 +1,20 @@
+﻿@typeparam T
+@using DevExpress.Blazor
+
+<DxPivotGrid Data=@Model.Data>
+    @foreach (XafPivotGridFieldModel field in Model.Fields) {
+        <DxPivotGridField Field=@field.Name Area=@field.Area />
+    }
+</DxPivotGrid>
+
+@code {
+    [Parameter]
+    public XafPivotGridModel<T> Model { get; set; }
+
+    public static RenderFragment Create(XafPivotGridModel<T> model) =>@<XafPivotGrid Model=@model />;
+
+    protected override void OnInitialized() {
+        base.OnInitialized();
+        Model.Update = StateHasChanged;
+    }
+}

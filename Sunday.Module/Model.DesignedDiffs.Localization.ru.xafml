@@ -33,6 +33,13 @@
         <Member Name="Name" Caption="Наименование" />
       </OwnMembers>
     </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.ExampleData" Caption="Пример данных">
+      <OwnMembers>
+        <Member Name="Date" Caption="Дата" />
+        <Member Name="Sum" Caption="Сумма" />
+        <Member Name="Type" Caption="Тип" />
+      </OwnMembers>
+    </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Locality" Caption="Населенный пункт">
       <OwnMembers>
         <Member Name="Name" Caption="Наименование" />
@@ -91,6 +98,11 @@
           <Item Id="Localities" Caption="Населенные пункты" />
           <Item Id="Regions" Caption="Области" />
           <Item Id="Streets" Caption="Улицы" />
+        </Items>
+      </Item>
+      <Item Id="TestItems" Caption="Тестовые элементы">
+        <Items>
+          <Item Id="ExampleData_ListView_Pivot" Caption="Пример данных (сводная таблица)" />
         </Items>
       </Item>
     </Items>

@@ -206,5 +206,13 @@
         <elementListCompartment Id="7f1b67d4-3768-49ae-894b-195662f59c09" absoluteBounds="27.155926361083985, 4.1433514523506165, 1.4700000000000002, 0.2770996168255806" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
+    <xpObjectShape Id="3f2e9d7f-896f-4554-af7c-359f81e5471a" absoluteBounds="4.1566505432128906, 5.3385419845581055, 1.5, 2.1043978286782892">
+      <xpObjectMoniker Id="67a189a8-4eeb-4dd4-94e6-4e034fc34e2b" />
+      <nestedChildShapes>
+        <elementListCompartment Id="feea7ff8-ae22-4230-8488-2be1d9f1db90" absoluteBounds="4.17165054321289, 5.6485419845581051, 1.4700000000000002, 1.1201985950271287" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7056e806-7ce6-4d98-9855-175067c4f467" absoluteBounds="4.17165054321289, 6.778740579585234, 1.4700000000000002, 0.2770996168255806" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="bdbe3ef4-c9f3-433f-ba71-a23f2fcd4da9" absoluteBounds="4.17165054321289, 7.0658401964108144, 1.4700000000000002, 0.2770996168255806" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </xpObjectShape>
   </nestedChildShapes>
 </visualDesignerDiagram>
