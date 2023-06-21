@@ -70,14 +70,10 @@
                 <LayoutItem Id="FastAddressString" RelativeSize="3.7166085946573753" Index="0" Removed="True" />
                 <LayoutGroup Id="Search" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="28.49462365591398" ImageName="Action_Search_Object_FindObjectByID" IsNewNode="True">
                   <LayoutItem Id="FastAddressString" ViewItem="FastAddressString" Index="0" RelativeSize="25.396825396825395" IsNewNode="True" />
-                  <LayoutGroup Id="Auto01b8b0a1-f998-4c2f-9b41-3e276bcda88b" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="47.61904761904762" IsNewNode="True">
-                    <LayoutGroup Id="Auto6619bb4b-5b80-405f-864a-9aca478b27f8" ShowCaption="False" Index="0" RelativeSize="49.904580152671755" IsNewNode="True">
+                  <LayoutGroup Id="LatLonContainer" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="47.61904761904762" IsNewNode="True">
+                    <LayoutGroup Id="LatAndLon" ShowCaption="False" Index="0" RelativeSize="49.904580152671755" IsNewNode="True">
                       <LayoutItem Id="Lat" ViewItem="Lat" Index="0" RelativeSize="50" IsNewNode="True" />
                       <LayoutItem Id="Lon" ViewItem="Lon" Index="1" RelativeSize="50" IsNewNode="True" />
-                    </LayoutGroup>
-                    <LayoutGroup Id="Autoff5d662e-64e2-4d98-be67-f148039f8b24" ShowCaption="False" Index="1" RelativeSize="50.095419847328245" IsNewNode="True">
-                      <LayoutItem Id="Item3" Index="0" RelativeSize="50" IsNewNode="True" />
-                      <LayoutItem Id="Item4" Index="1" RelativeSize="50" IsNewNode="True" />
                     </LayoutGroup>
                   </LayoutGroup>
                   <LayoutItem Id="SearchAddressAction" ViewItem="SearchAddressAction" Index="2" RelativeSize="26.984126984126984" IsNewNode="True" />

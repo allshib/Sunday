@@ -116,11 +116,10 @@
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
             <LayoutGroup Id="AddressBase" Caption="Адрес">
-              <LayoutGroup Id="AddressBase_col2">
+              <LayoutGroup Id="AddressBase_col2" Caption="AddressItems">
                 <LayoutGroup Id="Search" Caption="Поиск">
-                  <LayoutGroup Id="Auto01b8b0a1-f998-4c2f-9b41-3e276bcda88b" Caption="Auto01b8b0a1-f998-4c2f-9b41-3e276bcda88b(7)">
-                    <LayoutGroup Id="Auto6619bb4b-5b80-405f-864a-9aca478b27f8" Caption="Auto6619bb4b-5b80-405f-864a-9aca478b27f8(8)" />
-                    <LayoutGroup Id="Autoff5d662e-64e2-4d98-be67-f148039f8b24" Caption="Autoff5d662e-64e2-4d98-be67-f148039f8b24(11)" />
+                  <LayoutGroup Id="LatLonContainer" Caption="Auto01b8b0a1-f998-4c2f-9b41-3e276bcda88b(7)">
+                    <LayoutGroup Id="LatAndLon" Caption="Auto6619bb4b-5b80-405f-864a-9aca478b27f8(8)" />
                   </LayoutGroup>
                 </LayoutGroup>
                 <LayoutGroup Id="GeneralInfo" Caption="Общая информация" />
