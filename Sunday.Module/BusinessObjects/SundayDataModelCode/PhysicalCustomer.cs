@@ -13,6 +13,9 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
     {
         public PhysicalCustomer(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+        [PersistentAlias("[ShortName] + '. Заказов ' + ToStr([CustomerOrders][].Count())")]
+        public string DefaultProperty => EvaluateAlias(nameof(DefaultProperty)).ToString();
     }
 
 }

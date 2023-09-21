@@ -303,9 +303,6 @@
           <generalXpObjectHasFields Id="9600ba9c-8f54-421a-96b1-20130570008a">
             <persistentAlias Id="8f4e35b6-899e-4292-9d9b-469988cd3466" name="ShortName" virtualColumnType="String" expression="[Surname] + ' ' + Substring([Name], 0, 1) + '.' + Substring([Middlename], 0, 1)" />
           </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="ad0871a2-bb47-4049-8b48-212981e7e471">
-            <persistentAlias Id="70512b51-9e16-44ab-a966-009242f96640" name="DefaultProperty" virtualColumnType="String" expression="[ShortName] + '. Заказов ' + ToStr([CustomerOrders][].Count())" />
-          </generalXpObjectHasFields>
         </fields>
         <superClass>
           <inheritance Id="f9e48c6b-9a52-4fdd-84fe-dd4c0ee630ee">

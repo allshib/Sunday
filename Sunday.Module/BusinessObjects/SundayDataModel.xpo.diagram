@@ -235,15 +235,15 @@
         </associationConnectorReferencesSourceCollectionField>
       </sourceCollectionField>
     </simpleAssociationConnector>
-    <xpObjectShape Id="61ffe493-2f42-4c83-826d-69ced0e4de63" absoluteBounds="0.375, 4.375, 1.5, 2.5242789713541658">
+    <xpObjectShape Id="61ffe493-2f42-4c83-826d-69ced0e4de63" absoluteBounds="0.375, 4.375, 1.5, 2.3319775390624997">
       <xpObjectMoniker Id="9eab8b3b-e8c3-49f5-a217-c3b1ce0754d2" />
       <nestedChildShapes>
-        <elementListCompartment Id="be874e27-b782-4b42-93b3-4f627e839e73" absoluteBounds="0.38999999999999968, 4.685, 1.4700000000000002, 1.5954996744791665" name="Fields" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="e83b9d00-0e7d-47cb-8528-ae405c2cc9f0" absoluteBounds="0.39, 6.2904996744791664, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="6b6e6342-9a69-488a-80ea-cc6718c1aadb" absoluteBounds="0.39, 6.5498893229166661, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="be874e27-b782-4b42-93b3-4f627e839e73" absoluteBounds="0.38999999999999968, 4.685, 1.4700000000000002, 1.4031982421875" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e83b9d00-0e7d-47cb-8528-ae405c2cc9f0" absoluteBounds="0.39, 6.0981982421875, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6b6e6342-9a69-488a-80ea-cc6718c1aadb" absoluteBounds="0.39, 6.357587890625, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
-    <inheritaceConnector Id="e511830b-6b5c-4b6f-93d8-09c2a1d9049a" edgePoints="[(1.875 : 6.6132275390625); (8.375 : 6.6132275390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <inheritaceConnector Id="e511830b-6b5c-4b6f-93d8-09c2a1d9049a" edgePoints="[(1.875 : 6.52187825520833); (8.375 : 6.52187825520833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <inheritanceMoniker Id="f9e48c6b-9a52-4fdd-84fe-dd4c0ee630ee" />
       <nodes>
         <xpObjectShapeMoniker Id="61ffe493-2f42-4c83-826d-69ced0e4de63" />

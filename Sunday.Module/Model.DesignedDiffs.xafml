@@ -33,7 +33,7 @@
       <Item Id="Items_WorkItems" ImageName="BO_Position_v92" Index="1" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="CustomerOrders" ViewId="CustomerOrder_ListView" IsNewNode="True" />
-          <Item Id="Customers" ViewId="Customer_ListView" IsNewNode="True" />
+          <Item Id="Customers" ViewId="PhysicalCustomer_ListView" IsNewNode="True" />
           <Item Id="TestTree" ViewId="BaseTree_ListView" IsNewNode="True" />
         </Items>
       </Item>
@@ -229,29 +229,31 @@
     <DetailView Id="PhysicalCustomer_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="51.25">
-            <LayoutGroup Id="PhysicalCustomer" RelativeSize="49.1869918699187">
-              <LayoutGroup Id="PhysicalCustomer_col1" RelativeSize="49.9484004127967">
-                <LayoutItem Id="Name" RelativeSize="36.36363636363637" />
-                <LayoutItem Id="Surname" RelativeSize="27.272727272727273" />
-                <LayoutItem Id="Middlename" RelativeSize="36.36363636363637" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="52.5">
+            <LayoutGroup Id="PhysicalCustomer" RelativeSize="48.01587301587302">
+              <LayoutGroup Id="PhysicalCustomer_col1" RelativeSize="49.845201238390096">
+                <LayoutItem Id="Name" RelativeSize="36.36363636363637" Index="0" />
+                <LayoutItem Id="Surname" RelativeSize="27.272727272727273" Index="1" />
+                <LayoutItem Id="Middlename" RelativeSize="36.36363636363637" Index="2" />
+                <LayoutItem Id="DefaultProperty" Removed="True" />
               </LayoutGroup>
-              <LayoutGroup Id="PhysicalCustomer_col2" RelativeSize="50.0515995872033">
+              <LayoutGroup Id="PhysicalCustomer_col2" RelativeSize="50.154798761609904">
                 <LayoutItem Id="VKLink" RelativeSize="100" />
+                <LayoutItem Id="ShortName" Index="1" RelativeSize="63.63636363636363" Removed="True" />
                 <LayoutItem Id="FullName" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="Customer" RelativeSize="50.8130081300813">
+            <LayoutGroup Id="Customer" RelativeSize="51.98412698412698">
               <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
-                <LayoutItem Id="Address" ViewItem="Address" Index="0" RelativeSize="36.36363636363637" IsNewNode="True" />
-                <LayoutGroup Id="Autoad9c152f-1150-476a-8960-36cbdc3849aa" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="63.63636363636363" IsNewNode="True">
+                <LayoutItem Id="Address" ViewItem="Address" Index="0" RelativeSize="34.04255319148936" IsNewNode="True" />
+                <LayoutGroup Id="Autoad9c152f-1150-476a-8960-36cbdc3849aa" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="65.95744680851064" IsNewNode="True">
                   <LayoutGroup Id="Autobea6c45e-91a0-47dc-ad16-65604cbddb0d" ShowCaption="False" Index="0" RelativeSize="36.9453044375645" IsNewNode="True">
-                    <LayoutItem Id="INN" ViewItem="INN" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
-                    <LayoutItem Id="Email" ViewItem="Email" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+                    <LayoutItem Id="INN" ViewItem="INN" Index="0" RelativeSize="48.38709677419355" IsNewNode="True" />
+                    <LayoutItem Id="Email" ViewItem="Email" Index="1" RelativeSize="51.61290322580645" IsNewNode="True" />
                   </LayoutGroup>
                   <LayoutGroup Id="Auto98bfce27-5f32-4033-8d6a-84383ade43d0" ShowCaption="False" Index="1" RelativeSize="63.0546955624355" IsNewNode="True">
-                    <LayoutItem Id="Item3" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
-                    <LayoutItem Id="Item2" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+                    <LayoutItem Id="Item3" Index="0" RelativeSize="41.935483870967744" IsNewNode="True" />
+                    <LayoutItem Id="Item2" Index="1" RelativeSize="58.064516129032256" IsNewNode="True" />
                   </LayoutGroup>
                 </LayoutGroup>
               </LayoutGroup>
@@ -260,7 +262,7 @@
               <LayoutItem Id="INN" RelativeSize="28.571428571428573" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="48.75">
+          <TabbedGroup Id="Tabs" RelativeSize="47.5">
             <LayoutGroup Id="CustomerOrders" RelativeSize="100">
               <LayoutItem Id="CustomerOrders" RelativeSize="100" />
             </LayoutGroup>

@@ -52,11 +52,6 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
         {
             get { return (string)(EvaluateAlias(nameof(ShortName))); }
         }
-        [PersistentAlias("[ShortName] + '. Заказов ' + ToStr([CustomerOrders][].Count())")]
-        public string DefaultProperty
-        {
-            get { return (string)(EvaluateAlias(nameof(DefaultProperty))); }
-        }
     }
 
 }
