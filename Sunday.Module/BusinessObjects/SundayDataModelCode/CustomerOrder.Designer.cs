@@ -58,6 +58,13 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
             get { return fCustomerRequirements; }
             set { SetPropertyValue<string>(nameof(CustomerRequirements), ref fCustomerRequirements, value); }
         }
+        Sunday.Module.BusinessObjects.Enums.CustomerOrderWorkingStatusEnum fStage;
+        [ColumnDefaultValue(0)]
+        public Sunday.Module.BusinessObjects.Enums.CustomerOrderWorkingStatusEnum Stage
+        {
+            get { return fStage; }
+            set { SetPropertyValue<Sunday.Module.BusinessObjects.Enums.CustomerOrderWorkingStatusEnum>(nameof(Stage), ref fStage, value); }
+        }
     }
 
 }

@@ -30,17 +30,20 @@
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.City" Caption="Город" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" Caption="Заказчик">
       <OwnMembers>
-        <Member Name="Name" Caption="Наименование" />
+        <Member Name="Address" Caption="Адрес" />
+        <Member Name="CustomerOrders" Caption="Заказы" />
+        <Member Name="CustomerPhones" Caption="Телефоны" />
+        <Member Name="INN" Caption="ИНН" />
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" Caption="Заказ">
       <OwnMembers>
         <Member Name="CreatedDate" Caption="Дата создания" />
         <Member Name="Customer" Caption="Заказчик" />
-        <Member Name="CustomerDescription" Caption="" />
         <Member Name="CustomerRequirements" Caption="Требования" />
         <Member Name="Description" Caption="Заметки" />
         <Member Name="Name" Caption="Название" />
+        <Member Name="Stage" Caption="Стадия" />
         <Member Name="Type" Caption="Тип" />
       </OwnMembers>
     </Class>
@@ -61,6 +64,15 @@
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" Caption="Телефон">
       <OwnMembers>
         <Member Name="Type" Caption="Тип" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.PhysicalCustomer">
+      <OwnMembers>
+        <Member Name="FullName" Caption="Полное имя" />
+        <Member Name="Middlename" Caption="Отчество" />
+        <Member Name="Name" Caption="Имя" />
+        <Member Name="Surname" Caption="Фамилия" />
+        <Member Name="VKLink" Caption="Ссылка Вконтакте" />
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.PrimaryGeographicalUnit" Caption="Первостепенная географическая единица (поменять)">
@@ -96,6 +108,16 @@
         <LocalizationItem Name="OilPainting" Value="Картина маслом" />
         <LocalizationItem Name="PixelArt" Value="Пиксель-Арт" />
         <LocalizationItem Name="Undefined" Value="Не задано" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="Sunday.Module.BusinessObjects.Enums.CustomerOrderWorkingStatusEnum">
+        <LocalizationItem Name="Canceled" Value="Отменен" />
+        <LocalizationItem Name="Coordination" Value="Согласование" />
+        <LocalizationItem Name="Created" Value="Создан" />
+        <LocalizationItem Name="Delivery" Value="Доставка" />
+        <LocalizationItem Name="InProgress" Value="В работе" />
+        <LocalizationItem Name="MakingСhanges" Value="Внос правок" />
+        <LocalizationItem Name="SuccessfullyСompleted" Value="Успешно завершен" />
+        <LocalizationItem Name="WorkCompleted" Value="На проверке" />
       </LocalizationGroup>
       <LocalizationGroup Name="Sunday.Module.BusinessObjects.Enums.PhoneEnum">
         <LocalizationItem Name="Mobile" Value="Мобильный" />
@@ -157,22 +179,49 @@
       </Items>
     </DetailView>
     <DetailView Id="CustomerOrder_DetailView">
-      <Items>
-        <PropertyEditor Id="CustomerDescription" Caption="CustomerDescription(10)" />
-      </Items>
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
-            <LayoutGroup Id="CustomerOrder" Caption="Общие сведенья">
-              <LayoutGroup Id="Autob77902fd-cfb8-4d2d-854f-d0b59cc7f782" Caption="" />
-              <LayoutGroup Id="CustomerOrder_col2" Caption="CustomerOrder_col2" />
+            <LayoutGroup Id="CustomerOrder" Caption="Общие сведенья" />
+            <LayoutGroup Id="Generals" Caption="Общие сведенья">
+              <LayoutGroup Id="Autofdc9435d-d68a-4fec-95a6-b33772e5de85" Caption="Autofdc9435d-d68a-4fec-95a6-b33772e5de85(5)">
+                <LayoutGroup Id="Autoc3adb0e4-49cf-471a-8613-eef10e7d3bd1" Caption="Autoc3adb0e4-49cf-471a-8613-eef10e7d3bd1(6)">
+                  <LayoutGroup Id="Autod8a67bf3-9361-420c-9641-8e8a488e998e" Caption="Autod8a67bf3-9361-420c-9641-8e8a488e998e(7)">
+                    <LayoutGroup Id="Autodb606f1e-d180-4070-bee7-817847154513" Caption="Autodb606f1e-d180-4070-bee7-817847154513(13)">
+                      <LayoutGroup Id="Auto88a0d19f-c774-4119-8065-7359dd4467d2" Caption="" />
+                      <LayoutGroup Id="Auto85d57d63-dd7b-4bc4-9faa-603f03f5b3e3" Caption="">
+                        <LayoutGroup Id="Autoc839646c-f907-4c93-8e9c-a41b9bfa6f78" Caption="" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
           <LayoutGroup Id="SizeableEditors">
-            <TabbedGroup Id="Item3">
-              <LayoutGroup Id="Item2" Caption="Информация от заказчика" />
-              <LayoutGroup Id="Item1" Caption="Рабочие сведенья" />
+            <TabbedGroup Id="Tabs">
+              <LayoutGroup Id="CustomerInfo" Caption="Информация от заказчика" />
+              <LayoutGroup Id="WorkInfo" Caption="Рабочие сведенья" />
             </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="PhysicalCustomer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="PhysicalCustomer" Caption="Данные физ.лица">
+              <LayoutGroup Id="PhysicalCustomer_col2" Caption="PhysicalCustomer_col2" />
+            </LayoutGroup>
+            <LayoutGroup Id="Customer">
+              <LayoutGroup Id="Item1" Caption="Общие данные о заказчике">
+                <LayoutGroup Id="Autoad9c152f-1150-476a-8960-36cbdc3849aa" Caption="">
+                  <LayoutGroup Id="Autobea6c45e-91a0-47dc-ad16-65604cbddb0d" Caption="" />
+                  <LayoutGroup Id="Auto98bfce27-5f32-4033-8d6a-84383ade43d0" Caption="" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
       </Layout>

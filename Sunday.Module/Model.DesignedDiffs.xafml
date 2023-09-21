@@ -18,9 +18,14 @@
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.BaseTree" ImageName="TipOverTree_Right" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" ImageName="BO_Customer" />
-    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" ImageName="BO_Sale_Item" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" ImageName="BO_Sale_Item">
+      <OwnMembers>
+        <Member Name="CreatedDate" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerPhone" ImageName="BO_Phone" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" ImageName="Electronics_PhoneAndroid" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.PhysicalCustomer" ImageName="BO_Employee" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayStreet" ImageName="Action_Search_Object_FindObjectByID" />
   </BOModel>
   <NavigationItems>
@@ -124,6 +129,12 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Customer_CustomerOrders_ListView">
+      <Columns>
+        <ColumnInfo Id="CreatedDate" Index="1" />
+        <ColumnInfo Id="Type" Index="2" />
+      </Columns>
+    </ListView>
     <DetailView Id="Customer_DetailView">
       <Items>
         <StaticText Id="WarningText" IsNewNode="True" />
@@ -131,37 +142,62 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="Customer" RelativeSize="9.365079365079366">
-              <LayoutItem Id="Name" RelativeSize="54.23728813559322" />
-            </LayoutGroup>
+            <LayoutGroup Id="Customer" RelativeSize="9.365079365079366" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
     <DetailView Id="CustomerOrder_DetailView">
+      <Items>
+        <PropertyEditor Id="CreatedDate" PropertyName="CreatedDate" IsNewNode="True" Removed="True" />
+        <PropertyEditor Id="Customer" PropertyName="Customer" IsNewNode="True" Removed="True" />
+        <PropertyEditor Id="Name" PropertyName="Name" IsNewNode="True" Removed="True" />
+        <PropertyEditor Id="Oid" Removed="True" />
+        <PropertyEditor Id="Stage" PropertyName="Stage" IsNewNode="True" Removed="True" />
+        <PropertyEditor Id="Type" PropertyName="Type" IsNewNode="True" Removed="True" />
+      </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="37.083333333333336">
-            <LayoutGroup Id="CustomerOrder" Direction="Vertical" RelativeSize="100">
-              <LayoutGroup Id="Autob77902fd-cfb8-4d2d-854f-d0b59cc7f782" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="33.80281690140845" IsNewNode="True">
-                <LayoutItem Id="Type" ViewItem="Type" CaptionLocation="Top" Index="0" RelativeSize="33.333333333333336" IsNewNode="True" />
-                <LayoutItem Id="Item5" Index="1" RelativeSize="33.333333333333336" IsNewNode="True" />
-                <LayoutItem Id="CreatedDate" ViewItem="CreatedDate" CaptionLocation="Top" Index="2" RelativeSize="33.333333333333336" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="33.92504930966469">
+            <LayoutGroup Id="CustomerOrder" Direction="Vertical" RelativeSize="55.73770491803279" Index="1" Removed="True">
+              <LayoutGroup Id="CustomerOrder_col1" RelativeSize="58.45070422535211">
+                <LayoutItem Id="Customer" ViewItem="Customer" RelativeSize="38.55421686746988" />
+                <LayoutItem Id="Name" RelativeSize="28.91566265060241" />
+                <LayoutItem Id="Type" ViewItem="Type" RelativeSize="32.53012048192771" />
               </LayoutGroup>
-              <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="28.169014084507044" CaptionLocation="Top" IsNewNode="True" />
-              <LayoutGroup Id="CustomerOrder_col2" ShowCaption="False" Direction="Horizontal" Index="2" RelativeSize="38.028169014084504" IsNewNode="True" Removed="True">
-                <LayoutItem Id="Customer" ViewItem="Customer" Index="0" RelativeSize="49.9484004127967" CaptionLocation="Top" IsNewNode="True" />
-                <LayoutItem Id="Item4" Index="1" RelativeSize="50.0515995872033" IsNewNode="True" />
+              <LayoutGroup Id="CustomerOrder_col2" RelativeSize="41.54929577464789">
+                <LayoutItem Id="CreatedDate" ViewItem="CreatedDate" RelativeSize="45.76271186440678" />
+                <LayoutItem Id="Stage" RelativeSize="54.23728813559322" />
               </LayoutGroup>
-              <LayoutGroup Id="CustomerOrder_col1" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Generals" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="72.09302325581395" ImageName="State_Validation_Information" IsNewNode="True">
+              <LayoutGroup Id="Autofdc9435d-d68a-4fec-95a6-b33772e5de85" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Autoc3adb0e4-49cf-471a-8613-eef10e7d3bd1" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Autod8a67bf3-9361-420c-9641-8e8a488e998e" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Autodb606f1e-d180-4070-bee7-817847154513" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                      <LayoutGroup Id="Auto88a0d19f-c774-4119-8065-7359dd4467d2" ShowCaption="False" Index="0" RelativeSize="49.96431120628123" IsNewNode="True">
+                        <LayoutItem Id="Name" ViewItem="Name" CaptionLocation="Top" Index="0" RelativeSize="50" IsNewNode="True" />
+                        <LayoutItem Id="Customer" ViewItem="Customer" CaptionLocation="Top" Index="1" RelativeSize="50" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Auto85d57d63-dd7b-4bc4-9faa-603f03f5b3e3" ShowCaption="False" Index="1" RelativeSize="50.03568879371877" IsNewNode="True">
+                        <LayoutGroup Id="Autoc839646c-f907-4c93-8e9c-a41b9bfa6f78" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
+                          <LayoutItem Id="Type" ViewItem="Type" CaptionLocation="Top" Index="0" RelativeSize="49.92867332382311" IsNewNode="True" />
+                          <LayoutItem Id="Stage" ViewItem="Stage" CaptionLocation="Top" Index="1" RelativeSize="50.07132667617689" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutItem Id="Item4" Index="1" RelativeSize="50" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="SizeableEditors" RelativeSize="62.916666666666664" Direction="Vertical">
-            <TabbedGroup Id="Item3" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
-              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SizeableEditors" RelativeSize="66.0749506903353" Direction="Vertical">
+            <TabbedGroup Id="Tabs" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="CustomerInfo" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" ImageName="BO_Employee" IsNewNode="True">
                 <LayoutItem Id="CustomerRequirements" ViewItem="CustomerRequirements" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="WorkInfo" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" ImageName="Navigation_Group_ViewVariant" IsNewNode="True">
                 <LayoutItem Id="Description" ViewItem="Description" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True" />
               </LayoutGroup>
             </TabbedGroup>
@@ -187,6 +223,51 @@
               <LayoutItem Id="Type" RelativeSize="48.38709677419355" />
             </LayoutGroup>
           </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="PhysicalCustomer_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="51.25">
+            <LayoutGroup Id="PhysicalCustomer" RelativeSize="49.1869918699187">
+              <LayoutGroup Id="PhysicalCustomer_col1" RelativeSize="49.9484004127967">
+                <LayoutItem Id="Name" RelativeSize="36.36363636363637" />
+                <LayoutItem Id="Surname" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="Middlename" RelativeSize="36.36363636363637" />
+              </LayoutGroup>
+              <LayoutGroup Id="PhysicalCustomer_col2" RelativeSize="50.0515995872033">
+                <LayoutItem Id="VKLink" RelativeSize="100" />
+                <LayoutItem Id="FullName" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Customer" RelativeSize="50.8130081300813">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Address" ViewItem="Address" Index="0" RelativeSize="36.36363636363637" IsNewNode="True" />
+                <LayoutGroup Id="Autoad9c152f-1150-476a-8960-36cbdc3849aa" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="63.63636363636363" IsNewNode="True">
+                  <LayoutGroup Id="Autobea6c45e-91a0-47dc-ad16-65604cbddb0d" ShowCaption="False" Index="0" RelativeSize="36.9453044375645" IsNewNode="True">
+                    <LayoutItem Id="INN" ViewItem="INN" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
+                    <LayoutItem Id="Email" ViewItem="Email" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto98bfce27-5f32-4033-8d6a-84383ade43d0" ShowCaption="False" Index="1" RelativeSize="63.0546955624355" IsNewNode="True">
+                    <LayoutItem Id="Item3" Index="0" RelativeSize="42.857142857142854" IsNewNode="True" />
+                    <LayoutItem Id="Item2" Index="1" RelativeSize="57.142857142857146" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Address" RelativeSize="35.714285714285715" Removed="True" />
+              <LayoutItem Id="Email" RelativeSize="35.714285714285715" Removed="True" />
+              <LayoutItem Id="INN" RelativeSize="28.571428571428573" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="48.75">
+            <LayoutGroup Id="CustomerOrders" RelativeSize="100">
+              <LayoutItem Id="CustomerOrders" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="CustomerPhones" RelativeSize="100">
+              <LayoutItem Id="CustomerPhones" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>

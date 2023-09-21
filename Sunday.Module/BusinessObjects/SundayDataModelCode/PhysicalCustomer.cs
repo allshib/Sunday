@@ -8,13 +8,11 @@ using System.Reflection;
 namespace Sunday.Module.BusinessObjects.SundayDataModel
 {
 
-    public partial class CustomerOrder
+    [DefaultProperty(nameof(DefaultProperty))]
+    public partial class PhysicalCustomer
     {
-        public CustomerOrder(Session session) : base(session) { }
-        public override void AfterConstruction() { 
-            base.AfterConstruction();
-            CreatedDate = DateTime.UtcNow;
-        }
+        public PhysicalCustomer(Session session) : base(session) { }
+        public override void AfterConstruction() { base.AfterConstruction(); }
     }
 
 }

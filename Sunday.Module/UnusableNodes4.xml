@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="CustomerOrder_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="CustomerOrder">
+              <LayoutItem Id="CreatedDate" ViewItem="CreatedDate" CaptionLocation="Top" Index="0" RelativeSize="20.253164556962027" Removed="True" />
+              <LayoutItem Id="Customer" Index="1" RelativeSize="17.857142857142858" CaptionLocation="Top" Removed="True" />
+              <LayoutItem Id="Name" Index="1" RelativeSize="17.857142857142858" CaptionLocation="Top" ViewItem="Name" Removed="True" />
+              <LayoutItem Id="Type" ViewItem="Type" CaptionLocation="Top" Index="1" RelativeSize="16.877637130801688" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
