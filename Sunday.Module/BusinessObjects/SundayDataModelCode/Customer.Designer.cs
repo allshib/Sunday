@@ -13,19 +13,25 @@ using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
-namespace Sunday.Module.BusinessObjects.SundayDataModel {
+namespace Sunday.Module.BusinessObjects.SundayDataModel
+{
 
-    public partial class Customer : DevExpress.Persistent.BaseImpl.BaseObject {
+    public partial class Customer : DevExpress.Persistent.BaseImpl.BaseObject
+    {
         string fName;
-        public string Name {
+        public string Name
+        {
             get { return fName; }
             set { SetPropertyValue<string>(nameof(Name), ref fName, value); }
         }
         AddressBase fAddress;
-        public AddressBase Address {
+        public AddressBase Address
+        {
             get { return fAddress; }
             set { SetPropertyValue<AddressBase>(nameof(Address), ref fAddress, value); }
         }
+        [Association(@"CustomerOrderReferencesCustomer")]
+        public XPCollection<CustomerOrder> CustomerOrders { get { return GetCollection<CustomerOrder>(nameof(CustomerOrders)); } }
         [Association(@"CustomerPhoneReferencesCustomer"), Aggregated]
         public XPCollection<CustomerPhone> CustomerPhones { get { return GetCollection<CustomerPhone>(nameof(CustomerPhones)); } }
     }
