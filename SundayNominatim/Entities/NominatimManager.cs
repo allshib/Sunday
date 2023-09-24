@@ -1,13 +1,6 @@
 ﻿
-using DevExpress.ExpressApp;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
 using System.Runtime.Serialization.Json;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nominatim.Entities
 {
@@ -20,7 +13,7 @@ namespace Nominatim.Entities
 
         }
 
-        public NominatimAdress? GetAdressData(string quary)
+        public NominatimAdress? GetAdressData(string? quary)
         => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1").FirstOrDefault();
 
         
@@ -28,65 +21,61 @@ namespace Nominatim.Entities
 
         private List<T>? GetObjects<T>(string url)
         {
-            //var webr = WebRequest.Create(url);
-            //webr.Headers.Add("User-Agent: Other");
+            var httpClient = new HttpClient();
 
-            //HttpWebResponse resp = null;
-
-            WebClient webClient = new WebClient();
-            webClient.Headers.Add("Accept-Language: ru-ru");
-
-            webClient.Headers.Add("User-Agent: Other");
-            byte[] jsonData;
+            var msg = new HttpRequestMessage(HttpMethod.Get, url);
+            msg.Headers.Add("Accept-Language", "ru-ru");
+            msg.Headers.Add("User-Agent", "Other");
 
 
+            HttpContent? content = null;
             try
             {
-                jsonData = webClient.DownloadData(url);
-                //resp = (HttpWebResponse)webr.GetResponse();
+                var res = httpClient.Send(msg);
+
+                if (res.StatusCode != HttpStatusCode.OK || res.Content == null)
+                    throw new Exception("API геокодирования: Не удалось выполнить запрос");
+
+                content = res.Content;
             }
             catch (WebException e)
             {
-                if (e.Response == null)
-                {
-
-                    throw new UserFriendlyException(e.Message);
-                }
-                else
-                {
-                    var code = (int)((HttpWebResponse)e.Response).StatusCode;
-
-                    switch (code)
-                    {
-                        case 400:
-                            throw new UserFriendlyException("API геокодирования: адрес не удалось найти");
-
-                        default:
-                            throw new UserFriendlyException("API геокодирования: " + e.Message);
-                    }
-                }
-
+                HandleWebException(e);
             }
-            //Stream stream = resp.GetResponseStream();
-            //StreamReader sr = new StreamReader(stream, Encoding.GetEncoding(resp.CharacterSet));
 
-            //string sReadData = sr.ReadToEnd();
+            return SerrializeContent(typeof(List<T>), content) as List<T>;
+        }
 
-            //StringReader re = new StringReader(sReadData);
-            //var reader = new JsonTextReader(re);
-
-            //var se = new JsonSerializer();
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(List<T>));
+        private object? SerrializeContent(Type type, HttpContent content)
+        {
+            DataContractJsonSerializer serrializer = new DataContractJsonSerializer(type);
             try
             {
-                //var objects = se.Deserialize <List<T>> (reader);
-                var objects = ser.ReadObject(new MemoryStream(jsonData));
-                return objects as List<T>;
+                var serrializedObject = serrializer.ReadObject(content.ReadAsStream());
+                return serrializedObject;
             }
             catch (Exception exc)
             {
+                throw new Exception("API геокодирования, Ошибка серриализации: " + exc.Message);
+            }
+        }
 
-                throw new UserFriendlyException("API геокодирования: " + exc.Message);
+        private void HandleWebException(WebException e)
+        {
+            if (e.Response == null)
+                throw new Exception(e.Message);
+            else
+            {
+                var code = (int)((HttpWebResponse)e.Response).StatusCode;
+
+                switch (code)
+                {
+                    case 400:
+                        throw new Exception("API геокодирования: адрес не удалось найти");
+
+                    default:
+                        throw new Exception("API геокодирования: " + e.Message);
+                }
             }
         }
     }

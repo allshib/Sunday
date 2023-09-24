@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="CustomerDescription" Caption="" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="CustomerOrder_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="CustomerDescription" Caption="CustomerDescription(10)" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>
