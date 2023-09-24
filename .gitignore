@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Sunday.Module/UnusableNodes1_ru.xml
+/Sunday.Blazor.Server/UnusableNodes1.xml
