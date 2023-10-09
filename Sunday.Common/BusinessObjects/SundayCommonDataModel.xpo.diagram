@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<visualDesignerDiagram dslVersion="1.0.0.0" Id="f54e95a1-2615-4293-bd3c-5c812e03080e" absoluteBounds="0, 0, 11, 8.5" name="SundayCommonDataModel">
+  <dataBaseObjectModelMoniker Id="a67aabf2-afe7-4de7-a94f-d50677e191af" />
+  <nestedChildShapes>
+    <xpObjectShape Id="d6f893ed-5513-44e0-8142-6f54c3478478" absoluteBounds="6, 1.75, 1.5, 1.9473746744791662">
+      <xpObjectMoniker Id="15cae727-d1da-4c88-99df-dac33552a643" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8a99b20-eec8-479f-b296-10b963e56965" absoluteBounds="6.015, 2.06, 1.4700000000000002, 0.63399251302083326" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="14fda24c-483d-4651-a6ae-d2b9fd393b5c" absoluteBounds="6.015, 2.7039925130208333, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c89e4dc5-bd90-473c-ae57-43f1d7831c08" absoluteBounds="6.015, 2.9633821614583331, 1.4700000000000002, 0.63399251302083326" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </xpObjectShape>
+    <manyToManyConnector Id="28ebac2b-f323-45e3-bba6-72897d927ce6" edgePoints="[(6.53192307692308 : 3.69737467447917); (6.53192307692308 : 3.94737467447917); (6.97846153846154 : 3.94737467447917); (6.97846153846154 : 3.69737467447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <manyToManyRelationshipMoniker Id="214d4b3c-3bce-4f85-bca3-a11d2a32d4a3" />
+      <relativeChildShapes />
+      <nodes>
+        <xpObjectShapeMoniker Id="d6f893ed-5513-44e0-8142-6f54c3478478" />
+        <xpObjectShapeMoniker Id="d6f893ed-5513-44e0-8142-6f54c3478478" />
+      </nodes>
+      <targetCollectionField>
+        <manyToManyConnectorReferencesTargetCollectionField Id="ea7ffeb9-7db2-4668-97f0-dbcfe7e51af8">
+          <collectionFieldMoniker Id="85fd743c-bd53-446f-8c00-4802b9da80e9" />
+        </manyToManyConnectorReferencesTargetCollectionField>
+      </targetCollectionField>
+      <sourceCollectionField>
+        <manyToManyConnectorReferencesSourceCollectionField Id="d9ae87f9-4380-4863-bd51-31e84e7ea32e">
+          <collectionFieldMoniker Id="163aa7fb-16e7-4ba4-8a9d-092dd4b268ed" />
+        </manyToManyConnectorReferencesSourceCollectionField>
+      </sourceCollectionField>
+    </manyToManyConnector>
+  </nestedChildShapes>
+</visualDesignerDiagram>

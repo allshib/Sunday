@@ -143,6 +143,7 @@
           <Item Id="Countries" Caption="Страны" />
           <Item Id="Localities" Caption="Населенные пункты" />
           <Item Id="Regions" Caption="Области" />
+          <Item Id="States" Caption="Состояния" />
           <Item Id="Streets" Caption="Улицы" />
         </Items>
       </Item>

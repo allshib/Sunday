@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a67aabf2-afe7-4de7-a94f-d50677e191af" namespace="Sunday.Common.SundayCommonDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAMWUXW+bMBSG7yftP6Bcx3yTQEWoWtJV1baqatpptwd8SNDAjrBJsn8/EwgNaboP7aJ3Ps95j3xe+9jh5a4stA1WIudsNrJ0c3QZffwQXoPAheQVLPGOZVxTKiYudoLORisp1xeGsd1u9a2j82pp2KZpGd+/flmkKyxh1IvzP4tJzoQEluJI7app4RMkBYpmy318IEfggO6hxGghQWJovIBec8MaFsmqVvku6JPzXDTgeU1VeZRBIZRoCHvtbZ3TOxpZXgo4taeEWhSIm/o+CQKaEQqp43ieDRPXCY1O3BfHvKhLJgbtv4lVovHQJqNmGRpHYCD8nb1/tXhs0/MwnaDpE9tJkbhBkpDEtID4JtBg4ihg2a9sqnLjP5zGnL6D04kFaJmZS4LUdIlLp5QABjYJwMsyZ5o4gOZfOz1Hu7HsSRe/SMLmgSF9qHi6h5rR4m/ta4zmuLnZrSsUQp+DBH1jO7o11rr0rIl0TzfHWlwXsq5wxrCWFRRj7aFOijz9jD+f+A9ks8T3qTX1lEfTRDeA0Dhssd8vLkAIFM0FPNb96YZXVLWGWb7r+mrRos4G6BFLvsFTYUtPtbH6VKJnlq6ALZGqM2vi9mjO9RCqk1ljJfN37u2NNsJbZFip8Yp5WSKTopvRV3ggnqPIl2r5KVejcFIxzO3L5ligxCsheJqDVFd2qDmT2Bfc10XRjNk1rmCT80pNUQZqPtQDO82ob944+eejX3/Y/zcQBgAA" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="23.1.5.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="23.1.5.0" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="dffab19d-f971-4f78-b630-41692f255678">
+      <xpObject Id="15cae727-d1da-4c88-99df-dac33552a643" name="State" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="State" designerFileName="State.Designer" className="State" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="State">
+        <fields>
+          <generalXpObjectHasFields Id="f683c006-661e-41f5-838b-ff18c44a9dfb">
+            <field Id="55ec6e08-23ce-49bb-b01a-80ad96349b12" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5b36aa47-7861-4369-8574-fab116296a27">
+            <field Id="61ae10f4-9c04-4d7d-ae92-9a5ff37b3ae0" name="Code" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <mMTarget>
+          <manyToManyRelationship Id="214d4b3c-3bce-4f85-bca3-a11d2a32d4a3" sourceCollectionName="OutStates" name="StateReferencesState" targetCollectionName="InputStates">
+            <xpObjectMoniker Id="15cae727-d1da-4c88-99df-dac33552a643" />
+          </manyToManyRelationship>
+        </mMTarget>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="c062c656-c431-4970-a29f-1e2b37979286">
+            <collectionField Id="85fd743c-bd53-446f-8c00-4802b9da80e9" name="InputStates" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="715622d4-f73a-43f0-bef8-32c7bf97179d">
+            <collectionField Id="163aa7fb-16e7-4ba4-8a9d-092dd4b268ed" name="OutStates" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>

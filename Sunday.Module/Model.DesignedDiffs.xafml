@@ -44,6 +44,7 @@
           <Item Id="Countries" ViewId="SundayCountry_ListView" IsNewNode="True" />
           <Item Id="Localities" ViewId="Locality_ListView" IsNewNode="True" />
           <Item Id="Regions" ViewId="SundayRegion_ListView" IsNewNode="True" />
+          <Item Id="States" ViewId="State[TestStatus]_ListView" IsNewNode="True" />
           <Item Id="Streets" ViewId="SundayStreet_ListView" IsNewNode="True" />
         </Items>
       </Item>

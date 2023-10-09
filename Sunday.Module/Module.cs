@@ -13,6 +13,7 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
+using Sunday.Common;
 
 namespace Sunday.Module;
 
@@ -53,6 +54,8 @@ public sealed class SundayModule : ModuleBase {
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase));
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.ValidationModule));
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule));
+		RequiredModuleTypes.Add(typeof(CommonModule));
+        AdditionalExportedTypes.Add(typeof(Sunday.Common.BusinessObjects.State<Sunday.Module.BusinessObjects.Enums.TestStatus>));
     }
     public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
         ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
