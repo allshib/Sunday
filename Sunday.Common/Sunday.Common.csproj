@@ -9,9 +9,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Model.DesignedDiffs.Localization.ru-RU.xafml" />
+    <None Remove="Model.DesignedDiffs.Localization.ru.xafml" />
     <None Remove="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru-RU.xafml" />
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru.xafml" />
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>

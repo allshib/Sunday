@@ -1,8 +1,39 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
   <Options>
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="23.1.5.0" IsNewNode="True" />
+  </SchemaModules>
   <Views>
+    <DetailView Id="State_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="13.839285714285714">
+            <LayoutGroup Id="State" RelativeSize="100" Direction="Horizontal">
+              <LayoutGroup Id="Auto93045293-d554-4c3b-a378-af1b7f583075" ShowCaption="False" Index="0" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="StateName" ViewItem="StateName" Index="0" RelativeSize="51.61290322580645" IsNewNode="True" />
+                <LayoutItem Id="StateCode" ViewItem="StateCode" Index="1" RelativeSize="48.38709677419355" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Autodc51bc3a-50f3-4341-ac63-bb31b5cf26cc" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="Item2" Index="0" RelativeSize="51.61290322580645" IsNewNode="True" />
+                <LayoutItem Id="Item1" Index="1" RelativeSize="48.38709677419355" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="StateCode" RelativeSize="48.38709677419355" Removed="True" />
+              <LayoutItem Id="StateName" RelativeSize="51.61290322580645" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="86.16071428571429">
+            <LayoutGroup Id="InputStates" Index="0" RelativeSize="100">
+              <LayoutItem Id="InputStates" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="OutStates" Index="1" RelativeSize="100">
+              <LayoutItem Id="OutStates" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
   </Views>
 </Application>

@@ -19,16 +19,16 @@ namespace Sunday.Common.SundayCommonDataModel
     public partial class State : DevExpress.Persistent.BaseImpl.BaseObject
     {
         string fName;
-        public string Name
+        public string StateName
         {
             get { return fName; }
-            set { SetPropertyValue<string>(nameof(Name), ref fName, value); }
+            set { SetPropertyValue<string>(nameof(StateName), ref fName, value); }
         }
         int fCode;
-        public int Code
+        public int StateCode
         {
             get { return fCode; }
-            set { SetPropertyValue<int>(nameof(Code), ref fCode, value); }
+            set { SetPropertyValue<int>(nameof(StateCode), ref fCode, value); }
         }
         [Association(@"StateReferencesState")]
         public XPCollection<State> OutStates { get { return GetCollection<State>(nameof(OutStates)); } }

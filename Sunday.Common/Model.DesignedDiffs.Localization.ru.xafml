@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel>
+    <Class Name="Sunday.Common.SundayCommonDataModel.State" Caption="Состояние">
+      <OwnMembers>
+        <Member Name="InputStates" Caption="Входящие состояния" />
+        <Member Name="OutStates" Caption="Выходящие состояния" />
+        <Member Name="StateCode" Caption="Код состояния" />
+        <Member Name="StateName" Caption="Наименование" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views>
+    <DetailView Id="State_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="State" Caption="State">
+              <LayoutGroup Id="Auto93045293-d554-4c3b-a378-af1b7f583075" Caption="" />
+              <LayoutGroup Id="Autodc51bc3a-50f3-4341-ac63-bb31b5cf26cc" Caption="" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

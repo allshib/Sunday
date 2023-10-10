@@ -55,7 +55,7 @@ public sealed class SundayModule : ModuleBase {
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.ValidationModule));
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule));
 		RequiredModuleTypes.Add(typeof(CommonModule));
-        AdditionalExportedTypes.Add(typeof(Sunday.Common.BusinessObjects.State<Sunday.Module.BusinessObjects.Enums.TestStatus>));
+        AdditionalExportedTypes.Add(typeof(Sunday.Common.SundayCommonDataModel.State));
     }
     public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
         ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);

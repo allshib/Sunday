@@ -1,4 +1,6 @@
-﻿using Sunday.Common.SundayCommonDataModel;
+﻿using Sunday.Common.BusinessObjects.NonPersistent;
+using Sunday.Common.Interfaces;
+using Sunday.Common.SundayCommonDataModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,40 +9,34 @@ using System.Threading.Tasks;
 
 namespace Sunday.Common.Entities
 {
-    public class StateMachine<T> where T : Enum
+    public class StateMachine
     {
-        private readonly Func<State, State, object, bool> _transitFunc;
+        private readonly IStateble _checkedObject;
 
-        private readonly object _checkedObject;
+        public IState CurrentState { get; set; }
 
-        public State CurrentState { get; set; }
-
-        public StateMachine(Func<State, State, object, bool> transitFunc, object checkedObject, State currentState)
+        public StateMachine(IStateble checkedObject)
         {
-            CurrentState = currentState;
+            CurrentState = checkedObject.CurrentState;
 
-            _transitFunc = transitFunc;
             _checkedObject = checkedObject;
         }
 
-        public void ToState(T newState)
+        public FinalStateCheckResult ToState(IState newState)
         {
-            var nextState = CurrentState.OutStates?.SingleOrDefault(x => x.Code.Equals(newState));
+            var nextState = _checkedObject.SearchEndpointState(newState);
 
             if (nextState == null)
                 throw new InvalidOperationException();
 
-            if (CheckTransit(nextState))
-            {
-                CurrentState = nextState;
-            }
+            var finalResult = _checkedObject.CheckTransTo(nextState);
 
+            if (finalResult.ChecksResult)
+                _checkedObject.SetStateWithoutChecks(nextState);
 
+            
+            return finalResult;
         }
-
-        private bool CheckTransit(State newState)
-            => _transitFunc(CurrentState, newState, _checkedObject);
-
 
     }
 }

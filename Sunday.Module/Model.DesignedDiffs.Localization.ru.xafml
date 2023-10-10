@@ -31,9 +31,11 @@
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" Caption="Заказчик">
       <OwnMembers>
         <Member Name="Address" Caption="Адрес" />
+        <Member Name="CurrentState" Caption="Текущее состояние" />
         <Member Name="CustomerOrders" Caption="Заказы" />
         <Member Name="CustomerPhones" Caption="Телефоны" />
         <Member Name="INN" Caption="ИНН" />
+        <Member Name="Status" Caption="Статус" />
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" Caption="Заказ">
@@ -218,13 +220,15 @@
             <LayoutGroup Id="PhysicalCustomer" Caption="Данные физ.лица">
               <LayoutGroup Id="PhysicalCustomer_col2" Caption="PhysicalCustomer_col2" />
             </LayoutGroup>
-            <LayoutGroup Id="Customer">
+            <LayoutGroup Id="Customer" Caption="Общее">
               <LayoutGroup Id="Item1" Caption="Общие данные о заказчике">
                 <LayoutGroup Id="Autoad9c152f-1150-476a-8960-36cbdc3849aa" Caption="Autoad9c152f-1150-476a-8960-36cbdc3849aa(15)">
                   <LayoutGroup Id="Autobea6c45e-91a0-47dc-ad16-65604cbddb0d" Caption="Autobea6c45e-91a0-47dc-ad16-65604cbddb0d(16)" />
                   <LayoutGroup Id="Auto98bfce27-5f32-4033-8d6a-84383ade43d0" Caption="Auto98bfce27-5f32-4033-8d6a-84383ade43d0(19)" />
                 </LayoutGroup>
               </LayoutGroup>
+              <LayoutGroup Id="Customer_col2" Caption="Customer_col2" />
+              <LayoutGroup Id="Customer_col1" Caption="Customer_col1" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>

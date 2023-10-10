@@ -36,6 +36,12 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
             get { return fEmail; }
             set { SetPropertyValue<string>(nameof(Email), ref fEmail, value); }
         }
+        Sunday.Common.SundayCommonDataModel.State fStatus;
+        public Sunday.Common.SundayCommonDataModel.State Status
+        {
+            get { return fStatus; }
+            set { SetPropertyValue<Sunday.Common.SundayCommonDataModel.State>(nameof(Status), ref fStatus, value); }
+        }
         [Association(@"CustomerOrderReferencesCustomer")]
         public XPCollection<CustomerOrder> CustomerOrders { get { return GetCollection<CustomerOrder>(nameof(CustomerOrders)); } }
         [Association(@"CustomerPhoneReferencesCustomer"), Aggregated]

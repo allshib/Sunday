@@ -8,8 +8,8 @@ namespace Sunday.Common.Interfaces
 {
     public interface IState
     {
-        string Name { get; set; }
+        string StateName { get; set; }
 
-        int Code { get; set; };
+        int StateCode { get; set; }
     }
 }
