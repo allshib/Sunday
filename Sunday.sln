@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SundayTests", "SundayTests\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunday.Common", "Sunday.Common\Sunday.Common.csproj", "{B50F1177-1B55-4B2E-BA43-1E8D05CEFD5B}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Sunday-Documentation", "Sunday-Documentation\Sunday-Documentation.esproj", "{47413920-0D8A-49F6-B4C4-D4504CD91918}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,15 @@ Global
 		{B50F1177-1B55-4B2E-BA43-1E8D05CEFD5B}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
 		{B50F1177-1B55-4B2E-BA43-1E8D05CEFD5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B50F1177-1B55-4B2E-BA43-1E8D05CEFD5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.EasyTest|Any CPU.Deploy.0 = Release|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47413920-0D8A-49F6-B4C4-D4504CD91918}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -362,3 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /SundayNominatim/Entities/NominatimManager.cs
+/Sunday-Documentation/Sunday-Documentation.esproj
+/Sunday-Documentation/docs-html
