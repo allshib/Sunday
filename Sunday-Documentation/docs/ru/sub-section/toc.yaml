@@ -1,0 +1,5 @@
+﻿title: Пример саб-секции
+href: index.yaml
+items:
+  - name: Контент под саб-секцией
+    href: content.md
