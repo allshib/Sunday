@@ -13,11 +13,10 @@ namespace Sunday.Common.Entities
     {
         private readonly IStateble _checkedObject;
 
-        public IState CurrentState { get; set; }
 
         public StateMachine(IStateble checkedObject)
         {
-            CurrentState = checkedObject.CurrentState;
+
 
             _checkedObject = checkedObject;
         }

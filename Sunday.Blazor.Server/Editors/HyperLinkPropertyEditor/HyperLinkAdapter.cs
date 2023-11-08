@@ -31,6 +31,7 @@ namespace Sunday.Blazor.Server.Editors.HyperLinkPropertyEditor
         }
         public override void SetValue(object value)
         {
+            if (value == null) return;
             ComponentModel.DisplayValue = value?.ToString();
             string url = value?.ToString();
             string result = "";
