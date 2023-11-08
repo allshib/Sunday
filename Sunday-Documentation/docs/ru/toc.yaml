@@ -9,7 +9,7 @@ items:
     href: page.md
   - name: Другая страница
     href: anotherpage.md
-  - name: Саб-секция 
+  - name: Структура хранения данных
     include:
-      path: sub-section/toc.yaml
+      path: data-struct/toc.yaml
       mode: link

@@ -13,6 +13,10 @@ namespace Sunday.Common.SundayCommonDataModel
     public partial class State : IState
     {
         public State(Session session) : base(session) { }
+
+        public string StateName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int StateCode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public override void AfterConstruction() { base.AfterConstruction(); }
     }
 

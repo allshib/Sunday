@@ -16,7 +16,9 @@ Initiatl project structure with basic content can be found within your public gi
 ### Run locally by cloning repo:
 
 ```
-> git clone git@github.com:diplodoc-platform/documentation-template.git
+> npm i @diplodoc/transform
+
+> npm i @diplodoc/cli -g
 
 > cd documentation-template
 
