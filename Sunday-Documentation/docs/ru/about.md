@@ -1,23 +1,28 @@
-# Basic "About page" 
+﻿
+# О проекте
 
-This is an example for basic documenation project.
-It contains simple structure with couple of pages (this page, another page) and nested sub-section. 
+**Sunday** - Проект, созданный для демонстрации навыков разработки на платформе .NET 6 с использованием фреймворка XAF Devexpress. Проект пишется преимущественно для Blazor, но, возможно, часть функций будет создана и для Win (Windows Forms) проекта.
 
-Diplodoc provides you with unique name how this project can be reached on https://diplodoc.com like 
-"https://common---gh-aje0e4eg9hffg001r5e5.viewer.diplodoc.com/en/" 
-
-If you would like to extend your project - please refer to [YFM Project Organization guide](https://diplodoc.com/docs/en/project/)
-
-All changes for this project can be done within you public github repository called "diplodoc-example/docs". 
-To make changes and apply them: 
-
-- go to your repo under "diplodoc-example/docs" 
-- make changes for project structure or content
-- commit & push into your repository 
-- go to "Actions" tab for docs repository 
-- run "Release" action and wait till completion 
-- done, updates should be available for everyone. 
+## На данный момент реализованно следующее
+ - Базовый каркас на **Blazor**
+ - Базовый каркас **Win Forms**
+ - Подключено и внедрено в систему API для распознавания адреса
+ - Добавлено несколько компонентон **Blazor**
+ - Разработаны функции конечного автомата
 
 
-In case if you would like to make proxy from your own domain to this Documentation - please [Contact Us](https://diplodoc.com/#contact) - we will support you accordingly till appropriate documentation creation. 
+## В будущем планируется:
+ - Добавление нескольких микросервисов для расчета чего-нибудь
+ - Подключение **Hang Fire**
+ - Разработка собственного API
+ - Использование **Rabbit MQ** и **Mass Transit**
+ - Использование **Docker** и **Kubernetes**
+
+
+{% note info %}
+
+Проект пишется исключительно в образовательных целях, а также для демонстрации способностей разработки.
+
+{% endnote %}
+
 

@@ -1,0 +1,9 @@
+﻿title: Структура хранения данных
+href: index.yaml
+items:
+  - name: Основная информация
+    href: struct-main-info.md
+  - name: Адресс
+    include:
+      path: address/toc.yaml
+      mode: merge
