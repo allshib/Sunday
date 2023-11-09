@@ -9,7 +9,7 @@ using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
-using Sunday.Module.BusinessObjects;
+using Sunday.Module.BusinessObjects.Security;
 
 namespace Sunday.Module.DatabaseUpdate;
 

@@ -4,9 +4,10 @@ using System.Security.Principal;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
-using Sunday.Module.BusinessObjects;
+using Sunday.Module.BusinessObjects.Security;
 
-namespace Sunday.Blazor.Server.Services {
+namespace Sunday.Blazor.Server.Services
+{
 
     public class CustomAuthenticationProvider : IAuthenticationProviderV2 {
         private readonly IPrincipalProvider principalProvider;

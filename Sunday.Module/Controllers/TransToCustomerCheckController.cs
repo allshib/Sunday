@@ -9,6 +9,7 @@ using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
+using Sunday.Common.NonPersistent.Types;
 using Sunday.Common.SundayCommonDataModel;
 using Sunday.Module.BusinessObjects.SundayDataModel;
 using System;
@@ -51,7 +52,7 @@ namespace Sunday.Module.Controllers
             
         }
 
-        private void Customer_CheckFinished(Common.BusinessObjects.NonPersistent.StateCheckResult stateCheckResult)
+        private void Customer_CheckFinished(StateCheckResult stateCheckResult)
         {
             Console.WriteLine("ТЕст");
         }

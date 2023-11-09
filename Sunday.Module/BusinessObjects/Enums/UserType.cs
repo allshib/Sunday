@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sunday.Module.BusinessObjects.Interfaces
+namespace Sunday.Module.BusinessObjects.Enums
 {
-    public interface IDefaultClass
+    public enum UserType
     {
-        string DefaultProperty { get; }
+        Unknown,
+        Employee
     }
 }

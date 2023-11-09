@@ -14,8 +14,10 @@ namespace Sunday.Common.SundayCommonDataModel
     {
         public State(Session session) : base(session) { }
 
-        public string StateName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int StateCode { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        [Browsable(false)]
+        public string StateName { get => Name; set => Name = value; }
+        [Browsable(false)]
+        public int StateCode { get => Code; set => Code = value; }
 
         public override void AfterConstruction() { base.AfterConstruction(); }
     }

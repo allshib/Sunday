@@ -331,5 +331,8 @@
     <dataBaseObjectModelHasExternalTypes Id="5c745cd1-d8e5-4cb6-b9f5-7a1a790c9061">
       <externalType Id="92fec1ff-3647-47a7-af8a-68c67fb12f17" name="State" namespace="Sunday.Common.SundayCommonDataModel" />
     </dataBaseObjectModelHasExternalTypes>
+    <dataBaseObjectModelHasExternalTypes Id="089b0b85-3cc5-4327-b07d-15a0aabeee5b">
+      <externalType Id="645a8691-aa25-4021-a0b4-f32c12b54456" name="ApplicationUser" namespace="Sunday.Module.BusinessObjects" />
+    </dataBaseObjectModelHasExternalTypes>
   </externalTypes>
 </dataBaseObjectModel>

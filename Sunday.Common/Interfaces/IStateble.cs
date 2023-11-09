@@ -1,5 +1,6 @@
 ﻿using DevExpress.Pdf;
-using Sunday.Common.BusinessObjects.NonPersistent;
+using Sunday.Common.NonPersistent.Entities;
+using Sunday.Common.NonPersistent.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;

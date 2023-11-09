@@ -5,16 +5,19 @@ using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
-using Sunday.Module.BusinessObjects.Interfaces;
+
 using Sunday.Common.Interfaces;
 using DevExpress.ExpressApp.StateMachine.NonPersistent;
-using Sunday.Common.Entities;
+
 using Sunday.Common.SundayCommonDataModel;
 using State = Sunday.Common.SundayCommonDataModel.State;
-using Sunday.Common.BusinessObjects.NonPersistent;
+
 using static Sunday.Common.Interfaces.IStateble;
 using DevExpress.CodeParser;
 using static DevExpress.Map.OpenGL.OpenGLCheckingHelper;
+using Sunday.Common.NonPersistent.Entities;
+using Sunday.Common.NonPersistent.StateMachines;
+using Sunday.Common.NonPersistent.Types;
 
 namespace Sunday.Module.BusinessObjects.SundayDataModel {
 
@@ -37,7 +40,7 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel {
 
             Check(finalResult);
 
-            finalResult.ChecksResult = true;
+            finalResult.IsSuccess = true;
 
             AllChecksFinished?.Invoke(finalResult);
             return finalResult;
@@ -58,7 +61,7 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel {
         {          
             var stateMachine = new StateMachine(this);
 
-            stateMachine.ToState(state);
+            stateMachine.GoToState(state);
 
         }
 

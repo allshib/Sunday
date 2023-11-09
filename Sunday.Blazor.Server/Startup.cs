@@ -24,6 +24,7 @@ using Sunday.WebApi.JWT;
 using DevExpress.ExpressApp.Security.Authentication;
 using DevExpress.ExpressApp.Security.Authentication.ClientServer;
 using DevExpress.ExpressApp.Core;
+using Sunday.Module.BusinessObjects.Security;
 
 namespace Sunday.Blazor.Server;
 
@@ -91,10 +92,10 @@ public class Startup {
                     options.RoleType = typeof(PermissionPolicyRole);
                     // ApplicationUser descends from PermissionPolicyUser and supports the OAuth authentication. For more information, refer to the following topic: https://docs.devexpress.com/eXpressAppFramework/402197
                     // If your application uses PermissionPolicyUser or a custom user type, set the UserType property as follows:
-                    options.UserType = typeof(Sunday.Module.BusinessObjects.ApplicationUser);
+                    options.UserType = typeof(ApplicationUser);
                     // ApplicationUserLoginInfo is only necessary for applications that use the ApplicationUser user type.
                     // If you use PermissionPolicyUser or a custom user type, comment out the following line:
-                    options.UserLoginInfoType = typeof(Sunday.Module.BusinessObjects.ApplicationUserLoginInfo);
+                    options.UserLoginInfoType = typeof(ApplicationUserLoginInfo);
                     options.UseXpoPermissionsCaching();
                 })
                 .AddPasswordAuthentication(options => {

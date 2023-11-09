@@ -9,6 +9,7 @@ using DevExpress.Persistent.BaseImpl;
 using DevExpress.XtraEditors;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using DevExpress.ExpressApp.Design;
+using Sunday.Module.BusinessObjects.Security;
 
 namespace Sunday.Win;
 
@@ -58,8 +59,8 @@ public class ApplicationBuilder : IDesignTimeApplicationFactory {
         builder.Security
             .UseIntegratedMode(options => {
                 options.RoleType = typeof(PermissionPolicyRole);
-                options.UserType = typeof(Sunday.Module.BusinessObjects.ApplicationUser);
-                options.UserLoginInfoType = typeof(Sunday.Module.BusinessObjects.ApplicationUserLoginInfo);
+                options.UserType = typeof(ApplicationUser);
+                options.UserLoginInfoType = typeof(ApplicationUserLoginInfo);
                 options.UseXpoPermissionsCaching();
             })
             .UsePasswordAuthentication();
