@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="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" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" name="SundayDataModel" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="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" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" name="SundayDataModel" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
   <classes>
     <dataBaseObjectModelHasClasses Id="4fc82ea6-8712-4f6c-ab4f-fab384b336f9">
       <xpObject Id="2f870614-5f9f-4129-aebe-f7581f6b6f53" name="Customer" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Customer" designerFileName="Customer.Designer" className="Customer" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="Customer">
@@ -271,7 +271,7 @@
             <field Id="766dfafe-96c2-489e-bde6-43624b0c0c6d" name="Description" virtualColumnType="String" delayedUpdateModifiedOnly="false" size="700" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="05e27326-4812-4701-82b8-ed593dfa96de">
-            <field Id="060b3654-365d-47b0-b57f-2c5fc6bc5f6a" name="Type" virtualColumnType="Sunday.Module.BusinessObjects.Enums.CustomerOrderType" logicalType="Sunday.Module.BusinessObjects.Enums.CustomerOrderType" delayedUpdateModifiedOnly="false" defaultValue="Int32#0" />
+            <field Id="060b3654-365d-47b0-b57f-2c5fc6bc5f6a" name="Type" virtualColumnType="WorkType" logicalType="WorkType" delayedUpdateModifiedOnly="false" defaultValue="Int32#0" />
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="76665c57-f073-4dc4-a0b1-e27a83d4a6a4">
             <field Id="065d7a1d-c968-468c-91ea-7285a03aba5d" name="CreatedDate" columnType="DateTime" virtualColumnType="DateTime" delayedUpdateModifiedOnly="false" />
@@ -314,6 +314,60 @@
         </superClass>
       </xpObject>
     </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="53f33bd5-150a-4898-82ee-b5591572b1ad">
+      <xpObject Id="d3544fa2-39da-41b1-9be0-799029d1fd04" name="Department" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Department" designerFileName="Department.Designer" className="Department" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="Department">
+        <fields>
+          <generalXpObjectHasFields Id="aa9b04a1-3690-4cf9-8478-dacf2018d4fc">
+            <field Id="4c7ee178-9eaf-4e5b-a74c-faf52bca8f62" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="312682e5-a052-4e94-ad99-a7ce908646d1" sourceCollectionName="WorkTypes" name="WorkTypeReferencesDepartment" targetFieldName="Department">
+            <xpObjectMoniker Id="a0317edc-af29-4d44-90c8-0952b4295271" />
+          </simpleAssociation>
+        </saTargets>
+        <aggrTarget>
+          <aggregation Id="e2474805-9200-45c4-91d5-49d93a9a053f" sourceCollectionName="DepartmentMembers" name="DepartmentMemberReferencesDepartment" targetFieldName="Department">
+            <xpObjectMoniker Id="2e716545-2abe-4c22-bad4-818fb57e204b" />
+          </aggregation>
+        </aggrTarget>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="f0797e62-3f10-49a2-8dd8-9dfa785af0ee">
+            <collectionField Id="45ca821a-5f7f-4d19-bc15-d079f7e942d3" name="WorkTypes" />
+          </xpObjectHasCollectionFields>
+          <xpObjectHasCollectionFields Id="bd91e59c-c6c6-4bde-a450-2d37be587ebd">
+            <collectionField Id="0db30108-bf98-41cb-b37e-f6c9f08f4b76" name="DepartmentMembers" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="7f7c0a64-1ede-4156-b688-0eab94c8e5e9">
+      <xpObject Id="2e716545-2abe-4c22-bad4-818fb57e204b" name="DepartmentMember" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="DepartmentMember" designerFileName="DepartmentMember.Designer" className="DepartmentMember" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="DepartmentMember">
+        <fields>
+          <generalXpObjectHasFields Id="2e114dce-fab2-46f6-a3c8-37b7c71bc816">
+            <field Id="1c7a0723-d77a-4799-82ff-1614f17b579d" name="Department" virtualColumnType="Department" logicalType="Department" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="01b36bf6-41c7-4cb9-8882-58d0364feb25">
+            <field Id="c1d47f96-107d-4499-adc1-04d99d263444" name="Employee" virtualColumnType="Sunday.Module.BusinessObjects.Security.Employee" logicalType="Sunday.Module.BusinessObjects.Security.Employee" delayedUpdateModifiedOnly="false" customAttributes="DevExpress.Xpo.Association(@&quot;DepartmentMemberReferencesEmployee&quot;)" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="d9ad2da6-e5c1-4158-81b3-f887b8be50f7">
+            <field Id="bd26fdc5-dd85-4cd9-9414-848a1ce7b707" name="DepartmentRole" virtualColumnType="Sunday.Module.BusinessObjects.Security.CustomPermissionPolicyRole" logicalType="Sunday.Module.BusinessObjects.Security.CustomPermissionPolicyRole" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="528685fe-6ac8-440a-96c9-f18a9112572c">
+      <xpObject Id="a0317edc-af29-4d44-90c8-0952b4295271" name="WorkType" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="WorkType" designerFileName="WorkType.Designer" className="WorkType" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="WorkType">
+        <fields>
+          <generalXpObjectHasFields Id="05137d49-5315-4f65-904a-4349d8708e5a">
+            <field Id="341c8fb8-4bca-43b5-a91b-597ce68b197e" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="c0679476-b10f-407e-b4ab-7458f81e1304">
+            <field Id="a8258f9b-4342-4042-bd46-0c5eb6d5765e" name="Department" virtualColumnType="Department" logicalType="Department" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
   </classes>
   <externalTypes>
     <dataBaseObjectModelHasExternalTypes Id="8d4430af-34d9-49f7-8a96-9d9feadb8b07">
@@ -333,6 +387,12 @@
     </dataBaseObjectModelHasExternalTypes>
     <dataBaseObjectModelHasExternalTypes Id="089b0b85-3cc5-4327-b07d-15a0aabeee5b">
       <externalType Id="645a8691-aa25-4021-a0b4-f32c12b54456" name="ApplicationUser" namespace="Sunday.Module.BusinessObjects" />
+    </dataBaseObjectModelHasExternalTypes>
+    <dataBaseObjectModelHasExternalTypes Id="32c2ff35-fd04-4f85-9e34-8e890ed43846">
+      <externalType Id="9668f513-8562-4d8e-a1fe-a5a7243b1e45" name="Employee" namespace="Sunday.Module.BusinessObjects.Security" />
+    </dataBaseObjectModelHasExternalTypes>
+    <dataBaseObjectModelHasExternalTypes Id="ac0ab7ff-4a74-4391-8f64-45bd4d332256">
+      <externalType Id="8ed257e2-8a11-4199-a645-140886456701" name="CustomPermissionPolicyRole" namespace="Sunday.Module.BusinessObjects.Security" />
     </dataBaseObjectModelHasExternalTypes>
   </externalTypes>
 </dataBaseObjectModel>

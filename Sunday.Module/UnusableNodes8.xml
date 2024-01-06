@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Customer_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Address" Index="-1" />
+        <ColumnInfo Id="INN" Index="-1" />
+        <ColumnInfo Id="Status" Index="-1" />
+        <ColumnInfo Id="Email" Index="0" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PhysicalCustomer_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="PhysicalCustomer">
+              <LayoutGroup Id="PhysicalCustomer_col1">
+                <LayoutItem Id="DefaultProperty" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ReferenceBooks">
+        <Items Id="Items">
+          <Item Id="States" ViewId="State[TestStatus]_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

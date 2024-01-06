@@ -21,19 +21,40 @@ using Sunday.Common.NonPersistent.Types;
 
 namespace Sunday.Module.BusinessObjects.SundayDataModel {
 
-	
+
+    [DefaultProperty(nameof(DefaultProperty))]
 	public  partial class Customer : IStateble
 	{
 		public Customer(Session session) : base(session) { }
 
+
+        public override void AfterConstruction() { base.AfterConstruction(); }
+
+
+
+        [NonPersistent]
+        public virtual string DefaultProperty { get; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #region State Machine
         [Browsable(false)]
         public IState CurrentState => Status;
 
         public event StateCheckHandler CheckFinished;
         public event AllStateCheckHandler AllChecksFinished;
-
-        public override void AfterConstruction() { base.AfterConstruction(); }
-
         public FinalStateCheckResult CheckTransTo(IState newState)
         {
             var finalResult = new FinalStateCheckResult();
@@ -75,6 +96,8 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel {
             if (newState is State newStatus)
                 Status = newStatus;
         }
+
+        #endregion
     }
 
 }

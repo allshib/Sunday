@@ -6,11 +6,13 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
+using Sunday.Module.BusinessObjects.SundayDataModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using AggregatedAttribute = DevExpress.Xpo.AggregatedAttribute;
 
 namespace Sunday.Module.BusinessObjects.Security
 {
@@ -55,6 +57,12 @@ namespace Sunday.Module.BusinessObjects.Security
             get { return _Surname; }
             set { SetPropertyValue(nameof(Surname), ref _Surname, value); }
         }
+
+
+
+
+        [Association(@"DepartmentMemberReferencesEmployee"), Aggregated]
+        public XPCollection<DepartmentMember> Appointments { get { return GetCollection<DepartmentMember>(nameof(Appointments)); } }
 
         //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
         //public void ActionMethod() {

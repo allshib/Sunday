@@ -38,12 +38,12 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
             get { return fDescription; }
             set { SetPropertyValue<string>(nameof(Description), ref fDescription, value); }
         }
-        Sunday.Module.BusinessObjects.Enums.CustomerOrderType fType;
+        WorkType fType;
         [ColumnDefaultValue(0)]
-        public Sunday.Module.BusinessObjects.Enums.CustomerOrderType Type
+        public WorkType Type
         {
             get { return fType; }
-            set { SetPropertyValue<Sunday.Module.BusinessObjects.Enums.CustomerOrderType>(nameof(Type), ref fType, value); }
+            set { SetPropertyValue<WorkType>(nameof(Type), ref fType, value); }
         }
         DateTime fCreatedDate;
         public DateTime CreatedDate

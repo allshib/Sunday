@@ -9,6 +9,8 @@ using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Persistent.BaseImpl;
+using Sunday.Module.BusinessObjects.Security;
+using Sunday.Module.BusinessObjects.SundayDataModel;
 
 namespace Sunday.Blazor.Server;
 
@@ -32,5 +34,12 @@ public sealed class SundayBlazorModule : ModuleBase {
         base.Setup(application);
         //application.CreateCustomModelDifferenceStore += Application_CreateCustomModelDifferenceStore;
         application.CreateCustomUserModelDifferenceStore += Application_CreateCustomUserModelDifferenceStore;
+
+        application.LoggedOn += Application_LoggedOn;
+    }
+
+    private void Application_LoggedOn(object sender, LogonEventArgs e)
+    {
+        
     }
 }

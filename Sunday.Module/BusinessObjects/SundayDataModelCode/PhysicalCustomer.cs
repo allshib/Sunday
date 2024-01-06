@@ -8,14 +8,19 @@ using System.Reflection;
 namespace Sunday.Module.BusinessObjects.SundayDataModel
 {
 
-    [DefaultProperty(nameof(DefaultProperty))]
     public partial class PhysicalCustomer
     {
         public PhysicalCustomer(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
 
+
+
+        [Browsable(false)]
         [PersistentAlias("[ShortName] + '. Заказов ' + ToStr([CustomerOrders][].Count())")]
-        public string DefaultProperty => EvaluateAlias(nameof(DefaultProperty)).ToString();
+        private string DefaultPropertyString => EvaluateAlias(nameof(DefaultPropertyString)).ToString();
+
+
+        public override string DefaultProperty => DefaultPropertyString;
     }
 
 }

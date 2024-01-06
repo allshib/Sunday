@@ -1,4 +1,5 @@
 ﻿using DevExpress.ExpressApp.Blazor.Components;
+using DevExpress.ExpressApp.Blazor.Components.Models;
 using DevExpress.ExpressApp.Blazor.Editors.Adapters;
 using DevExpress.ExpressApp.Editors;
 using DevExpress.ExpressApp.Utils;
@@ -14,16 +15,19 @@ namespace Sunday.Blazor.Server.Editors.HyperLinkPropertyEditor
 
         public HyperLinkAdapter(HyperLinkModel componentModel)
         {
-            ComponentModel = componentModel ?? throw new ArgumentNullException(nameof(componentModel));
+            this.componentModel = componentModel ?? throw new ArgumentNullException(nameof(componentModel));
         }
-        public HyperLinkModel ComponentModel { get; }
+        public HyperLinkModel componentModel { init; get; }
+
+        public override IComponentModel ComponentModel => componentModel;
+
         public override void SetAllowEdit(bool allowEdit)
         {
 
         }
         public override object GetValue()
         {
-            return ComponentModel.Value;
+            return ((HyperLinkModel)ComponentModel).Value;
         }
         private static bool IsValidUrl(string url)
         {
@@ -32,7 +36,7 @@ namespace Sunday.Blazor.Server.Editors.HyperLinkPropertyEditor
         public override void SetValue(object value)
         {
             if (value == null) return;
-            ComponentModel.DisplayValue = value?.ToString();
+            ((HyperLinkModel)ComponentModel).DisplayValue = value?.ToString();
             string url = value?.ToString();
             string result = "";
             if (url.Contains("@") && IsValidUrl(url))
@@ -43,11 +47,11 @@ namespace Sunday.Blazor.Server.Editors.HyperLinkPropertyEditor
             {
                 result = string.Format("https://{0}", url);
             }
-            ComponentModel.Value = result;
+            ((HyperLinkModel)ComponentModel).Value = result;
         }
         protected override RenderFragment CreateComponent()
         {
-            return ComponentModelObserver.Create(ComponentModel, HyperLinkRenderer.Create(ComponentModel));
+            return ComponentModelObserver.Create(ComponentModel, HyperLinkRenderer.Create(((HyperLinkModel)ComponentModel)));
         }
         public override void SetAllowNull(bool allowNull) { /* ...*/ }
         public override void SetDisplayFormat(string displayFormat) { /* ...*/ }
@@ -58,6 +62,5 @@ namespace Sunday.Blazor.Server.Editors.HyperLinkPropertyEditor
         public override void SetIsPassword(bool isPassword) { /* ...*/ }
         public override void SetMaxLength(int maxLength) { /* ...*/ }
         public override void SetNullText(string nullText) { /* ...*/ }
-
     }
 }

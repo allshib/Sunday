@@ -19,14 +19,13 @@
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp" Version="23.1.5" />
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="23.1.5" />
-    <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="23.1.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Objects" Version="23.1.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="23.1.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="23.1.5" />
-    <PackageReference Include="DevExpress.Persistent.Base" Version="23.1.5" />
-    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.1.5" />
+    <PackageReference Include="DevExpress.ExpressApp" Version="23.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="23.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Objects" Version="23.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="23.2.3" />
+    <PackageReference Include="DevExpress.ExpressApp.Xpo" Version="23.2.3" />
+    <PackageReference Include="DevExpress.Persistent.Base" Version="23.2.3" />
+    <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.2.3" />
   </ItemGroup>
   <ItemGroup>
     <None Update="BusinessObjects\SundayCommonDataModel.xpo.diagram">

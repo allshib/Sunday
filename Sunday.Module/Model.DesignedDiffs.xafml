@@ -10,6 +10,7 @@
   </ActionDesign>
   <BOModel>
     <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+    <Class Name="Sunday.Module.BusinessObjects.Security.Employee" ImageName="Employees" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" ImageName="BO_Address">
       <OwnMembers>
         <Member Name="Lat" AllowEdit="False" />
@@ -24,9 +25,16 @@
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.CustomerPhone" ImageName="BO_Phone" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Department" ImageName="BO_Department" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.DepartmentMember" ImageName="BO_Position">
+      <OwnMembers>
+        <Member Name="DepartmentRole" DataSourceProperty="Department.DepartmentRoles" />
+      </OwnMembers>
+    </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Phone" ImageName="Electronics_PhoneAndroid" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.PhysicalCustomer" ImageName="BO_Employee" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayStreet" ImageName="Action_Search_Object_FindObjectByID" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.WorkType" ImageName="CustomizeGrid" />
   </BOModel>
   <NavigationItems>
     <Items>
@@ -39,13 +47,23 @@
       </Item>
       <Item Id="ReferenceBooks" ImageName="Lookup&amp;Reference" Index="2" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="Addresses" ViewId="AddressBase_ListView" IsNewNode="True" />
-          <Item Id="Cities" ViewId="City_ListView" IsNewNode="True" />
-          <Item Id="Countries" ViewId="SundayCountry_ListView" IsNewNode="True" />
-          <Item Id="Localities" ViewId="Locality_ListView" IsNewNode="True" />
-          <Item Id="Regions" ViewId="SundayRegion_ListView" IsNewNode="True" />
+          <Item Id="Address" ImageName="BO_Address" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Addresses" ViewId="AddressBase_ListView" IsNewNode="True" />
+              <Item Id="Cities" ViewId="City_ListView" IsNewNode="True" />
+              <Item Id="Countries" ViewId="SundayCountry_ListView" IsNewNode="True" />
+              <Item Id="Localities" ViewId="Locality_ListView" IsNewNode="True" />
+              <Item Id="Regions" ViewId="SundayRegion_ListView" IsNewNode="True" />
+              <Item Id="Streets" ViewId="SundayStreet_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
           <Item Id="States" ViewId="State[TestStatus]_ListView" IsNewNode="True" />
-          <Item Id="Streets" ViewId="SundayStreet_ListView" IsNewNode="True" />
+          <Item Id="WorkTypes" ViewId="WorkType_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Default" Caption="Security">
+        <Items>
+          <Item Id="Departments" ViewId="Department_ListView" IsNewNode="True" />
         </Items>
       </Item>
       <Item Id="TestItems" ViewId="" IsNewNode="True">
@@ -60,10 +78,15 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="23.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="23.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="23.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
+  <Validation>
+    <Rules>
+      <RuleRequiredField Id="DepartmentMember_RuleRequiredField_DepartmentRole" TargetType="Sunday.Module.BusinessObjects.SundayDataModel.DepartmentMember" TargetContextIDs="Save" TargetPropertyName="DepartmentRole" IsNewNode="True" />
+    </Rules>
+  </Validation>
   <Views>
     <DetailView Id="AddressBase_DetailView">
       <Items>
@@ -143,17 +166,7 @@
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="21.914893617021278">
-            <LayoutGroup Id="Customer" RelativeSize="100">
-              <LayoutGroup Id="Customer_col1" RelativeSize="49.93045897079277">
-                <LayoutItem Id="Address" Index="0" RelativeSize="50" />
-                <LayoutItem Id="INN" Index="1" RelativeSize="50" />
-                <LayoutItem Id="CurrentState" Removed="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Customer_col2" RelativeSize="50.06954102920723">
-                <LayoutItem Id="Email" RelativeSize="50" />
-                <LayoutItem Id="Status" RelativeSize="50" />
-              </LayoutGroup>
-            </LayoutGroup>
+            <LayoutGroup Id="Customer" RelativeSize="100" />
           </LayoutGroup>
           <TabbedGroup Id="Tabs" RelativeSize="78.08510638297872">
             <LayoutGroup Id="CustomerOrders" RelativeSize="100">
@@ -166,10 +179,15 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="Customer_LookupListView" ShowAutoFilterRow="True" ShowFindPanel="True">
+      <Columns>
+        <ColumnInfo Id="Email" PropertyName="Email" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
     <DetailView Id="CustomerOrder_DetailView">
       <Items>
         <PropertyEditor Id="CreatedDate" PropertyName="CreatedDate" IsNewNode="True" Removed="True" />
-        <PropertyEditor Id="Customer" PropertyName="Customer" IsNewNode="True" Removed="True" />
+        <PropertyEditor Id="Customer" PropertyName="Customer" LookupEditorMode="AllItemsWithSearch" IsNewNode="True" Removed="True" />
         <PropertyEditor Id="Name" PropertyName="Name" IsNewNode="True" Removed="True" />
         <PropertyEditor Id="Oid" Removed="True" />
         <PropertyEditor Id="Stage" PropertyName="Stage" IsNewNode="True" Removed="True" />
@@ -226,6 +244,33 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="CustomerOrder_ListView_WARNINGCRITERIA" ClassName="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="CustomerRequirements" PropertyName="CustomerRequirements" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Description" PropertyName="Description" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Oid" PropertyName="Oid" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="Name" PropertyName="Name" SortIndex="0" SortOrder="Ascending" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Customer" PropertyName="Customer" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="Type" PropertyName="Type" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="CreatedDate" PropertyName="CreatedDate" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Stage" PropertyName="Stage" Index="4" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DepartmentMember_DetailView">
+      <Items>
+        <PropertyEditor Id="Employee" PropertyName="Employee" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DepartmentMember" RelativeSize="100">
+              <LayoutItem Id="Employee" ViewItem="Employee" Index="0" RelativeSize="3.37909186906019" IsNewNode="True" />
+              <LayoutItem Id="DepartmentRole" Index="1" RelativeSize="96.62090813093981" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="ExampleData_ListView_Pivot" ClassName="Sunday.Module.BusinessObjects.SundayDataModel.ExampleData" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="Oid" PropertyName="Oid" Index="-1" IsNewNode="True" />
@@ -254,7 +299,6 @@
                 <LayoutItem Id="Name" RelativeSize="36.36363636363637" Index="0" />
                 <LayoutItem Id="Surname" RelativeSize="27.272727272727273" Index="1" />
                 <LayoutItem Id="Middlename" RelativeSize="36.36363636363637" Index="2" />
-                <LayoutItem Id="DefaultProperty" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="PhysicalCustomer_col2" RelativeSize="50.06954102920723">
                 <LayoutItem Id="VKLink" RelativeSize="36.36363636363637" />
@@ -276,15 +320,6 @@
                     <LayoutItem Id="Item2" Index="1" RelativeSize="50" IsNewNode="True" />
                   </LayoutGroup>
                 </LayoutGroup>
-              </LayoutGroup>
-              <LayoutGroup Id="Customer_col2" Index="1" RelativeSize="30.319888734353267" Removed="True">
-                <LayoutItem Id="Email" RelativeSize="100" Removed="True" />
-                <LayoutItem Id="Status" RelativeSize="23.703703703703702" Removed="True" />
-              </LayoutGroup>
-              <LayoutGroup Id="Customer_col1" RelativeSize="14.325452016689846" Removed="True">
-                <LayoutItem Id="Address" Index="0" RelativeSize="100" Removed="True" />
-                <LayoutItem Id="INN" Index="1" RelativeSize="76.29629629629629" Removed="True" />
-                <LayoutItem Id="CurrentState" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>

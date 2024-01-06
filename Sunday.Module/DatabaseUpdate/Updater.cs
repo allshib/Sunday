@@ -39,7 +39,7 @@ public class Updater : ModuleUpdater {
             ObjectSpace.CommitChanges(); //This line persists created object(s).
             ((ISecurityUserWithLoginInfo)sampleUser).CreateUserLoginInfo(SecurityDefaults.PasswordAuthentication, ObjectSpace.GetKeyValueAsString(sampleUser));
         }
-        PermissionPolicyRole defaultRole = CreateDefaultRole();
+        CustomPermissionPolicyRole defaultRole = CreateDefaultRole();
         sampleUser.Roles.Add(defaultRole);
 
         ApplicationUser userAdmin = ObjectSpace.FirstOrDefault<ApplicationUser>(u => u.UserName == "Admin");
@@ -55,9 +55,9 @@ public class Updater : ModuleUpdater {
             ((ISecurityUserWithLoginInfo)userAdmin).CreateUserLoginInfo(SecurityDefaults.PasswordAuthentication, ObjectSpace.GetKeyValueAsString(userAdmin));
         }
 		// If a role with the Administrators name doesn't exist in the database, create this role
-        PermissionPolicyRole adminRole = ObjectSpace.FirstOrDefault<PermissionPolicyRole>(r => r.Name == "Administrators");
+        CustomPermissionPolicyRole adminRole = ObjectSpace.FirstOrDefault<CustomPermissionPolicyRole>(r => r.Name == "Administrators");
         if(adminRole == null) {
-            adminRole = ObjectSpace.CreateObject<PermissionPolicyRole>();
+            adminRole = ObjectSpace.CreateObject<CustomPermissionPolicyRole>();
             adminRole.Name = "Administrators";
         }
         adminRole.IsAdministrative = true;
@@ -71,17 +71,17 @@ public class Updater : ModuleUpdater {
         //    RenameColumn("DomainObject1Table", "OldColumnName", "NewColumnName");
         //}
     }
-    private PermissionPolicyRole CreateDefaultRole() {
-        PermissionPolicyRole defaultRole = ObjectSpace.FirstOrDefault<PermissionPolicyRole>(role => role.Name == "Default");
+    private CustomPermissionPolicyRole CreateDefaultRole() {
+        CustomPermissionPolicyRole defaultRole = ObjectSpace.FirstOrDefault<CustomPermissionPolicyRole>(role => role.Name == "Default");
         if(defaultRole == null) {
-            defaultRole = ObjectSpace.CreateObject<PermissionPolicyRole>();
+            defaultRole = ObjectSpace.CreateObject<CustomPermissionPolicyRole>();
             defaultRole.Name = "Default";
 
 			defaultRole.AddObjectPermissionFromLambda<ApplicationUser>(SecurityOperations.Read, cm => cm.Oid == (Guid)CurrentUserIdOperator.CurrentUserId(), SecurityPermissionState.Allow);
             defaultRole.AddNavigationPermission(@"Application/NavigationItems/Items/Default/Items/MyDetails", SecurityPermissionState.Allow);
 			defaultRole.AddMemberPermissionFromLambda<ApplicationUser>(SecurityOperations.Write, "ChangePasswordOnFirstLogon", cm => cm.Oid == (Guid)CurrentUserIdOperator.CurrentUserId(), SecurityPermissionState.Allow);
 			defaultRole.AddMemberPermissionFromLambda<ApplicationUser>(SecurityOperations.Write, "StoredPassword", cm => cm.Oid == (Guid)CurrentUserIdOperator.CurrentUserId(), SecurityPermissionState.Allow);
-            defaultRole.AddTypePermissionsRecursively<PermissionPolicyRole>(SecurityOperations.Read, SecurityPermissionState.Deny);
+            defaultRole.AddTypePermissionsRecursively<CustomPermissionPolicyRole>(SecurityOperations.Read, SecurityPermissionState.Deny);
             defaultRole.AddTypePermissionsRecursively<ModelDifference>(SecurityOperations.ReadWriteAccess, SecurityPermissionState.Allow);
             defaultRole.AddTypePermissionsRecursively<ModelDifferenceAspect>(SecurityOperations.ReadWriteAccess, SecurityPermissionState.Allow);
 			defaultRole.AddTypePermissionsRecursively<ModelDifference>(SecurityOperations.Create, SecurityPermissionState.Allow);

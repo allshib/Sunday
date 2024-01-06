@@ -6,6 +6,18 @@
     </Actions>
   </ActionDesign>
   <BOModel>
+    <Class Name="Sunday.Module.BusinessObjects.Security.CustomPermissionPolicyRole">
+      <OwnMembers>
+        <Member Name="Department" Caption="Отдел" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.Security.Employee" Caption="Сотрудник">
+      <OwnMembers>
+        <Member Name="FirstName" Caption="Имя" />
+        <Member Name="MiddleName" Caption="Отчество" />
+        <Member Name="Surname" Caption="Фамилия" />
+      </OwnMembers>
+    </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" Caption="Адрес">
       <OwnMembers>
         <Member Name="Country" Caption="Страна" />
@@ -31,9 +43,9 @@
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Customer" Caption="Заказчик">
       <OwnMembers>
         <Member Name="Address" Caption="Адрес" />
-        <Member Name="CurrentState" Caption="Текущее состояние" />
         <Member Name="CustomerOrders" Caption="Заказы" />
         <Member Name="CustomerPhones" Caption="Телефоны" />
+        <Member Name="DefaultProperty" Caption="Информация о заказчике" />
         <Member Name="INN" Caption="ИНН" />
         <Member Name="Status" Caption="Статус" />
       </OwnMembers>
@@ -47,6 +59,21 @@
         <Member Name="Name" Caption="Название" />
         <Member Name="Stage" Caption="Стадия" />
         <Member Name="Type" Caption="Тип" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Department" Caption="Отдел">
+      <OwnMembers>
+        <Member Name="DepartmentMembers" Caption="Сотрудники" />
+        <Member Name="DepartmentRoles" Caption="Роли" />
+        <Member Name="Name" Caption="Наименование" />
+        <Member Name="WorkTypes" Caption="Типы работ" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.DepartmentMember" Caption="Сотрудник отдела">
+      <OwnMembers>
+        <Member Name="Department" Caption="Отдел" />
+        <Member Name="DepartmentRole" Caption="Роль" />
+        <Member Name="Employee" Caption="Сотрудник" />
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.ExampleData" Caption="Пример данных">
@@ -70,7 +97,6 @@
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.PhysicalCustomer" Caption="Заказчик физ.лицо">
       <OwnMembers>
-        <Member Name="DefaultProperty" Caption="Инфо" />
         <Member Name="FullName" Caption="Полное имя" />
         <Member Name="Middlename" Caption="Отчество" />
         <Member Name="Name" Caption="Имя" />
@@ -104,15 +130,15 @@
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Village" Caption="Деревня" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.WorkType" Caption="Тип работы">
+      <OwnMembers>
+        <Member Name="Department" Caption="Отдел" />
+        <Member Name="Name" Caption="Наименвоание" />
+      </OwnMembers>
+    </Class>
   </BOModel>
   <Localization>
     <LocalizationGroup Name="Enums">
-      <LocalizationGroup Name="Sunday.Module.BusinessObjects.Enums.CustomerOrderType">
-        <LocalizationItem Name="Icon" Value="Иконка" />
-        <LocalizationItem Name="OilPainting" Value="Картина маслом" />
-        <LocalizationItem Name="PixelArt" Value="Пиксель-Арт" />
-        <LocalizationItem Name="Undefined" Value="Не задано" />
-      </LocalizationGroup>
       <LocalizationGroup Name="Sunday.Module.BusinessObjects.Enums.CustomerOrderWorkingStatusEnum">
         <LocalizationItem Name="Canceled" Value="Отменен" />
         <LocalizationItem Name="Coordination" Value="Согласование" />
@@ -140,13 +166,24 @@
       </Item>
       <Item Id="ReferenceBooks" Caption="Справочники">
         <Items>
-          <Item Id="Addresses" Caption="Адреса" />
-          <Item Id="Cities" Caption="Города" />
-          <Item Id="Countries" Caption="Страны" />
-          <Item Id="Localities" Caption="Населенные пункты" />
-          <Item Id="Regions" Caption="Области" />
+          <Item Id="Address" Caption="Адрес">
+            <Items>
+              <Item Id="Addresses" Caption="Адреса" />
+              <Item Id="Cities" Caption="Города" />
+              <Item Id="Countries" Caption="Страны" />
+              <Item Id="Localities" Caption="Населенные пункты" />
+              <Item Id="Regions" Caption="Области" />
+              <Item Id="Streets" Caption="Улицы" />
+            </Items>
+          </Item>
           <Item Id="States" Caption="Состояния" />
-          <Item Id="Streets" Caption="Улицы" />
+          <Item Id="WorkTypes" Caption="Типы работ" />
+        </Items>
+      </Item>
+      <Item Id="Default" Caption="Безопасность">
+        <Items>
+          <Item Id="Departments" Caption="Отделы" />
+          <Item Id="Employee_ListView" Caption="Сотрудники" />
         </Items>
       </Item>
       <Item Id="TestItems" Caption="Тестовые элементы">
@@ -213,6 +250,15 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="DepartmentMember_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="DepartmentMember" Caption="Роль" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="PhysicalCustomer_DetailView">
       <Layout>
         <LayoutGroup Id="Main">
@@ -227,8 +273,6 @@
                   <LayoutGroup Id="Auto98bfce27-5f32-4033-8d6a-84383ade43d0" Caption="Auto98bfce27-5f32-4033-8d6a-84383ade43d0(19)" />
                 </LayoutGroup>
               </LayoutGroup>
-              <LayoutGroup Id="Customer_col2" Caption="Customer_col2" />
-              <LayoutGroup Id="Customer_col1" Caption="Customer_col1" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>

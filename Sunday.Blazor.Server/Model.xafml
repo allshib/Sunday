@@ -9,9 +9,9 @@
   </BOModel>
   <NavigationItems NavigationStyle="Accordion" />
   <SchemaModules>
-    <SchemaModule Name="CloneObjectModule" Version="23.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SchedulerModuleBase" Version="23.1.5.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="23.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="CloneObjectModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SchedulerModuleBase" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
     <ListView Id="BaseTree_ListView" DataAccessMode="Client" />
@@ -26,6 +26,12 @@
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
+    </DetailView>
+    <ListView Id="Customer_LookupListView" ShowAutoFilterRow="True" ShowFindPanel="True" />
+    <DetailView Id="CustomerOrder_DetailView">
+      <Items>
+        <PropertyEditor Id="Customer" LookupEditorMode="AllItemsWithSearch" />
+      </Items>
     </DetailView>
     <ListView Id="ExampleData_ListView" EditorTypeName="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor" />
     <ListView Id="ExampleData_ListView_Pivot" EditorTypeName="DevExpress.ExpressApp.Blazor.Editors.Grid.GridListEditor" />
