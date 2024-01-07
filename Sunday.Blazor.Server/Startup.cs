@@ -74,10 +74,20 @@ public class Startup {
             	.Add<SundayBlazorModule>();
             builder.ObjectSpaceProviders
                 .AddSecuredXpo((serviceProvider, options) => {
-                    string connectionString = null;
-                    if(Configuration.GetConnectionString("ConnectionString") != null) {
-                        connectionString = Configuration.GetConnectionString("ConnectionString");
-                    }
+
+#if RELEASE
+                    string connectionStringName = "ProdConnectionString";
+#else
+                    string connectionStringName = "DevConnectionString";
+#endif
+
+                    string connectionString = null;     
+
+                    if (Configuration.GetConnectionString(connectionStringName) != null)
+                        connectionString = Configuration.GetConnectionString(connectionStringName);
+
+                    
+
 #if EASYTEST
                     if(Configuration.GetConnectionString("EasyTestConnectionString") != null) {
                         connectionString = Configuration.GetConnectionString("EasyTestConnectionString");
@@ -118,15 +128,16 @@ public class Startup {
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Authentication:Jwt:IssuerSigningKey"]))
-                };
-            });
+                    
+                };}
+            );
         //Configure OAuth2 Identity Providers based on your requirements. For more information, see
         //https://docs.devexpress.com/eXpressAppFramework/402197/task-based-help/security/how-to-use-active-directory-and-oauth2-authentication-providers-in-blazor-applications
         //https://developers.google.com/identity/protocols/oauth2
         //https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow
         //https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow
-        authentication.AddMicrosoftIdentityWebApp(Configuration, configSectionName: "Authentication:AzureAd", cookieScheme: null);
-        authentication.AddMicrosoftIdentityWebApi(Configuration, configSectionName: "Authentication:AzureAd", jwtBearerScheme: "AzureAd");
+        //authentication.AddMicrosoftIdentityWebApp(Configuration, configSectionName: "Authentication:AzureAd", cookieScheme: null);
+        //authentication.AddMicrosoftIdentityWebApi(Configuration, configSectionName: "Authentication:AzureAd", jwtBearerScheme: "AzureAd");
 
         services.AddAuthorization(options => {
             options.DefaultPolicy = new AuthorizationPolicyBuilder(
@@ -150,78 +161,80 @@ public class Startup {
                     .EnableQueryFeatures(100);
             });
 
-        services.AddSwaggerGen(c => {
-            c.EnableAnnotations();
-            c.SwaggerDoc("v1", new OpenApiInfo {
-                Title = "Sunday API",
-                Version = "v1",
-                Description = @"Use AddXafWebApi(options) in the Sunday.Blazor.Server\Startup.cs file to make Business Objects available in the Web API."
-            });
-            c.AddSecurityDefinition("JWT", new OpenApiSecurityScheme() {
-                Type = SecuritySchemeType.Http,
-                Name = "Bearer",
-                Scheme = "bearer",
-                BearerFormat = "JWT",
-                In = ParameterLocation.Header
-            });
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-                {
-                    {
-                        new OpenApiSecurityScheme() {
-                            Reference = new OpenApiReference() {
-                                Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                                Id = "JWT"
-                            }
-                        },
-                        new string[0]
-                    },
-            });
-            var azureAdAuthorityUrl = $"{Configuration["Authentication:AzureAd:Instance"]}{Configuration["Authentication:AzureAd:TenantId"]}";
-            c.AddSecurityDefinition("AzureAd", new OpenApiSecurityScheme {
-                Type = SecuritySchemeType.OAuth2,
-                Flows = new OpenApiOAuthFlows() {
-                    AuthorizationCode = new OpenApiOAuthFlow() {
-                        AuthorizationUrl = new Uri($"{azureAdAuthorityUrl}/oauth2/v2.0/authorize"),
-                        TokenUrl = new Uri($"{azureAdAuthorityUrl}/oauth2/v2.0/token"),
-                        Scopes = new Dictionary<string, string> {
-                            // Configure scopes corresponding to https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-expose-web-apis
-                            { @"[Enter the scope name in the Sunday.Blazor.Server\Startup.cs file]", @"[Enter the scope description in the Sunday.Blazor.Server\Startup.cs file]" }
-                        }
-                    }
-                }
-            });
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement() {
-                {
-                    new OpenApiSecurityScheme {
-                        Reference = new OpenApiReference {
-                            Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                            Id = "AzureAd"
-                        },
-                        In = ParameterLocation.Header
-                    },
-                    new string[0]
-                }
-            });
-        });
+        //services.AddSwaggerGen(c => {
+        //    c.EnableAnnotations();
+        //    c.SwaggerDoc("v1", new OpenApiInfo {
+        //        Title = "Sunday API",
+        //        Version = "v1",
+        //        Description = @"Use AddXafWebApi(options) in the Sunday.Blazor.Server\Startup.cs file to make Business Objects available in the Web API."
+        //    });
+        //    c.AddSecurityDefinition("JWT", new OpenApiSecurityScheme() {
+        //        Type = SecuritySchemeType.Http,
+        //        Name = "Bearer",
+        //        Scheme = "bearer",
+        //        BearerFormat = "JWT",
+        //        In = ParameterLocation.Header,
+                
+        //    });
+        //    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+        //        {
+        //            {
+        //                new OpenApiSecurityScheme() {
+        //                    Reference = new OpenApiReference() {
+        //                        Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+        //                        Id = "JWT"
+                               
+        //                    }
+        //                },
+        //                new string[0]
+        //            },
+        //    });
+        //    //var azureAdAuthorityUrl = $"{Configuration["Authentication:AzureAd:Instance"]}{Configuration["Authentication:AzureAd:TenantId"]}";
+        //    //c.AddSecurityDefinition("AzureAd", new OpenApiSecurityScheme {
+        //    //    Type = SecuritySchemeType.OAuth2,
+        //    //    Flows = new OpenApiOAuthFlows() {
+        //    //        AuthorizationCode = new OpenApiOAuthFlow() {
+        //    //            AuthorizationUrl = new Uri($"{azureAdAuthorityUrl}/oauth2/v2.0/authorize"),
+        //    //            TokenUrl = new Uri($"{azureAdAuthorityUrl}/oauth2/v2.0/token"),
+        //    //            Scopes = new Dictionary<string, string> {
+        //    //                // Configure scopes corresponding to https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-expose-web-apis
+        //    //                { @"[Enter the scope name in the Sunday.Blazor.Server\Startup.cs file]", @"[Enter the scope description in the Sunday.Blazor.Server\Startup.cs file]" }
+        //    //            }
+        //    //        }
+        //    //    }
+        //    //});
+        //    //c.AddSecurityRequirement(new OpenApiSecurityRequirement() {
+        //    //    {
+        //    //        new OpenApiSecurityScheme {
+        //    //            Reference = new OpenApiReference {
+        //    //                Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+        //    //                Id = "AzureAd"
+        //    //            },
+        //    //            In = ParameterLocation.Header
+        //    //        },
+        //    //        new string[0]
+        //    //    }
+        //    //});
+        //});
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
         if(env.IsDevelopment()) {
             app.UseDeveloperExceptionPage();
-            app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sunday WebApi v1");
-                c.OAuthClientId(Configuration["Authentication:AzureAd:ClientId"]);
-                c.OAuthUsePkce();
-            });
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c => {
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sunday WebApi v1");
+            //    c.OAuthClientId(Configuration["Authentication:AzureAd:ClientId"]);
+            //    c.OAuthUsePkce();
+            //});
         }
         else {
             app.UseExceptionHandler("/Error");
             // The default HSTS value is 30 days. To change this for production scenarios, see: https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
-        app.UseHttpsRedirection();
+        //app.UseHttpsRedirection();
         app.UseRequestLocalization();
         app.UseStaticFiles();
         app.UseRouting();

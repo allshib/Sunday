@@ -19,6 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sunday.Common", "Sunday.Com
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Sunday-Documentation", "Sunday-Documentation\Sunday-Documentation.esproj", "{47413920-0D8A-49F6-B4C4-D4504CD91918}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "K8S", "K8S", "{3AE380AE-38C4-48C6-974D-E7493E2EEF76}"
+	ProjectSection(SolutionItems) = preProject
+		sunday-depl.yaml = sunday-depl.yaml
+		sunday-np-srv.yaml = sunday-np-srv.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

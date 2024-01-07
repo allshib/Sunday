@@ -7,6 +7,8 @@
     <FileVersion>1.0.0.0</FileVersion>
     <Configurations>Debug;Release;EasyTest</Configurations>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>756640fb-4ad9-47e8-bf18-2c40201f9fc1</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Controllers\CustomControllers.cs" />
@@ -33,6 +35,7 @@
     <None Include="Controllers\CustomControllers.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DevExpress.Drawing.Skia" Version="23.2.3" />
     <PackageReference Include="DevExpress.ExpressApp.Api.Xpo.All" Version="23.2.3" />
     <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="23.2.3" />
     <PackageReference Include="DevExpress.ExpressApp.Dashboards.Blazor" Version="23.2.3" />
@@ -42,6 +45,8 @@
     <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="23.2.3" />
     <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="23.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.6" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.5.1" />
@@ -51,6 +56,228 @@
     <ProjectReference Include="..\Sunday.Module\Sunday.Module.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="Packages\DevExpress.AspNetCore.Common.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.AspNetCore.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.AspNetCore.Dashboard.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.AspNetCore.Reporting.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Blazor.Dashboard.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Blazor.Reporting.JSBasedControls.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Blazor.Reporting.JSBasedControls.Common.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Blazor.RichEdit.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Blazor.Themes.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Charts.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Charts.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.CodeParser.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Dashboard.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.DataAccess.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.DataVisualization.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Drawing.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Drawing.Skia.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Api.Xpo.All.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.AspNetCore.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.AuditTrail.Xpo.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Chart.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.CloneObject.Xpo.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.ConditionalAppearance.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Dashboards.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Dashboards.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.FileAttachment.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Kpi.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Notifications.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Objects.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Office.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Office.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.PivotChart.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.PivotGrid.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.ReportsV2.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.ReportsV2.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Scheduler.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.ScriptRecorder.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Security.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Security.AspNetCore.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Security.Xpo.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.StateMachine.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.TreeListEditors.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Validation.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Validation.Blazor.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.ViewVariantsModule.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.WebApi.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.WebApi.Xpo.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.ExpressApp.Xpo.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Gauges.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Images.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Map.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Office.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Pdf.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Pdf.Drawing.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Persistent.Base.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Persistent.BaseImpl.Xpo.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.PivotGrid.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Printing.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Reporting.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.RichEdit.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.RichEdit.Export.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Scheduler.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Sparkline.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.SpellChecker.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Spreadsheet.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.TreeMap.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.TreeMap.Core.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Web.Dashboard.Common.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Web.Reporting.Common.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Web.Reporting.Common.Services.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Packages\DevExpress.Web.Resources.23.2.3.nupkg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="UnusableNodes.xml">
       <DependentUpon>Model.xafml</DependentUpon>
     </None>

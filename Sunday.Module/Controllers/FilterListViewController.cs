@@ -35,22 +35,18 @@ namespace Sunday.Module.Controllers
             base.OnActivated();
             // Perform various tasks depending on the target View.
 
-                if (SecuritySystem.CurrentUser is Employee)
-                {
-                    CriteriaOperator criteria = default;
+            if (SecuritySystem.CurrentUser is Employee employee && employee.Appointments.Count > 0)
+            {
+                CriteriaOperator criteria = default;
 
-                    var appointments = ((Employee)SecuritySystem.CurrentUser).Appointments;
-                    var lastappointment = appointments.Last();
+                foreach (var appointment in employee.Appointments)
+                    criteria = CriteriaOperator
+                        .Or(criteria, CriteriaOperator.FromLambda<CustomerOrder>(x => x.Type.Department.Oid == appointment.Department.Oid));
 
-                    foreach (var appointment in appointments)
-                    {
-                        var oid = appointment.Department.Oid;
-                        criteria = CriteriaOperator.Or(criteria, CriteriaOperator.FromLambda<CustomerOrder>(x=>x.Type.Department.Oid == oid));
-                    }
 
-                    View.CollectionSource.Criteria["Devs"] = criteria;
-                    
-                }
+                View.CollectionSource.Criteria["Devs"] = criteria;
+
+            }
         }
 
 

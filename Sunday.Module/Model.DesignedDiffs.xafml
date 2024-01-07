@@ -244,7 +244,8 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="CustomerOrder_ListView_WARNINGCRITERIA" ClassName="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" IsNewNode="True">
+    <ListView Id="CustomerOrder_ListView" DataAccessMode="Server" />
+    <ListView Id="CustomerOrder_ListView_WARNINGCRITERIA" ClassName="Sunday.Module.BusinessObjects.SundayDataModel.CustomerOrder" DataAccessMode="Server" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="CustomerRequirements" PropertyName="CustomerRequirements" Index="-1" IsNewNode="True" />
         <ColumnInfo Id="Description" PropertyName="Description" Index="-1" IsNewNode="True" />

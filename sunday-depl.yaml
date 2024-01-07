@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sunday-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sundayservice
+  template:
+    metadata:
+      labels:
+        app: sundayservice
+    spec:
+      containers:
+        - name: sundayservice
+          image: alexzeeker/sundayblazorserver:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sunday-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: sundayservice
+  ports:
+    - name: sundayservice
+      protocol: TCP
+      port: 80
+      targetPort: 80
