@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <ActionToContainerMapping>
+      <ActionContainer Id="SearchAddressContainer" IsNewNode="True">
+        <ActionLink ActionId="SearchAddress" IsNewNode="True" />
+      </ActionContainer>
+      <ActionContainer Id="View">
+        <ActionLink ActionId="SearchAddress" Removed="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="23.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="AddressPicker_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="Search" ActionContainer="SearchAddressContainer" PaintStyle="CaptionAndImage" Caption="Search(7)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.511737089201878">
+            <LayoutGroup Id="AddressPicker" RelativeSize="100" Caption="My display name">
+              <LayoutItem Id="SearchString" RelativeSize="50" />
+              <LayoutItem Id="Search" ViewItem="Search" Index="1" RelativeSize="50" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Adresses_Group" Direction="Vertical" RelativeSize="92.48826291079813">
+            <LayoutItem Id="Adresses" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

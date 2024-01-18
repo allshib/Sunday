@@ -1,9 +1,12 @@
 ﻿using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp.Utils;
+
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.XtraSpreadsheet.DocumentFormats.Xlsb;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Nominatim.Entities;
+using Shib.Common.Interfaces.Address;
+using Shib.XAF.Address.BusinessObjects.NonPersistent;
 using Sunday.Module.BusinessObjects.SundayDataModel;
 using System;
 using System.Collections.Generic;
@@ -18,57 +21,48 @@ using NomAdress = Nominatim.Entities.Address;
 namespace Sunday.Module.Entities {
     public static class SundayAddressEx {
 
-        public static void FillAddressByQuery(this AddressBase address, string query) {
-            if (address == null) return;
+        public static void FillAddressFromEntity(this AddressBase address, IAddress adressEntity) {
+            if (address == null || adressEntity == null) return;
 
-            var nominatimAddress = WrapperNominatim.GetAdressData(query);
 
-            if (nominatimAddress == null) return;
-
-            if (String.IsNullOrEmpty(nominatimAddress.lat)) return;
-
-            //double temp;
-            address.Lat = Convert.ToDouble(nominatimAddress.lat, CultureInfo.InvariantCulture);
-            address.Lon = Convert.ToDouble(nominatimAddress.lon, CultureInfo.InvariantCulture);
-
-            //address.Lat = Double.TryParse(nominatimAddress.lat, out temp) ? temp : address.Lat;
-            //address.Lon = Double.TryParse(nominatimAddress.lon, out temp) ? temp : address.Lon;
+            address.Lat = adressEntity.Lat;
+            address.Lon = adressEntity.Lon;
 
             SundayCountry country=null;
-            if (!String.IsNullOrEmpty(nominatimAddress?.address?.country)) 
-                country = FillCountry(address, nominatimAddress.address);
+            if (!String.IsNullOrEmpty(adressEntity.Country)) 
+                country = FillCountry(address, adressEntity);
             
             SundayRegion region=null;
-            if (!String.IsNullOrEmpty(nominatimAddress?.address?.state)) {
-                region = FillRegion(address, nominatimAddress.address);
+            if (!String.IsNullOrEmpty(adressEntity.Region)) {
+                region = FillRegion(address, adressEntity);
                 if (country != null)
                     region.Country = address.Country;
 
             }
 
             Locality loc=null;
-            if (!String.IsNullOrEmpty(nominatimAddress?.address?.city)) {
-                loc = FillLoc(address, nominatimAddress.address);
+            if (!String.IsNullOrEmpty(adressEntity.Locality)) {
+                loc = FillLoc(address, adressEntity);
                 if (region != null) loc.PGUnit = region;
                 else if (country != null) loc.PGUnit = address.Country;
             }
 
-            if (!String.IsNullOrEmpty(nominatimAddress?.address?.road)) {
-                var street = FillStreet(address, nominatimAddress.address);
+            if (!String.IsNullOrEmpty(adressEntity.Street)) {
+                var street = FillStreet(address, adressEntity);
                 if (loc != null) street.Locacity = loc;
             }
 
-            if (!String.IsNullOrEmpty(nominatimAddress.address.postcode))
-                address.ZIP = Convert.ToInt32(nominatimAddress.address.postcode);
+            if (adressEntity.ZIP > 0)
+                address.ZIP = adressEntity.ZIP;
 
         }
 
 
-        private static SundayRegion FillRegion(this AddressBase address, NomAdress nominatimAddress) {
-            var region = address.Session.FindObject<SundayRegion>(CriteriaOperator.Parse("Name = ?", nominatimAddress.state));
+        private static SundayRegion FillRegion(this AddressBase address, IAddress adressEntity) {
+            var region = address.Session.FindObject<SundayRegion>(CriteriaOperator.Parse("Name = ?", adressEntity.Region));
             if (region == null) {
                 region = new SundayRegion(address.Session);
-                region.Name = nominatimAddress.state;
+                region.Name = adressEntity.Region;
             }
             
             address.Region = region;
@@ -77,11 +71,11 @@ namespace Sunday.Module.Entities {
 
 
 
-        private static SundayCountry FillCountry(this AddressBase address, NomAdress nominatimAddress) {
-            var country = address.Session.FindObject<SundayCountry>(CriteriaOperator.Parse("Name = ?", nominatimAddress.country));
+        private static SundayCountry FillCountry(this AddressBase address, IAddress adressEntity) {
+            var country = address.Session.FindObject<SundayCountry>(CriteriaOperator.Parse("Name = ?", adressEntity.Country));
             if (country == null) {
                 country = new SundayCountry(address.Session);
-                country.Name = nominatimAddress.country;
+                country.Name = adressEntity.Country;
             }
             address.Country = country;
 
@@ -91,23 +85,23 @@ namespace Sunday.Module.Entities {
 
 
 
-        private static Locality FillLoc(this AddressBase address, NomAdress nominatimAddress) {
-            var loc = address.Session.FindObject<Locality>(CriteriaOperator.Parse("Name = ?", nominatimAddress.city));
+        private static Locality FillLoc(this AddressBase address, IAddress adressEntity) {
+            var loc = address.Session.FindObject<Locality>(CriteriaOperator.Parse("Name = ?", adressEntity.Locality));
             if (loc == null) {
                 loc = new City(address.Session);
-                loc.Name = nominatimAddress.city;
+                loc.Name = adressEntity.Locality;
             }
             address.Locality = loc;
             return loc;
         }
 
 
-        private static SundayStreet FillStreet(this AddressBase address, NomAdress nominatimAddress) {
-            var street = address.Session.FindObject<SundayStreet>(CriteriaOperator.Parse("Name = ?", nominatimAddress.road));
+        private static SundayStreet FillStreet(this AddressBase address, IAddress adressEntity) {
+            var street = address.Session.FindObject<SundayStreet>(CriteriaOperator.Parse("Name = ?", adressEntity.Street));
             if (street == null) {
                 street = new SundayStreet(address.Session);
-                street.Name = nominatimAddress.road;
-                street.HouseNumber = nominatimAddress.house_number;
+                street.Name = adressEntity.Street;
+                street.HouseNumber = adressEntity.HomeNumber;
             }
             address.Street = street;
 

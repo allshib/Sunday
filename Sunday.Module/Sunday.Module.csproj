@@ -596,6 +596,7 @@
     <PackageReference Include="DevExpress.Persistent.BaseImpl.Xpo" Version="23.2.3" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shib.XAF.Address\Shib.XAF.Address.csproj" />
     <ProjectReference Include="..\Sunday.Common\Sunday.Common.csproj" />
     <ProjectReference Include="..\SundayNominatim\SundayNominatim.csproj" />
   </ItemGroup>

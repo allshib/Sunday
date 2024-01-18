@@ -14,6 +14,7 @@ using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using Sunday.Common;
+using Shib.XAF.Address;
 
 namespace Sunday.Module;
 
@@ -54,9 +55,10 @@ public sealed class SundayModule : ModuleBase {
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase));
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.ValidationModule));
 		RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule));
-		RequiredModuleTypes.Add(typeof(CommonModule));
+		RequiredModuleTypes.Add(typeof(AddressModule));
+        RequiredModuleTypes.Add(typeof(CommonModule));
         AdditionalExportedTypes.Add(typeof(Sunday.Common.SundayCommonDataModel.State));
-        DevExpress.Xpo.Metadata.ReflectionClassInfo.SuppressSuspiciousMemberInheritanceCheck = true;
+        //DevExpress.Xpo.Metadata.ReflectionClassInfo.SuppressSuspiciousMemberInheritanceCheck = true;
     }
     public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
         ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);

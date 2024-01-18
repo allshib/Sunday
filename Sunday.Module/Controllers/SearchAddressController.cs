@@ -9,6 +9,9 @@ using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
+using Microsoft.Extensions.DependencyInjection;
+using Shib.Common.Interfaces.Address;
+using Shib.XAF.Address.BusinessObjects.NonPersistent;
 using Sunday.Module.BusinessObjects.SundayDataModel;
 using Sunday.Module.Entities;
 using System;
@@ -22,19 +25,55 @@ namespace Sunday.Module.Controllers {
         // Use CodeRush to create Controllers and Actions with a few keystrokes.
         // https://docs.devexpress.com/CodeRushForRoslyn/403133/
         SimpleAction searchAction;
+        SimpleAction detailedSearchAction;
+        private readonly IAddressSearcher addressSearcher;
         public SearchAddressController() {
             InitializeComponent();
             // Target required Views (via the TargetXXX properties) and create their Actions.
             TargetObjectType = typeof(AddressBase);
             TargetViewType = ViewType.DetailView;
+
             searchAction = new SimpleAction(this, "SearchAddressAction", "SearchAddressCategory") {
                 //Specify the Action's button caption.
                 Caption = "Search Action",
                 TargetObjectType = TargetObjectType,
             };
-            //This event fires when a user clicks the Simple Action control. Handle this event to execute custom code.
             searchAction.Execute += SearchAction_Execute;
+
+            detailedSearchAction = new SimpleAction(this, "DetailedSearchAction", "SearchAddressCategory")
+            {
+                //Specify the Action's button caption.
+                Caption = "Детальный поиск",
+                TargetObjectType = TargetObjectType,
+            };
+            detailedSearchAction.Execute += SearchAction_Execute1;
+
         }
+
+        [ActivatorUtilitiesConstructor]
+        public SearchAddressController(IAddressSearcher addressSearcher) : this()
+        {
+            this.addressSearcher = addressSearcher;
+        }
+
+
+        private void SearchAction_Execute1(object sender, SimpleActionExecuteEventArgs e)
+        {
+            AddressBase address = View.CurrentObject as AddressBase;
+
+            var os = Application.CreateObjectSpace(typeof(AddressPicker));
+
+            var addressPicker = new AddressPicker(address.FastAddressString);
+            DetailView detailView = Application.CreateDetailView(os, addressPicker);
+            detailView.CurrentObject = addressPicker;
+            detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
+
+            Application.ShowViewStrategy.ShowViewInPopupWindow(detailView,
+            () => Application.ShowViewStrategy.ShowMessage("Done."),
+            () => Application.ShowViewStrategy.ShowMessage("Cancelled."),
+            null, null);
+        }
+
         protected override void OnActivated() {
             base.OnActivated();
             // Perform various tasks depending on the target View.
@@ -46,7 +85,10 @@ namespace Sunday.Module.Controllers {
             if (String.IsNullOrEmpty(address.FastAddressString)) throw new UserFriendlyException("Адрес не задан");
 
 
-            address.FillAddressByQuery(address.FastAddressString);
+            var searchedAddress = addressSearcher.GetAddress(address.FastAddressString);
+
+
+            address.FillAddressFromEntity(searchedAddress);
         }
 
         protected override void OnViewControlsCreated() {

@@ -25,6 +25,9 @@ using DevExpress.ExpressApp.Security.Authentication;
 using DevExpress.ExpressApp.Security.Authentication.ClientServer;
 using DevExpress.ExpressApp.Core;
 using Sunday.Module.BusinessObjects.Security;
+using Shib.Common.Interfaces.Address;
+using Nominatim.Entities;
+using Shib.XAF.Address.BusinessObjects.NonPersistent;
 
 namespace Sunday.Blazor.Server;
 
@@ -39,6 +42,9 @@ public class Startup {
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services) {
         //DevExpress.Xpo.Metadata.ReflectionClassInfo.SuppressSuspiciousMemberInheritanceCheck = true;
+        services.AddScoped<IAddressSearcher>(x =>
+            new NominatimWrapper(()=> new AddressEntity()));
+
 
         services.AddSingleton(typeof(Microsoft.AspNetCore.SignalR.HubConnectionHandler<>), typeof(ProxyHubConnectionHandler<>));
 

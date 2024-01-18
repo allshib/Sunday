@@ -13,10 +13,11 @@ namespace Nominatim.Entities
 
         }
 
-        public NominatimAdress? GetAdressData(string? quary)
-        => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1").FirstOrDefault();
+        public NominatimAdress? GetFirstAdressData(string? quary)
+        => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1")?.FirstOrDefault();
 
-        
+        public List<NominatimAdress>? GetListAdressData(string? quary, int limit = 10)
+        => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit={limit}&addressdetails=1");
 
 
         private List<T>? GetObjects<T>(string url)
@@ -64,19 +65,18 @@ namespace Nominatim.Entities
         {
             if (e.Response == null)
                 throw new Exception(e.Message);
-            else
+
+            var code = (int)((HttpWebResponse)e.Response).StatusCode;
+
+            switch (code)
             {
-                var code = (int)((HttpWebResponse)e.Response).StatusCode;
+                case 400:
+                    throw new Exception("API геокодирования: адрес не удалось найти");
 
-                switch (code)
-                {
-                    case 400:
-                        throw new Exception("API геокодирования: адрес не удалось найти");
-
-                    default:
-                        throw new Exception("API геокодирования: " + e.Message);
-                }
+                default:
+                    throw new Exception("API геокодирования: " + e.Message);
             }
+            
         }
     }
 }
