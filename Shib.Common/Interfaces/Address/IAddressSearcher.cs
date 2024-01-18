@@ -10,7 +10,7 @@ namespace Shib.Common.Interfaces.Address
     {
         IAddress? GetAddress(string query);
 
-        IEnumerable<IAddress>? GetAddresses(string query);
+        IEnumerable<IAddress>? GetAddressList(string query);
 
         
     }

@@ -51,7 +51,7 @@ namespace Shib.XAF.Address.Controllers
         {
             var picker = View.CurrentObject as AddressPicker;
 
-            var nominatimAddresses = addressSearcher.GetAddresses(picker.SearchString);
+            var nominatimAddresses = addressSearcher.GetAddressList(picker.SearchString);
 
 
 

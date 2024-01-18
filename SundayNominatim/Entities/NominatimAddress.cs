@@ -22,7 +22,7 @@ namespace Nominatim.Entities
         public string? postcode { get; set; }
     }
 
-    public class NominatimAdress
+    public class NominatimAddress
     {
         public long place_id { get; set; }
         public string ?licence { get; set; }

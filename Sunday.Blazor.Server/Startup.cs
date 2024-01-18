@@ -43,7 +43,7 @@ public class Startup {
     public void ConfigureServices(IServiceCollection services) {
         //DevExpress.Xpo.Metadata.ReflectionClassInfo.SuppressSuspiciousMemberInheritanceCheck = true;
         services.AddScoped<IAddressSearcher>(x =>
-            new NominatimWrapper(()=> new AddressEntity()));
+            new NominatimAddressSearcher(()=> new AddressEntity()));
 
 
         services.AddSingleton(typeof(Microsoft.AspNetCore.SignalR.HubConnectionHandler<>), typeof(ProxyHubConnectionHandler<>));

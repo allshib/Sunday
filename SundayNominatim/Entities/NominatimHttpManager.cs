@@ -4,20 +4,20 @@ using System.Runtime.Serialization.Json;
 
 namespace Nominatim.Entities
 {
-    public class NominatimManager
+    public class NominatimHttpManager
     {
         private string _url = "http://nominatim.openstreetmap.org";
 
-        public NominatimManager()
+        public NominatimHttpManager()
         {
 
         }
 
-        public NominatimAdress? GetFirstAdressData(string? quary)
-        => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1")?.FirstOrDefault();
+        public NominatimAddress? GetFirstAddressData(string? quary)
+        => GetObjects<NominatimAddress>($"{_url}/search?q={quary}&format=jsonv2&limit=1&addressdetails=1")?.FirstOrDefault();
 
-        public List<NominatimAdress>? GetListAdressData(string? quary, int limit = 10)
-        => GetObjects<NominatimAdress>($"{_url}/search?q={quary}&format=jsonv2&limit={limit}&addressdetails=1");
+        public List<NominatimAddress>? GetListAdressData(string? quary, int limit = 10)
+        => GetObjects<NominatimAddress>($"{_url}/search?q={quary}&format=jsonv2&limit={limit}&addressdetails=1");
 
 
         private List<T>? GetObjects<T>(string url)
