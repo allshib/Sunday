@@ -27,7 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "K8S", "K8S", "{3AE380AE-38C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shib.XAF.Address", "Shib.XAF.Address\Shib.XAF.Address.csproj", "{26FDFC4D-F374-4A2E-8C66-8367CD0D491E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shib.Common", "Shib.Common\Shib.Common.csproj", "{86342968-B3D8-445B-A7AD-3D2BA7FF799B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shib.Common", "Shib.Common\Shib.Common.csproj", "{86342968-B3D8-445B-A7AD-3D2BA7FF799B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shib.Common.YandexAPI", "Shib.Common.YandexAPI\Shib.Common.YandexAPI.csproj", "{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,12 @@ Global
 		{86342968-B3D8-445B-A7AD-3D2BA7FF799B}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
 		{86342968-B3D8-445B-A7AD-3D2BA7FF799B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86342968-B3D8-445B-A7AD-3D2BA7FF799B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}.EasyTest|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}.EasyTest|Any CPU.Build.0 = Debug|Any CPU
+		{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE6E0CF-E2E8-4226-A518-D4B3E617AE59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

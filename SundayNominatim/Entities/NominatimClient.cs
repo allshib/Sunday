@@ -4,11 +4,11 @@ using System.Runtime.Serialization.Json;
 
 namespace Nominatim.Entities
 {
-    public class NominatimHttpManager
+    public class NominatimClient
     {
         private string _url = "http://nominatim.openstreetmap.org";
 
-        public NominatimHttpManager()
+        public NominatimClient()
         {
 
         }
@@ -22,7 +22,7 @@ namespace Nominatim.Entities
 
         private List<T>? GetObjects<T>(string url)
         {
-            var httpClient = new HttpClient();
+            using var httpClient = new HttpClient();
 
             var msg = new HttpRequestMessage(HttpMethod.Get, url);
             msg.Headers.Add("Accept-Language", "ru-ru");

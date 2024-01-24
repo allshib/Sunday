@@ -10,7 +10,7 @@ namespace Nominatim.Entities
 {
     public  class NominatimAddressSearcher : IAddressSearcher
     {
-        private readonly NominatimHttpManager httpManager = new NominatimHttpManager();
+        private readonly NominatimClient httpManager = new NominatimClient();
         private readonly Func<IAddress> defaultAddressCreator;
 
         public NominatimAddressSearcher(Func<IAddress> defaultAddressCreator) {
