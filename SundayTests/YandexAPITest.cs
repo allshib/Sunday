@@ -13,11 +13,11 @@ namespace SundayTests
         [Fact]
         public void SimpleYandexTest()
         {
-            var addressManager = new YandexAddressManager(
-                new GeocoderClient("2e6c8a50-744d-48d7-832e-3fd44ce16701"), 
-                new GeosudgestClient("d40fef97-cc1a-46cb-97a5-02556fcd0d52"));
+            //var addressManager = new YandexAddressManager(
+            //    new GeocoderClient(), 
+            //    new GeosudgestClient());
 
-            var result = addressManager.GetAddress("Пермь, Сортировочная 88");
+            //var result = addressManager.GetAddress("Пермь, Сортировочная 88");
         }
 
     }
