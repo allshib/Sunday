@@ -12,12 +12,16 @@
   </ActionDesign>
   <BOModel>
     <Class Name="Shib.XAF.Address.BusinessObjects.NonPersistent.AddressEntity" Caption="Адрес">
+      <AppearanceRules>
+        <AppearanceRule Id="SelectedAddress" Context="ListView" BackColor="LightGreen" Criteria="[Selected] = True" TargetItems="*" IsNewNode="True" />
+      </AppearanceRules>
       <OwnMembers>
         <Member Name="Country" Caption="Страна" />
         <Member Name="DisplayName" Caption="Полный адрес" />
         <Member Name="HomeNumber" Caption="Номер дома" />
         <Member Name="Locality" Caption="Населенный пункт" />
         <Member Name="Region" Caption="Область" />
+        <Member Name="Selected" Caption="Выбран" />
         <Member Name="Street" Caption="Улица" />
       </OwnMembers>
     </Class>
@@ -81,9 +85,10 @@
         <ColumnInfo Id="Street" Index="-1" SortIndex="0" SortOrder="Ascending" />
         <ColumnInfo Id="ZIP" Index="-1" />
         <ColumnInfo Id="DisplayName" SortIndex="-1" SortOrder="None" Width="655" />
+        <ColumnInfo Id="Selected" ImageForTrue="Action_MarkCompleted" ImmediatePostData="True" />
       </Columns>
     </ListView>
-    <ListView Id="AddressPicker_Adresses_ListView">
+    <ListView Id="AddressPicker_Adresses_ListView" AllowEdit="False">
       <Columns>
         <ColumnInfo Id="Country" Index="-1" />
         <ColumnInfo Id="HomeNumber" Index="-1" />
@@ -93,7 +98,8 @@
         <ColumnInfo Id="Region" Index="-1" />
         <ColumnInfo Id="Street" Index="-1" />
         <ColumnInfo Id="ZIP" Index="-1" />
-        <ColumnInfo Id="DisplayName" Width="660" />
+        <ColumnInfo Id="DisplayName" Width="675" />
+        <ColumnInfo Id="Selected" ImageForTrue="State_Validation_Valid" />
       </Columns>
     </ListView>
     <DetailView Id="AddressPicker_DetailView">

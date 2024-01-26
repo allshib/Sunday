@@ -16,6 +16,7 @@
         <Member Name="ApiName" AllowEdit="False" />
         <Member Name="Lat" AllowEdit="False" />
         <Member Name="Lon" AllowEdit="False" />
+        <Member Name="Name" Caption="Full Address" />
       </OwnMembers>
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.BaseTree" ImageName="TipOverTree_Right" />
@@ -143,17 +144,17 @@
     <ListView Id="AddressBase_ListView" FreezeColumnIndices="True">
       <Columns>
         <ColumnInfo Id="ApiName" Index="-1" />
+        <ColumnInfo Id="Country" Index="-1" />
+        <ColumnInfo Id="FastAddressString" Index="-1" />
         <ColumnInfo Id="FormattedAddress" Index="-1" />
+        <ColumnInfo Id="Lat" Index="-1" />
+        <ColumnInfo Id="Locality" Index="-1" />
+        <ColumnInfo Id="Lon" Index="-1" />
         <ColumnInfo Id="Oid" Index="-1" />
+        <ColumnInfo Id="Region" Index="-1" />
+        <ColumnInfo Id="Street" Index="-1" />
+        <ColumnInfo Id="ZIP" Index="-1" />
         <ColumnInfo Id="Name" Index="0" />
-        <ColumnInfo Id="Country" Index="1" />
-        <ColumnInfo Id="Region" Index="2" />
-        <ColumnInfo Id="Street" Index="3" />
-        <ColumnInfo Id="Locality" Index="4" />
-        <ColumnInfo Id="ZIP" Index="5" />
-        <ColumnInfo Id="FastAddressString" Index="6" />
-        <ColumnInfo Id="Lat" Index="7" />
-        <ColumnInfo Id="Lon" Index="8" />
       </Columns>
     </ListView>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />

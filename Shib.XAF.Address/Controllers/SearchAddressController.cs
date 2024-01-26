@@ -53,9 +53,10 @@ namespace Shib.XAF.Address.Controllers
 
             var nominatimAddresses = addressSearcher.GetAddressList(picker.SearchString);
 
+            picker.Adresses.Clear();
 
 
-            foreach(var address in nominatimAddresses)
+            foreach (var address in nominatimAddresses)
             {
                 picker.Adresses.Add((AddressEntity)address);
             }

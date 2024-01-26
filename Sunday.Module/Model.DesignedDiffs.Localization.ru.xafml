@@ -27,7 +27,7 @@
         <Member Name="Lat" Caption="Широта" DisplayFormat="{0:#,###,##0.00}" />
         <Member Name="Locality" Caption="Населенный пункт" />
         <Member Name="Lon" Caption="Долгота" DisplayFormat="{0:#,###,##0.00}" />
-        <Member Name="Name" Caption="Наименование" />
+        <Member Name="Name" Caption="Полный адрес" />
         <Member Name="Region" Caption="Область" />
         <Member Name="Street" Caption="Улица" />
       </OwnMembers>

@@ -44,7 +44,7 @@ namespace Shib.XAF.Address.BusinessObjects.NonPersistent
         public int ZIP { get; set; }
         public double Lat { get; set; }
         public double Lon { get; set; }
-        
+        public bool Selected { get; set; }
 
 
 
@@ -55,11 +55,12 @@ namespace Shib.XAF.Address.BusinessObjects.NonPersistent
 
 
 
-        //[Action(Caption = "My UI Action", ConfirmationMessage = "Are you sure?", ImageName = "Attention", AutoCommit = true)]
-        //public void ActionMethod() {
-        //    // Trigger custom business logic for the current record in the UI (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112619.aspx).
-        //    this.SampleProperty = "Paid";
-        //}
+
+        [Action(Caption = "Выбрать", ImageName = "Action_MarkCompleted", SelectionDependencyType = MethodActionSelectionDependencyType.RequireSingleObject)]
+        public void SelectAddress()
+        {
+            Selected = true;
+        }
 
         #region IXafEntityObject members (see https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppIXafEntityObjecttopic.aspx)
         void IXafEntityObject.OnCreated()

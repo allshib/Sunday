@@ -69,9 +69,20 @@ namespace Sunday.Module.Controllers {
             detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
 
             Application.ShowViewStrategy.ShowViewInPopupWindow(detailView,
-            () => Application.ShowViewStrategy.ShowMessage("Done."),
+            () => {
+                var addressEntity = addressPicker.Adresses.SingleOrDefault(x => x.Selected);
+
+                if (addressEntity == null)
+                    throw new UserFriendlyException("Адрес не найден");
+
+                address.FillAddressFromEntity(addressEntity);
+                Application.ShowViewStrategy.ShowMessage("Done.");
+            },
             () => Application.ShowViewStrategy.ShowMessage("Cancelled."),
             null, null);
+
+            
+
         }
 
         protected override void OnActivated() {
@@ -88,6 +99,8 @@ namespace Sunday.Module.Controllers {
 
             var searchedAddress = addressSearcher.GetAddress(address.FastAddressString);
 
+            if (searchedAddress == null)
+                throw new UserFriendlyException("Адрес не найден");
 
             address.FillAddressFromEntity(searchedAddress);
         }

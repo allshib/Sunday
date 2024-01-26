@@ -21,9 +21,22 @@ using NomAdress = Nominatim.Entities.Address;
 namespace Sunday.Module.Entities {
     public static class SundayAddressEx {
 
+        public static void Clear(this AddressBase address)
+        {
+            address.Street = null;
+            address.Region = null;
+            address.Lat = 0;
+            address.Lon = 0;
+            address.Country = null;
+            address.ZIP = 0;
+            address.Locality = null;
+            address.FormattedAddress = null;
+        }
+
         public static void FillAddressFromEntity(this AddressBase address, IAddress adressEntity) {
             if (address == null || adressEntity == null) return;
 
+            address.Clear();
 
             address.Lat = adressEntity.Lat;
             address.Lon = adressEntity.Lon;

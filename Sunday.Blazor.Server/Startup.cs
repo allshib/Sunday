@@ -43,8 +43,8 @@ public class Startup {
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services) {
         //DevExpress.Xpo.Metadata.ReflectionClassInfo.SuppressSuspiciousMemberInheritanceCheck = true;
-
-        services.AddAddressService(Configuration);
+        if (!ModuleHelper.IsDesignMode)
+            services.AddAddressService(Configuration);
 
         services.AddSingleton(typeof(Microsoft.AspNetCore.SignalR.HubConnectionHandler<>), typeof(ProxyHubConnectionHandler<>));
 
