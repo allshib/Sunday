@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /Sunday-Documentation/docs-html
 /SundayTests/YandexAPITest.cs
+/Sunday.Blazor.Server/appsettings.json
