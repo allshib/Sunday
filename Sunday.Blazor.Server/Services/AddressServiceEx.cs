@@ -24,20 +24,12 @@ namespace Sunday.Blazor.Server.Services
                         new GeocoderClient(geocoderKey), () => new AddressEntity()));
                     break;
                 case "NOMINATIM":
+                default:
                     services.AddScoped<IAddressSearcher>(x =>
                 new NominatimAddressSearcher(() => new AddressEntity()));
                     break;
 
             }
-
-
-            services.AddScoped<IAddressSearcher>(x =>
-                new NominatimAddressSearcher(()=> new AddressEntity()));
-
-            
-
-
-
             return services;
         }
 
