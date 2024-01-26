@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shib.Common.YandexAPI\Shib.Common.YandexAPI.csproj" />
+    <ProjectReference Include="..\Shib.XAF.Address\Shib.XAF.Address.csproj" />
   </ItemGroup>
 
 </Project>

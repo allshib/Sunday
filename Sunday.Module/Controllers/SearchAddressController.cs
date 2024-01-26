@@ -77,7 +77,8 @@ namespace Sunday.Module.Controllers {
         protected override void OnActivated() {
             base.OnActivated();
             // Perform various tasks depending on the target View.
-            
+            AddressBase address = View.CurrentObject as AddressBase;
+            address.ApiName = addressSearcher.Name;
         }
 
         private void SearchAction_Execute(object sender, SimpleActionExecuteEventArgs e) {

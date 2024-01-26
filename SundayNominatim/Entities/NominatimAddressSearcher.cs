@@ -10,13 +10,15 @@ namespace Nominatim.Entities
 {
     public  class NominatimAddressSearcher : IAddressSearcher
     {
+        public string Name => "NOMINATIM";
         private readonly NominatimClient httpManager = new NominatimClient();
         private readonly Func<IAddress> defaultAddressCreator;
-
         public NominatimAddressSearcher(Func<IAddress> defaultAddressCreator) {
 
             this.defaultAddressCreator = defaultAddressCreator;
         }
+
+        
 
         public IAddress? GetAddress(string quary)
         {

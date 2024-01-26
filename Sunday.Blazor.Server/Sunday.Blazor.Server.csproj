@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlazorComponents\BlazorComponents.csproj" />
+    <ProjectReference Include="..\Shib.Common.YandexAPI\Shib.Common.YandexAPI.csproj" />
     <ProjectReference Include="..\Sunday.Module\Sunday.Module.csproj" />
   </ItemGroup>
   <ItemGroup>

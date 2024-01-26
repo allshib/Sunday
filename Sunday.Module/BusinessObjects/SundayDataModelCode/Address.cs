@@ -10,6 +10,9 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel {
     public partial class AddressBase {
         public AddressBase(Session session) : base(session) { }
         public override void AfterConstruction() { base.AfterConstruction(); }
+
+        [NonPersistent]
+        public string ApiName { get; set; } 
     }
 
 }

@@ -28,6 +28,7 @@ using Sunday.Module.BusinessObjects.Security;
 using Shib.Common.Interfaces.Address;
 using Nominatim.Entities;
 using Shib.XAF.Address.BusinessObjects.NonPersistent;
+using Shib.Common.YandexAPI.Entities;
 
 namespace Sunday.Blazor.Server;
 
@@ -42,9 +43,12 @@ public class Startup {
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services) {
         //DevExpress.Xpo.Metadata.ReflectionClassInfo.SuppressSuspiciousMemberInheritanceCheck = true;
-        services.AddScoped<IAddressSearcher>(x =>
-            new NominatimAddressSearcher(()=> new AddressEntity()));
+        //services.AddScoped<IAddressSearcher>(x =>
+        //    new NominatimAddressSearcher(()=> new AddressEntity()));
 
+        services.AddScoped<IAddressSearcher>(x =>
+            new YandexAddressManager(
+                new GeocoderClient("2e6c8a50-744d-48d7-832e-3fd44ce16701"), () => new AddressEntity()));
 
         services.AddSingleton(typeof(Microsoft.AspNetCore.SignalR.HubConnectionHandler<>), typeof(ProxyHubConnectionHandler<>));
 

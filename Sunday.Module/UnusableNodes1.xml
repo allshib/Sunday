@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ReferenceBooks">
+        <Items Id="Items">
+          <Item Id="States" ViewId="State[TestStatus]_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Views Id="Views">
+    <DetailView Id="AddressBase_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="AddressBase">
+              <LayoutGroup Id="AddressBase_col2">
+                <LayoutItem Id="ZIP" Index="1" RelativeSize="5.687203791469194" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

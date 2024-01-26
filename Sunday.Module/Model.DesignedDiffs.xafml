@@ -13,6 +13,7 @@
     <Class Name="Sunday.Module.BusinessObjects.Security.Employee" ImageName="Employees" />
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" ImageName="BO_Address">
       <OwnMembers>
+        <Member Name="ApiName" AllowEdit="False" />
         <Member Name="Lat" AllowEdit="False" />
         <Member Name="Lon" AllowEdit="False" />
       </OwnMembers>
@@ -90,36 +91,41 @@
   <Views>
     <DetailView Id="AddressBase_DetailView">
       <Items>
-        <ActionContainerViewItem Id="SearchAddressAction" PaintStyle="CaptionAndImage" ActionContainer="SearchAddressCategory" IsNewNode="True" />
+        <ActionContainerViewItem Id="SearchAddressAction" PaintStyle="CaptionAndImage" ActionContainer="SearchAddressCategory" Caption="SearchAddressAction(11)" IsNewNode="True" />
         <PropertyEditor Id="Street.HouseNumber" PropertyName="Street.HouseNumber" IsNewNode="True" />
       </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
           <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="AddressBase" RelativeSize="100" Direction="Vertical">
-              <LayoutGroup Id="AddressBase_col2" RelativeSize="100" Index="0">
+            <LayoutGroup Id="Search" ShowCaption="True" ImageName="Action_Search_Object_FindObjectByID" CaptionLocation="Top" Index="0" RelativeSize="24.28785607196402" IsNewNode="True">
+              <LayoutGroup Id="Auto20b08ffa-302f-453b-ba22-08076170d399" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="27.131782945736433" IsNewNode="True">
+                <LayoutItem Id="FastAddressString" ViewItem="FastAddressString" Index="0" RelativeSize="92.78017241379311" IsNewNode="True" />
+                <LayoutItem Id="ApiName" ShowCaption="False" ViewItem="ApiName" CaptionLocation="Top" Index="1" RelativeSize="7.219827586206897" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="LatLonContainer" ShowCaption="False" Index="1" RelativeSize="46.51162790697674" IsNewNode="True">
+                <LayoutGroup Id="LatAndLon" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="Lat" ViewItem="Lat" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="Lon" ViewItem="Lon" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="SearchAddressAction" ViewItem="SearchAddressAction" Index="2" RelativeSize="26.356589147286822" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="GeneralInfo" ShowCaption="True" ImageName="Actions_Info" CaptionLocation="Top" Index="1" RelativeSize="75.71214392803599" IsNewNode="True">
+              <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="6.779661016949152" IsNewNode="True" />
+              <LayoutItem Id="Country" ViewItem="Country" Index="1" RelativeSize="5.084745762711864" IsNewNode="True" />
+              <LayoutItem Id="Region" ViewItem="Region" Index="2" RelativeSize="5.084745762711864" IsNewNode="True" />
+              <LayoutItem Id="Street" ViewItem="Street" Index="3" RelativeSize="5.084745762711864" IsNewNode="True" />
+              <LayoutItem Id="Street.HouseNumber" ViewItem="Street.HouseNumber" Index="4" RelativeSize="5.084745762711864" IsNewNode="True" />
+              <LayoutItem Id="Locality" ViewItem="Locality" Index="5" RelativeSize="5.084745762711864" IsNewNode="True" />
+              <LayoutItem Id="ZIP" ViewItem="ZIP" Index="6" RelativeSize="5.084745762711864" IsNewNode="True" />
+              <LayoutItem Id="FormattedAddress" ViewItem="FormattedAddress" Index="7" RelativeSize="62.71186440677966" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="AddressBase" RelativeSize="40.779610194902546" Direction="Vertical" Index="2" Removed="True">
+              <LayoutGroup Id="AddressBase_col2" RelativeSize="100" Index="0" Removed="True">
                 <LayoutItem Id="FastAddressString" RelativeSize="3.7166085946573753" Index="0" Removed="True" />
-                <LayoutGroup Id="Search" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="28.49462365591398" ImageName="Action_Search_Object_FindObjectByID" IsNewNode="True">
-                  <LayoutItem Id="FastAddressString" ViewItem="FastAddressString" Index="0" RelativeSize="25.396825396825395" IsNewNode="True" />
-                  <LayoutGroup Id="LatLonContainer" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="47.61904761904762" IsNewNode="True">
-                    <LayoutGroup Id="LatAndLon" ShowCaption="False" Index="0" RelativeSize="49.904580152671755" IsNewNode="True">
-                      <LayoutItem Id="Lat" ViewItem="Lat" Index="0" RelativeSize="50" IsNewNode="True" />
-                      <LayoutItem Id="Lon" ViewItem="Lon" Index="1" RelativeSize="50" IsNewNode="True" />
-                    </LayoutGroup>
-                  </LayoutGroup>
-                  <LayoutItem Id="SearchAddressAction" ViewItem="SearchAddressAction" Index="2" RelativeSize="26.984126984126984" IsNewNode="True" />
-                </LayoutGroup>
-                <LayoutGroup Id="GeneralInfo" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="71.50537634408602" ImageName="Actions_Info" IsNewNode="True">
-                  <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="8.743169398907105" IsNewNode="True" />
-                  <LayoutItem Id="Country" ViewItem="Country" Index="1" RelativeSize="6.557377049180328" IsNewNode="True" />
-                  <LayoutItem Id="Region" ViewItem="Region" Index="2" RelativeSize="6.557377049180328" IsNewNode="True" />
-                  <LayoutItem Id="Street" ViewItem="Street" Index="3" RelativeSize="6.557377049180328" IsNewNode="True" />
-                  <LayoutItem Id="Street.HouseNumber" ViewItem="Street.HouseNumber" Index="4" RelativeSize="6.557377049180328" IsNewNode="True" />
-                  <LayoutItem Id="Locality" ViewItem="Locality" Index="5" RelativeSize="6.557377049180328" IsNewNode="True" />
-                  <LayoutItem Id="ZIP" ViewItem="ZIP" Index="6" RelativeSize="58.46994535519126" IsNewNode="True" />
-                </LayoutGroup>
                 <LayoutItem Id="Lat" Index="1" RelativeSize="2.7874564459930316" Removed="True" />
                 <LayoutItem Id="Lon" Index="2" RelativeSize="2.7874564459930316" Removed="True" />
+                <LayoutItem Id="FormattedAddress" Removed="True" />
                 <LayoutItem Id="Name" RelativeSize="3.870967741935484" Removed="True" />
               </LayoutGroup>
               <LayoutGroup Id="AddressBase_col1" RelativeSize="72.94685990338164" Removed="True">
@@ -134,6 +140,22 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <ListView Id="AddressBase_ListView" FreezeColumnIndices="True">
+      <Columns>
+        <ColumnInfo Id="ApiName" Index="-1" />
+        <ColumnInfo Id="FormattedAddress" Index="-1" />
+        <ColumnInfo Id="Oid" Index="-1" />
+        <ColumnInfo Id="Name" Index="0" />
+        <ColumnInfo Id="Country" Index="1" />
+        <ColumnInfo Id="Region" Index="2" />
+        <ColumnInfo Id="Street" Index="3" />
+        <ColumnInfo Id="Locality" Index="4" />
+        <ColumnInfo Id="ZIP" Index="5" />
+        <ColumnInfo Id="FastAddressString" Index="6" />
+        <ColumnInfo Id="Lat" Index="7" />
+        <ColumnInfo Id="Lon" Index="8" />
+      </Columns>
+    </ListView>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
     <DetailView Id="BaseTree_DetailView">
       <Layout>

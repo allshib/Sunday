@@ -31,7 +31,6 @@ namespace Shib.Common.YandexAPI.Entities
             }
             catch (Exception ex) { }
 
-            var t = result?.Content.ReadAsStringAsync();
 
             return await SerrializeContent(result?.Content);
         }

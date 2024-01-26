@@ -20,8 +20,10 @@
     </Class>
     <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" Caption="Адрес">
       <OwnMembers>
+        <Member Name="ApiName" Caption="API" />
         <Member Name="Country" Caption="Страна" />
         <Member Name="FastAddressString" Caption="Строка быстрого поиска" />
+        <Member Name="FormattedAddress" Caption="Форматированный адрес" />
         <Member Name="Lat" Caption="Широта" DisplayFormat="{0:#,###,##0.00}" />
         <Member Name="Locality" Caption="Населенный пункт" />
         <Member Name="Lon" Caption="Долгота" DisplayFormat="{0:#,###,##0.00}" />
@@ -201,15 +203,12 @@
       <Layout>
         <LayoutGroup Id="Main">
           <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Search" Caption="Поиск">
+              <LayoutGroup Id="Auto20b08ffa-302f-453b-ba22-08076170d399" Caption="Auto20b08ffa-302f-453b-ba22-08076170d399(6)" />
+            </LayoutGroup>
+            <LayoutGroup Id="GeneralInfo" Caption="Общая информация" />
             <LayoutGroup Id="AddressBase" Caption="Адрес">
-              <LayoutGroup Id="AddressBase_col2" Caption="AddressItems">
-                <LayoutGroup Id="Search" Caption="Поиск">
-                  <LayoutGroup Id="LatLonContainer" Caption="Auto01b8b0a1-f998-4c2f-9b41-3e276bcda88b(7)">
-                    <LayoutGroup Id="LatAndLon" Caption="Auto6619bb4b-5b80-405f-864a-9aca478b27f8(8)" />
-                  </LayoutGroup>
-                </LayoutGroup>
-                <LayoutGroup Id="GeneralInfo" Caption="Общая информация" />
-              </LayoutGroup>
+              <LayoutGroup Id="AddressBase_col2" Caption="AddressItems" />
               <LayoutGroup Id="AddressBase_col1" Caption="AddressBase_col1" />
             </LayoutGroup>
           </LayoutGroup>

@@ -55,6 +55,8 @@ namespace Sunday.Module.Entities {
             if (adressEntity.ZIP > 0)
                 address.ZIP = adressEntity.ZIP;
 
+            address.FormattedAddress = adressEntity.DisplayName;
+
         }
 
 

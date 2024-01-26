@@ -8,6 +8,7 @@ namespace Shib.Common.Interfaces.Address
 {
     public interface IAddressSearcher
     {
+        string Name { get; }
         IAddress? GetAddress(string query);
 
         IEnumerable<IAddress>? GetAddressList(string query);
