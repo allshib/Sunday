@@ -82,10 +82,10 @@
         <ColumnInfo Id="Locality" Index="-1" />
         <ColumnInfo Id="Lon" Index="-1" />
         <ColumnInfo Id="Region" Index="-1" />
+        <ColumnInfo Id="Selected" ImageForTrue="Action_MarkCompleted" ImmediatePostData="True" Index="-1" />
         <ColumnInfo Id="Street" Index="-1" SortIndex="0" SortOrder="Ascending" />
         <ColumnInfo Id="ZIP" Index="-1" />
         <ColumnInfo Id="DisplayName" SortIndex="-1" SortOrder="None" Width="655" />
-        <ColumnInfo Id="Selected" ImageForTrue="Action_MarkCompleted" ImmediatePostData="True" />
       </Columns>
     </ListView>
     <ListView Id="AddressPicker_Adresses_ListView" AllowEdit="False">

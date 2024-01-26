@@ -94,7 +94,9 @@ namespace Sunday.Module.Controllers {
 
         private void SearchAction_Execute(object sender, SimpleActionExecuteEventArgs e) {
             AddressBase address = View.CurrentObject as AddressBase;
-            if (String.IsNullOrEmpty(address.FastAddressString)) throw new UserFriendlyException("Адрес не задан");
+
+            if (String.IsNullOrEmpty(address.FastAddressString)) 
+                throw new UserFriendlyException("Адрес не задан");
 
 
             var searchedAddress = addressSearcher.GetAddress(address.FastAddressString);

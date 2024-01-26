@@ -14,7 +14,7 @@
     <SchemaModule Name="SystemModule" Version="23.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
-    <ListView Id="AddressPicker_Adresses_ListView" InlineEditMode="Inline" AllowEdit="True" />
+    <ListView Id="AddressPicker_Adresses_ListView" InlineEditMode="Inline" AllowEdit="False" />
     <ListView Id="BaseTree_ListView" DataAccessMode="Client" />
     <DetailView Id="Customer_DetailView">
       <Items>
