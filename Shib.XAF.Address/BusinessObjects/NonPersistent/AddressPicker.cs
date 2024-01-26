@@ -28,10 +28,11 @@ namespace Shib.XAF.Address.BusinessObjects.NonPersistent
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public AddressPicker(string searchString)
+        public AddressPicker(string searchString, string apiName)
         {
             this.searchString = searchString;
             Oid = Guid.NewGuid();
+            this.apiName = apiName;
         }
 
         [DevExpress.ExpressApp.Data.Key]
@@ -54,6 +55,23 @@ namespace Shib.XAF.Address.BusinessObjects.NonPersistent
                 }
             }
         }
+
+        private string apiName;
+        [XafDisplayName("API")]
+        public string ApiName
+        {
+            get { return apiName; }
+            set
+            {
+                if (apiName != value)
+                {
+                    apiName = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+
 
         private BindingList<AddressEntity> adresses = new BindingList<AddressEntity>();
 

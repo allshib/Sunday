@@ -63,7 +63,7 @@ namespace Sunday.Module.Controllers {
 
             var os = Application.CreateObjectSpace(typeof(AddressPicker));
 
-            var addressPicker = new AddressPicker(address.FastAddressString);
+            var addressPicker = new AddressPicker(address.FastAddressString, addressSearcher.Name);
             DetailView detailView = Application.CreateDetailView(os, addressPicker);
             detailView.CurrentObject = addressPicker;
             detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
