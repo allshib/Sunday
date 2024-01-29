@@ -9,36 +9,45 @@ using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
-using DevExpress.Xpo.DB.Helpers;
 using Microsoft.Extensions.DependencyInjection;
-
 using Shib.Common.Interfaces.Address;
+using Shib.XAF.Address.BusinessObjects.AddressModuleDataModel;
 using Shib.XAF.Address.BusinessObjects.NonPersistent;
+using Shib.XAF.Address.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Shib.XAF.Address.Controllers
-{
+namespace Shib.XAF.Address.Controllers {
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppViewControllertopic.aspx.
-    public partial class SearchAddressController : ViewController
-    {
+    public partial class SearchAddressController : ViewController {
+        // Use CodeRush to create Controllers and Actions with a few keystrokes.
+        // https://docs.devexpress.com/CodeRushForRoslyn/403133/
+        SimpleAction searchAction;
+        SimpleAction detailedSearchAction;
         private readonly IAddressSearcher addressSearcher;
-        public SearchAddressController()
-        {
+        public SearchAddressController() {
             InitializeComponent();
             // Target required Views (via the TargetXXX properties) and create their Actions.
-            TargetObjectType = typeof(AddressPicker);
+            TargetObjectType = typeof(AddressBase);
             TargetViewType = ViewType.DetailView;
 
-
-            SimpleAction searchAddress = new SimpleAction(this, "SearchAddress", PredefinedCategory.View)
-            {
-                Caption = "Найти адрес",
+            searchAction = new SimpleAction(this, "SearchAddressAction", "SearchAddressCategory") {
+                //Specify the Action's button caption.
+                Caption = "Search Action",
+                TargetObjectType = TargetObjectType,
             };
+            searchAction.Execute += SearchAction_Execute;
 
-            searchAddress.Execute += SearchAddress_Execute;
+            detailedSearchAction = new SimpleAction(this, "DetailedSearchAction", "SearchAddressCategory")
+            {
+                //Specify the Action's button caption.
+                Caption = "Детальный поиск",
+                TargetObjectType = TargetObjectType,
+            };
+            detailedSearchAction.Execute += SearchAction_Execute1;
+
         }
 
         [ActivatorUtilitiesConstructor]
@@ -47,34 +56,62 @@ namespace Shib.XAF.Address.Controllers
             this.addressSearcher = addressSearcher;
         }
 
-        private void SearchAddress_Execute(object sender, SimpleActionExecuteEventArgs e)
+
+        private void SearchAction_Execute1(object sender, SimpleActionExecuteEventArgs e)
         {
-            var picker = View.CurrentObject as AddressPicker;
+            AddressBase address = View.CurrentObject as AddressBase;
 
-            var nominatimAddresses = addressSearcher.GetAddressList(picker.SearchString);
+            var os = Application.CreateObjectSpace(typeof(AddressPicker));
 
-            picker.Adresses.Clear();
+            var addressPicker = new AddressPicker(address.SearchString, addressSearcher.Name);
+            DetailView detailView = Application.CreateDetailView(os, addressPicker);
+            detailView.CurrentObject = addressPicker;
+            detailView.ViewEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
 
+            Application.ShowViewStrategy.ShowViewInPopupWindow(detailView,
+            () => {
+                var addressEntity = addressPicker.Adresses.SingleOrDefault(x => x.Selected);
 
-            foreach (var address in nominatimAddresses)
-            {
-                picker.Adresses.Add((AddressEntity)address);
-            }
+                if (addressEntity == null)
+                    throw new UserFriendlyException("Адрес не найден");
+
+                address.FillAddressFromEntity(addressEntity);
+                Application.ShowViewStrategy.ShowMessage("Done.");
+            },
+            () => Application.ShowViewStrategy.ShowMessage("Cancelled."),
+            null, null);
+
+            
 
         }
 
-        protected override void OnActivated()
-        {
+        protected override void OnActivated() {
             base.OnActivated();
             // Perform various tasks depending on the target View.
+            AddressBase address = View.CurrentObject as AddressBase;
+            address.ApiName = addressSearcher.Name;
         }
-        protected override void OnViewControlsCreated()
-        {
+
+        private void SearchAction_Execute(object sender, SimpleActionExecuteEventArgs e) {
+            AddressBase address = View.CurrentObject as AddressBase;
+
+            if (String.IsNullOrEmpty(address.SearchString)) 
+                throw new UserFriendlyException("Адрес не задан");
+
+
+            var searchedAddress = addressSearcher.GetAddress(address.SearchString);
+
+            if (searchedAddress == null)
+                throw new UserFriendlyException("Адрес не найден");
+
+            address.FillAddressFromEntity(searchedAddress);
+        }
+
+        protected override void OnViewControlsCreated() {
             base.OnViewControlsCreated();
             // Access and customize the target View control.
         }
-        protected override void OnDeactivated()
-        {
+        protected override void OnDeactivated() {
             // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
         }

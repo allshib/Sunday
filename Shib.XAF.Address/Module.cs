@@ -12,6 +12,8 @@ using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
+using Shib.XAF.Address.BusinessObjects.AddressModuleDataModel;
+using Country = Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.Country;
 
 namespace Shib.XAF.Address;
 
@@ -42,5 +44,29 @@ public sealed class AddressModule : ModuleBase {
     public override void CustomizeTypesInfo(ITypesInfo typesInfo) {
         base.CustomizeTypesInfo(typesInfo);
         CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
+
+
+        ModelNodesGeneratorSettings.SetIdPrefix(
+                typeof(Country),
+                "ShibCountry"
+            );
+
+        ModelNodesGeneratorSettings.SetIdPrefix(
+                typeof(Region),
+                "ShibRegion"
+            );
+
+        ModelNodesGeneratorSettings.SetIdPrefix(
+                typeof(AddressBase),
+                "ShibAddressBase"
+            );
+        ModelNodesGeneratorSettings.SetIdPrefix(
+                typeof(Locality),
+                "ShibLocality"
+            );
+        ModelNodesGeneratorSettings.SetIdPrefix(
+                typeof(PrimaryGeographicalUnit),
+                "ShibPGUnit"
+            );
     }
 }

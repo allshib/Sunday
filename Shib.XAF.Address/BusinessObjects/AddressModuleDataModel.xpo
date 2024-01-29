@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="5520288c-3701-42f0-9567-c36395332551" namespace="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAN1Z224bNxB9D5B/EPwcSrxfAllBYidpUDcw4qTo65Ac2otKu8buype/76zvt6RuI0hooRdxOMTu4ZyZOSNN35wt5qMTbLuqqbe3xJhvvZm9fDF9Bx0e9E0Lh/ipLs2IvOru9VmXt7eO+v749WRyeno6PlXjpj2cSM7F5I/f9g7SES5g68a5+ntnVtVdD3XCLXrqaDT9CnGO3fDIi/W15Y7h2vQZFjjbaxLMq/58Orm13bi9rwfbrG+XOJ1cLW42d6tuMHw7ztDjrMC8I6f7xhvfj8sqf8ozDNFm7QtDC57pkgSLhhsWgAPPQgRTynRy5XxzeKeZLxd1dw/Bd820MWC43JwNX6eTO4Z7jj+C908h3oUpckhWZMUcBMW0CpEBRstQF5tFcsGDeASTjk9+Aun+x2911a8fK6KUNnLNBIJh2ubCvHTAFI/ZBM6tSHLVWL+eH28gqkEWgGgiS6IA09xbFtBmhryoIHRQ4Qnyfg/pU9arFHx26h70LWK/lsQtOoiIXDAtLTLthGZQtGROOwBVIGodV5q4t2Vp3WF26NAKHlnJasALmoUoBbM6x+ish+Lsqgm9mTIVgoKUuGfGF8l0Bsu8j7Q0WhoThOHerRrpL82yw8/LRcR2A4DROmsxMXDKUQYT4MhlYVIJ5aMSwiS11gzeb6sFtOcfsTls4fioIs5fVvE1pDTIaE3SiZWSNdMCJYsxauY1yBwgBZ7gf9CLXfZSqJyZMEN/yjKxKEh3OBU8NxZdEXytMd9plnXfrkdvGUgaqCdTSgtqWU4B8wUNkyJx7hG19/qHMR5N/iXKL3hIcng9otKgEJkKduAXZSwlForhjNsAyqIqPj1WWz9D5JsIrr9gC/BKIFPSknzO3jGwiuBSC3bacGXd87XWKrj8NucWu24YddYSaqGCdBwKK16TDAmZ5gcgxalS9C5YqTA/7lj/yVDzEGwo1rKUaVzS0ToWpSrMFurMoLiP6Ffdm69zdt1Ys4jGSCcZSJOYNjQa+kgSO9vAidhSSUyrxro5fYnZaJMoiREi6UsI1HcLyRGIygirqWDj88eIZ6K9nhTWjdUaGYMJNCOBlwOLCwuZlmZIVB+SD2hWPgg3XQ/znSZvQGykKFO2LtD0SxJDJ59ZMDRFCAfWE82RPqvG+2E5n1/V4Q0EODqvqcNSbBMFGGh6iEpZ6r3WewM5eLVywHuwASa7hM456ZhPSJ2HNAcNEU5R65UQgdgsYeVT4d4mijFADPTRQ4sdirEKjLJUMu6U1rzkJN3KG8+Hpl1A32PeGI99TEVES8MQCpoStLAsqMRZdk5IzpOT5vmon6Osrta3LtPht2LM+22T7irv6e+XPyzPdvHk/dnxcDvjXehhfCLVWL4aXW1vD6uxGvNXo53lvF+2uF3jsm9h/mq0v4zzKv2K51+bP7Hejp4qkTM6O85RB5rxrh9x8bydOXQddkMAvixvbndKkdlvsVRntxMBmQ6W5Z7pCy6aE3zoeGl96LtDonH2rU5HUB9ipjsb1pdX89Q7TOlmjrHtqw2/23deY/oRa2yJXjvNYoF1311x9JH5nvMudtUhff1QERUenLi/d3FsF+fY49uua1IFPYXs+swTGxcHPlNvGGj2Do/gpGpaYlEB4gcl2MOdly+mkwd/Wcz+AsrBg2TbGAAA" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="23.2.3.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="23.2.3.0" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+  <classes>
+    <dataBaseObjectModelHasClasses Id="7de5b1c3-ef33-471d-b89e-fa9e24ce38bd">
+      <xpObject Id="e9b6d48f-e6a8-4fc1-b505-9a0a0d1195ff" name="Locality" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Locality" designerFileName="Locality.Designer" className="Locality" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="Locality">
+        <fields>
+          <generalXpObjectHasFields Id="8613c47d-c927-4f86-949d-f305433d608f">
+            <field Id="1d9c61d3-7a93-439b-aeb6-e4f6d1c798a1" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="b92aff53-f9df-47c4-ae1a-c6a6344d0e6c">
+            <field Id="ee226b04-1ea5-46df-827a-30bd590061c2" name="PGUnit" virtualColumnType="PrimaryGeographicalUnit" logicalType="PrimaryGeographicalUnit" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4e81383b-b455-4ce5-8e02-4fa8d65b7e74">
+            <field Id="92faab5b-c1fa-4086-9e6d-e0f3914939ff" name="Type" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="ae923f3a-bb16-4e57-a169-9b410f1f4024" sourceCollectionName="Streets" name="StreetReferencesLocality" targetFieldName="Locality">
+            <xpObjectMoniker Id="f491be01-426e-4714-af42-747aa3fab44b" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="c6d46824-09fd-4ed0-9e82-e5465847dbb5">
+            <collectionField Id="a157061f-d0ce-4a2a-b968-0c76ee3ba94e" name="Streets" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="6d85bb05-59cc-4fa9-9e4b-4c0ab33097db">
+      <xpObject Id="f491be01-426e-4714-af42-747aa3fab44b" name="Street" baseClass="DevExpress.Persistent.BaseImpl.Address" userFileName="Street" designerFileName="Street.Designer" className="Street" virtualBaseClass="DevExpress.Persistent.BaseImpl.Address" virtualName="Street">
+        <fields>
+          <generalXpObjectHasFields Id="1111f458-3481-440b-8818-46e89322c90f">
+            <field Id="7e7e610b-fd31-42a4-9b21-64dbb768af76" name="Locality" virtualColumnType="Locality" logicalType="Locality" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="4b596d0f-497c-4739-abb4-5ec97c497808">
+            <field Id="993acc08-58f2-4da6-88b8-554255915087" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="98096dae-3722-4510-9f8c-013410d43930">
+            <field Id="9e6766ec-a737-40a6-b02f-23138b3115c3" name="HouseNumber" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="2c5a3011-70cc-43ea-905b-f19b58aa277a">
+      <xpObject Id="a2b65c4c-ffd4-41e2-bbb4-84a2d9ac90ca" name="PrimaryGeographicalUnit" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="PrimaryGeographicalUnit" designerFileName="PrimaryGeographicalUnit.Designer" className="PrimaryGeographicalUnit" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="PrimaryGeographicalUnit">
+        <fields>
+          <generalXpObjectHasFields Id="91568d68-2c88-4a13-9665-00221700d54f">
+            <field Id="7d8213dd-15a5-4d2c-b1c1-7398056e7f10" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <saTargets>
+          <simpleAssociation Id="05b458ec-c5b1-49dd-b93e-8168668e92c7" sourceCollectionName="Localities" name="LocalityReferencesPrimaryGeographicalUnit" targetFieldName="PGUnit">
+            <xpObjectMoniker Id="e9b6d48f-e6a8-4fc1-b505-9a0a0d1195ff" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="0337ffd6-33e8-465f-87b3-9ac4661e9859">
+            <collectionField Id="56534316-afb6-4a55-b99a-ed1f29dc2342" name="Localities" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="19bdaf52-738c-4dad-bedd-d7723f13a770">
+      <xpObject Id="5ac4a46d-551a-473a-8fe5-21c008ee4884" name="Country" baseClass="PrimaryGeographicalUnit" userFileName="Country" designerFileName="Country.Designer" className="Country" virtualBaseClass="PrimaryGeographicalUnit" mapInheritance="ParentTable" virtualName="Country">
+        <superClass>
+          <inheritance Id="a499e8e6-4e60-4a8e-8054-08250be9f336">
+            <xpObjectMoniker Id="a2b65c4c-ffd4-41e2-bbb4-84a2d9ac90ca" />
+          </inheritance>
+        </superClass>
+        <saTargets>
+          <simpleAssociation Id="2fb18a2e-4024-4525-a673-f9da96350f03" sourceCollectionName="Regions" name="RegionReferencesCountry" targetFieldName="Country">
+            <xpObjectMoniker Id="e5e11d0b-90f2-4dcc-9f50-069a36e3f8c1" />
+          </simpleAssociation>
+        </saTargets>
+        <collectionFields>
+          <xpObjectHasCollectionFields Id="f8c6f1a4-0e77-4229-a8af-7f2864d7c944">
+            <collectionField Id="3a9dbd8d-b1d2-4b36-a3fd-e70ac1ebb2bb" name="Regions" />
+          </xpObjectHasCollectionFields>
+        </collectionFields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="0bc4826a-c9f6-4a90-ae1b-a7eb3a372cbf">
+      <xpObject Id="e5e11d0b-90f2-4dcc-9f50-069a36e3f8c1" name="Region" baseClass="PrimaryGeographicalUnit" userFileName="Region" designerFileName="Region.Designer" className="Region" virtualBaseClass="PrimaryGeographicalUnit" mapInheritance="ParentTable" virtualName="Region">
+        <fields>
+          <generalXpObjectHasFields Id="8cac1cea-7ec6-43d7-b6a9-3729d55e75cd">
+            <field Id="991a831e-3268-4d87-a63c-9a3f74503672" name="Country" virtualColumnType="Country" logicalType="Country" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+        </fields>
+        <superClass>
+          <inheritance Id="80d9c435-f3d0-40d9-b4cf-54e049573589">
+            <xpObjectMoniker Id="a2b65c4c-ffd4-41e2-bbb4-84a2d9ac90ca" />
+          </inheritance>
+        </superClass>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+    <dataBaseObjectModelHasClasses Id="5fb25049-a795-4389-a5d1-4b9a42379fc3">
+      <xpObject Id="139270af-f84e-49d1-badf-3cb879623ed7" name="AddressBase" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="AddressBase" designerFileName="AddressBase.Designer" className="AddressBase" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="AddressBase">
+        <fields>
+          <generalXpObjectHasFields Id="de2ab4a8-17ac-465c-9fe7-d8a95d404a51">
+            <field Id="09969f66-cd8f-4b67-b23f-6f559a308be8" name="Country" virtualColumnType="Country" logicalType="Country" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="49b25296-bfd9-4a04-bd52-2e97571468fc">
+            <field Id="d1b55272-a25c-45a8-8bfa-d6903f7232ec" name="Region" virtualColumnType="Region" logicalType="Region" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="1cb0c269-409f-4ebc-a486-38482cf9d294">
+            <field Id="ed545c1e-eab1-4a92-bf37-ab35164c4aef" name="Locality" virtualColumnType="Locality" logicalType="Locality" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f0ff5cfe-56c5-4155-a0c7-d7b80609f2c0">
+            <field Id="652b959d-ea82-4b6f-9d9d-53ed789c89e5" name="Street" virtualColumnType="Street" logicalType="Street" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="2db5985c-b583-4e27-bdcd-c0e6461162b1">
+            <field Id="cb2cd679-30c1-4c8d-9531-17a68d1bebeb" name="PostalCode" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="5f1233c4-c465-4a1b-a066-58ce7c3055d6">
+            <field Id="7ce77727-8cee-4e5e-a773-9a2abaed72a6" name="Lat" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="848e7ca7-ba62-4622-9da9-8e7192df72b2">
+            <field Id="aab9b9b4-f84c-4539-89e2-073440fdc278" name="Lon" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="3f4d126d-ef82-4dd0-a10a-17e8085488fe">
+            <field Id="8bcf1b6c-fe15-4416-93c0-d771200c7258" name="FormattedAddress" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f6bd7c2d-ad18-4c46-a6d7-708cf8796505">
+            <persistentAlias Id="0ef58800-5c2d-4187-b1ce-34d75d31b111" name="FullAddress" virtualColumnType="String" expression="Iif([Country] &lt;&gt; null, [Country.Name], '') + ', ' + Iif([Region] &lt;&gt; null, [Region.Name], '') + ', ' + Iif([Locality] &lt;&gt; null, [Locality.Name], '') + ', ' + Iif([Street] &lt;&gt; null, [Street.Name] + ', ' + [Street.HouseNumber], '')" />
+          </generalXpObjectHasFields>
+        </fields>
+      </xpObject>
+    </dataBaseObjectModelHasClasses>
+  </classes>
+</dataBaseObjectModel>
