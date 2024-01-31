@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" Caption="Адрес">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="ApiName" Caption="API" />
+        <Member Name="Lat" Caption="Широта" DisplayFormat="{0:#,###,##0.00}" />
+        <Member Name="Lon" Caption="Долгота" DisplayFormat="{0:#,###,##0.00}" />
+        <Member Name="Name" Caption="Полный адрес" />
+        <Member Name="Country" Caption="Страна" />
+        <Member Name="FastAddressString" Caption="Строка быстрого поиска" />
+        <Member Name="FormattedAddress" Caption="Форматированный адрес" />
+        <Member Name="Locality" Caption="Населенный пункт" />
+        <Member Name="Region" Caption="Область" />
+        <Member Name="Street" Caption="Улица" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayStreet" Caption="Улица">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="HouseNumber" Caption="Номер дома" />
+        <Member Name="Locacity" Caption="Населенный пункт" />
+        <Member Name="Name" Caption="Название улицы" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.City" Caption="Город" />
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Locality" Caption="Населенный пункт">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Name" Caption="Наименование" />
+        <Member Name="PGUnit" Caption="Принадлежит к" />
+        <Member Name="Streets" Caption="Улицы" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.PrimaryGeographicalUnit" Caption="Первостепенная географическая единица (поменять)">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Localities" Caption="Населенные пункты" />
+        <Member Name="Name" Caption="Наименование" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayCountry" Caption="Страна">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Regions" Caption="Области" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayRegion" Caption="Область">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="Country" Caption="Страна" />
+        <Member Name="RegionID" Caption="Id области" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.Village" Caption="Деревня" />
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="AddressBase_DetailView">
+      <Items Id="Items">
+        <ActionContainerViewItem Id="SearchAddressAction" Caption="Найти адрес" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Search" Caption="Поиск">
+              <LayoutGroup Id="Auto20b08ffa-302f-453b-ba22-08076170d399" Caption="Auto20b08ffa-302f-453b-ba22-08076170d399(6)" />
+            </LayoutGroup>
+            <LayoutGroup Id="GeneralInfo" Caption="Общая информация" />
+            <LayoutGroup Id="AddressBase" Caption="Адрес">
+              <LayoutGroup Id="AddressBase_col2" Caption="AddressItems" />
+              <LayoutGroup Id="AddressBase_col1" Caption="AddressBase_col1" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

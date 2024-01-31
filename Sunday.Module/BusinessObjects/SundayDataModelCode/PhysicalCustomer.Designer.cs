@@ -16,6 +16,7 @@ using System.Reflection;
 namespace Sunday.Module.BusinessObjects.SundayDataModel
 {
 
+    [MapInheritance(MapInheritanceType.ParentTable)]
     public partial class PhysicalCustomer : Customer
     {
         string fName;

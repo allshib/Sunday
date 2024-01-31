@@ -18,12 +18,6 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
 
     public partial class Customer : DevExpress.Persistent.BaseImpl.BaseObject
     {
-        AddressBase fAddress;
-        public AddressBase Address
-        {
-            get { return fAddress; }
-            set { SetPropertyValue<AddressBase>(nameof(Address), ref fAddress, value); }
-        }
         int fINN;
         public int INN
         {
@@ -41,6 +35,12 @@ namespace Sunday.Module.BusinessObjects.SundayDataModel
         {
             get { return fStatus; }
             set { SetPropertyValue<Sunday.Common.SundayCommonDataModel.State>(nameof(Status), ref fStatus, value); }
+        }
+        Sunday.Module.BusinessObjects.SundayDataModelCode.SundayAddress fAddress;
+        public Sunday.Module.BusinessObjects.SundayDataModelCode.SundayAddress Address
+        {
+            get { return fAddress; }
+            set { SetPropertyValue<Sunday.Module.BusinessObjects.SundayDataModelCode.SundayAddress>(nameof(Address), ref fAddress, value); }
         }
         [Association(@"CustomerOrderReferencesCustomer")]
         public XPCollection<CustomerOrder> CustomerOrders { get { return GetCollection<CustomerOrder>(nameof(CustomerOrders)); } }

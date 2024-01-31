@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="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" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" name="SundayDataModel" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
+<dataBaseObjectModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9116a532-e7c7-4258-9731-cbe99e7288b1" namespace="Sunday.Module.BusinessObjects.SundayDataModel" dataBaseShemaInfo="H4sIAAAAAAAEAO1cWW/cRhJ+XyD/QfBzSur7CGQFiex4jThewXKyi32r7qqWBplDO4dt/fst6rJlOVllxZBxMjA8EJskZop1fV9VNfe/fjeb7rzh5WqymD9+pHfVo68Pvvjb/re44uP1Yokn/HzeFjty1Xz11bsVPX50ul6ffbW39/bt2923dnexPNkzSum9f/3w4rie8gwf3Vw8+d8Xw2S+WuO88iP51p2d/ddYprzqvvLi+Hrlg4XrpZc444PDzWq9mPFyf+/92s1lT+fd2sF6ueH9vauDm5NPJqtu4cczwjUfNJyu5KLbizfXPttM6DkdmJaiCtqBb7mB0yYDcmFo0SfdQgnN2/29q4tvbj5cTDez+eqWBL+4LCc6GS5PHnR/7u99sHDrwl8T77eK+KGYIRcK0WvIMSI4TA7Q5wTe5ES5eBNzuCOm3L73AEmPThfzEUStgZsxOkCKpoJrJUMumcFqdtyCb2hi36J+Q7Tk1Wp4YXVtDrNKoHMR87XNACrRcCGuOQY0xZa+hX3+8uXwgrIt6CpliMo5cDWIVpXy4Fw1IeUQVdR9C/p0hpPp8KKmUqyOxYAjQ+BUQEgWFajWmsncKOa7IemBoh6vcb0ZwX6z0s01xyJmSSKwbpBabRKDqVQUy46V7y3rp1avksi9k89V0Bog81ASz9UOgU0q4IwoHLOVuEzJYLPJZWz9Zp7NrHRZdWgdW6aQdcwQbJWAjKqKPdfOfzli0Drb4vu259fnZyOkHuMse+UUBOMVuKgaZO2jqDQWRrJV3HhQa+4Q3+slD2PQLnPQPiXINYieIyJkkjxc2AnMqM1HvhuiH2LQR7jk+Xp4NTdTOSjrIZYiAdo3Ddi0YMaM2UcRWVy4b4MeBzaW6mtyJkK9gBc5WEFVCQVtmGrIVAnSvcOLwyXLz3ki/4eXN2pfklIWjMAJMWETBDuqDLpiNcnZYuluTP49HfiaCw2XllCzACssUGMVCBKrhlSJJXiHmGMNDV3u1Yvf072htY0RteaQoLooSFIr0TYVCz4q9ppac9oNqu1/LpY/fyPmP4iiS0HGmEW9RkuycpkgcYpAQp9si6kVczctf37M13Iy5GOFIlBS7Dk6KMYKpM6mkFIh1nrXnj9XOojNZV89Q1FN4LT4MWBxBiI5nR2HWsP9M1MfFn28FvSxHsSefbOaUlBQmhF7NiSWbbMBT5GiEP9aE/Vqz39fbFY8Fqg2oQgJNgxsyYIL5AEFe4AhJZpWPppk/hwYxLHEaGcFfkSf5aNUyEmQdWiUiA0GH3p34BcLSfiT9fkIhLhpUxs5iU9VchKSAgziy0KFLSWMsej7k/9eEMjFYxiiEqt0rY0zKKO7UlbSULwEsBZNTNYr7/FuNv5Qmzt7/6eInbanQ4lJRhC0FQxtnBExneDM5HQBarHpoqJVpmfaP4rXYkUOEqOgFhvFjq0Sr01G0hFh8aGrcPVexDpcbObr5QhOW8hzZuMgqizCsvHCgYmghKS1YdQuYe/V9Wc/zicjkN9eZe2lYreczHB5/owXJ0s8O52IL18+mQGcubGvJRMCoZEsXChCCt5DYDH4wMXm1i/mGMeZ2abku8aR8R3YEM+GrIUWB0eIzRBJhho2KV17+gA6tjrVkHXXaihCIIoNQohVgdhMsD502ar+PnnpFZ9MFvNBhEwmpSCmC7UFEZJZDLlwAqUxFlMJwydqtA9i/WPFavS6OpUEP1Lr+KA4b+ragwWRFXKJOvVe0rpU5PMnI/SSsral5gq265g5VRtkdrEr7mRTiy9V379t1ofn/jSZTvFkmFJW9NpQikIGbSkifMuQMzOQE+jVlFAHe5cj9eK5NwWAIcrulVv0NQPVrmBnQwVUygk/Kp4kQjWl+81Bo7muSRm9YA9oXpKP05KQsmEFIVJIKvioSu919+sYPLjjJquQtAKjjGg1lwjZC8yqStCXVsVp7L1pdl2sGRxeJA66NAfNCXZyUTJsTiKrjYEKW9TUfz9lPIZfPTdfUEtuddgVNcSKcwhAKYsd+6S53b/qfE9p//38aITCTagSZDvrdezkw3edQaH2NrDLjFUg5V3g1INap5+/WvvItFc5qGsBb/PQNg9t89AfNg/9CQLWNg/dFvQ7XK2vArBY82R+MsbIrw6OsodiLUk8jkLpK1uIWMV1VSai/vsmOILbYhR5vPC6WiXduJIRSksSjlOmZoOQfeq91PxijFicc2zVCI9vXYvXFZOhoImiUUxBFVXLb5hXuK8hL5YzXK+ZRutpJ21itClDIJMk29oKYrsMsSj2ASmrgWdyjjdzwvNtZ3vb2X6gpNvO9qid7Us//mu0Ei5l3TYUtg2FB0r7h2soPH2Hs7NpNy88zNhkiKiF/6fOpgs4koDWTdbJobKuVevY3FX3Qwz7eDMbY19Z9kxOAydJvY58hRQ7XSvUmG32yvbOmcYZ+Va6eht9AXSmS8JoxX3Fm7FY9IWDirr32Y1xdqfEZCyKWBCUE2Bl0ADamiQfpypAOlLOvdOHkeYVtODjKMCqsJVkW5VAjSQ4kjCisIgioHnYfTjXM+7/WNJA+5olJRkTXABrYhVluwIpiQObEqrOPgQV+t3XPN4YP8WSoioIRgt4Fu7gIWtToEkAywkrxXp/bf+h7ZpUDEIYhAor1pJxsgVslUDFbFqMlTz2Thie8KouJ2frUarPIi41FFiVQ9dTSB2soi7Z2iAWraqq4S7z/SyDswpK6IB3IB/UcUFh+z6Kv1bfaijyGXpPQ5c7rWikvCtyCpQiqDkImApJyK9mBKH3HpXFgr531V7HqFFtOpPyxgjgiN3GQUcCnpPFbpNowhar4VL49xL8Ff9nM1nyjOfrESp5ykVlslGgbLe7LnsJ1DkF0C1RLUVitesdVB6vL6aNBsfPqbIyPkNSJKiSaxTo7E33bhGVsYSizLATk0en56tuNHbQl6tkxpKKLcIiqiDO3Dyg0UIWbdHyfKJ39OsDWJ9HWnZBZyIBV9Z3nTRKkqVcETHJeFOpqtB/p+V4s5yPIqzHqI1KHlTpmhAokStrq4CUk8hd5B/1jrZ+mBBNeRx5s1bamGigpSbAo5KwCscE0VZyqtsI3v/bC376/sVk/vMIeyW1Uw4NAtZkOt6UoIRQwPmMpsaAOQxb3HnCZ7hczy52+Q+xN0cc2DXhxbab6Xe6aMiFFcScJXGRbmLkf4Z4VSOzjgkkPgth4q74EV0FQdrelIpi6PfvsPSr5h/4suk0xH4zjloAtweDXTG+GgMFu/aETk2gNxvl+i3kfWjMw9fzIqpoLNDF+7/EoCGZ1kAH7ZqOIm/uHW0/nZ1NF+c8goFXLai6ZUGWqqteOpEWqWpQjnImE6xzvVe63mv31WI6gsxF5GpUPRClruYlsDM7LebsEgrYiiWq+7/2rK+XGVxy6SHeWqGsjkwVsHVVXHJO8HZNoLJENGfk8xOvB/v8Ird1ukp0Er4sYbrb1iCAOusCPkdBIqnoHHvnjmOGLUzGp5YFgVgngEQgJhRyAVT1XAL5GPz95e2vZ7zd3rEdq32YrNux2u1Y7XasdjtWux2r3Y7V/kXGaq+O31+y372LnOlouagfDrft/3T54nIBnm+evjvrns5uN92z+8bYXfPlztXpx93Rrt1VX+4cbqbrzZIfz3mzXuL0y52jTZlO6vd8/nrxM88fl5RId8XmqJTEJtzfu/6Ki+87nOJqxatOAa82N093XzRztOQ2efd+6E6Wjjft1tIrni3e8McXXq5+fO0hrvjgx3k9xfkJC2i7OL58NJ/6DfvyZM54uZ6M/Nt+4WfsP+M5L8W8Dhezi4bSlY3eWb518RNeTU7kz+8mYgof3XH73MVtT3jKa/5mtVrUCXb9uut7PnHi4oaXm+m0M7Nv+RTfTBZLsaKGYh/iYB+f+eJv+3sfvRL/4L82QrlOO18AAA==" generateStoredProcedures="false" fieldNameCase="Unchanged" generateDefaultConstructors="false" useNameOf="true" createdInVersion="22.2.6.0" generateJsonSerializationContractResolver="false" generateServiceCollectionExtensions="false" lastModifiedInVersion="22.2.6.0" name="SundayDataModel" xmlns="http://schemas.microsoft.com/dsltools/ORMDataModel">
   <classes>
     <dataBaseObjectModelHasClasses Id="4fc82ea6-8712-4f6c-ab4f-fab384b336f9">
       <xpObject Id="2f870614-5f9f-4129-aebe-f7581f6b6f53" name="Customer" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Customer" designerFileName="Customer.Designer" className="Customer" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="Customer">
         <fields>
-          <generalXpObjectHasFields Id="63bc67c5-bfb4-4fa1-8cb3-678ac8f8f450">
-            <field Id="1cf4a908-19bf-43f2-a07a-bdec976a2b3b" name="Address" virtualColumnType="AddressBase" logicalType="AddressBase" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="37a5e805-1561-4b66-8d6e-2a051c4c8e0a">
             <field Id="e3ba4cd9-7044-4c69-9005-44c268967071" name="INN" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
@@ -15,6 +12,9 @@
           </generalXpObjectHasFields>
           <generalXpObjectHasFields Id="73d078b0-15d4-4d25-8d1c-51c793a09814">
             <field Id="901f4f4e-40b8-4d1f-8fcf-aedbcaa907ce" name="Status" virtualColumnType="Sunday.Common.SundayCommonDataModel.State" logicalType="Sunday.Common.SundayCommonDataModel.State" delayedUpdateModifiedOnly="false" />
+          </generalXpObjectHasFields>
+          <generalXpObjectHasFields Id="f34d448b-a95f-4e80-987c-975476f80ef6">
+            <field Id="562ddda3-3fb3-4174-89ee-17cf7b22a5be" name="Address" virtualColumnType="Sunday.Module.BusinessObjects.SundayDataModelCode.SundayAddress" logicalType="Sunday.Module.BusinessObjects.SundayDataModelCode.SundayAddress" delayedUpdateModifiedOnly="false" />
           </generalXpObjectHasFields>
         </fields>
         <saTargets>
@@ -97,152 +97,6 @@
         </fields>
       </xpObject>
     </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="ad6a676b-a993-4ebe-81d1-7e18db1fd5e5">
-      <xpObject Id="5f31d860-bf20-42d1-8392-5d7d7ef6cc8d" name="SundayStreet" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Street" designerFileName="Street.Designer" className="SundayStreet" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="SundayStreet">
-        <fields>
-          <generalXpObjectHasFields Id="1bc4a5ae-9e2e-49eb-9d21-f6170a515aae">
-            <field Id="26b4c62e-e3d3-46d5-a57d-2d0194057282" name="HouseNumber" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="c7d84a62-9eb8-48f0-b65a-8bfd67776f71">
-            <field Id="4e1e643f-4759-47bc-980f-6fd8de2a6569" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="d80bbc75-4ce6-46a7-b3a2-fe5cf255589d">
-            <field Id="9f12cfd4-89c5-4ad0-a6f8-a903d8a77b13" name="Locacity" virtualColumnType="Locality" logicalType="Locality" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-        </fields>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="fd587464-f0be-4915-9510-9bf321ad17d4">
-      <xpObject Id="201ccfe9-021f-4381-b50a-f727835055a4" name="City" baseClass="Locality" userFileName="City" designerFileName="City.Designer" className="City" virtualBaseClass="Locality" virtualName="City">
-        <superClass>
-          <inheritance Id="ac77803d-6c43-4ed0-810d-e5f48830925f">
-            <xpObjectMoniker Id="d287838a-242f-4471-841b-df7f1b07302f" />
-          </inheritance>
-        </superClass>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="d1551ea8-e08d-4519-ad2e-59fe8e853d70">
-      <xpObject Id="d287838a-242f-4471-841b-df7f1b07302f" name="Locality" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Locality" designerFileName="Locality.Designer" className="Locality" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="Locality">
-        <fields>
-          <generalXpObjectHasFields Id="82da539e-c56f-4138-b65d-b2fe44271540">
-            <field Id="acae66b4-cb37-4a30-9882-abdab56b3173" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="b75dfe07-45a0-4b1b-a738-224d01b50afb">
-            <field Id="bd5e9e24-7097-4e25-9cdd-b68112ea148a" name="PGUnit" virtualColumnType="PrimaryGeographicalUnit" logicalType="PrimaryGeographicalUnit" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-        </fields>
-        <saTargets>
-          <simpleAssociation Id="dd776fb7-9ad6-4c90-be1d-990efa4aeb50" sourceCollectionName="Streets" name="StreetReferencesLocality" targetFieldName="Locacity">
-            <xpObjectMoniker Id="5f31d860-bf20-42d1-8392-5d7d7ef6cc8d" />
-          </simpleAssociation>
-        </saTargets>
-        <collectionFields>
-          <xpObjectHasCollectionFields Id="961dc8a0-6cc8-487c-bb54-62a578c317c6">
-            <collectionField Id="bd616659-1522-4b45-8360-8e8280076f62" name="Streets" />
-          </xpObjectHasCollectionFields>
-        </collectionFields>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="e41873ff-e189-4428-99c4-e01d2e20434c">
-      <xpObject Id="fe5cb9da-da23-4bd7-8655-6ea306eb39fd" name="PrimaryGeographicalUnit" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="PrimaryGeographicalUnit" designerFileName="PrimaryGeographicalUnit.Designer" className="PrimaryGeographicalUnit" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="PrimaryGeographicalUnit">
-        <fields>
-          <generalXpObjectHasFields Id="38c0e9ee-2613-4de1-9219-7732ea282776">
-            <field Id="e388577a-25d3-4ae6-9109-64daaf2dd6f8" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-        </fields>
-        <saTargets>
-          <simpleAssociation Id="1dce78f8-d71a-4333-96cc-1291b36f4d29" sourceCollectionName="Localities" name="LocalityReferencesPrimaryGeographicalUnit" targetFieldName="PGUnit">
-            <xpObjectMoniker Id="d287838a-242f-4471-841b-df7f1b07302f" />
-          </simpleAssociation>
-        </saTargets>
-        <collectionFields>
-          <xpObjectHasCollectionFields Id="4549207e-548b-4332-9c17-d5a446cd8614">
-            <collectionField Id="294cbc8f-ab93-4dd9-b722-8e2e236589ff" name="Localities" />
-          </xpObjectHasCollectionFields>
-        </collectionFields>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="2d687dbd-828e-459c-91df-0bd506875a69">
-      <xpObject Id="318c6915-44be-4b36-8c0b-7f26356021fc" name="SundayCountry" baseClass="PrimaryGeographicalUnit" userFileName="Country" designerFileName="Country.Designer" className="SundayCountry" virtualBaseClass="PrimaryGeographicalUnit" virtualName="SundayCountry">
-        <superClass>
-          <inheritance Id="aeecdead-1d13-4dc1-921e-8048f062e3fa">
-            <xpObjectMoniker Id="fe5cb9da-da23-4bd7-8655-6ea306eb39fd" />
-          </inheritance>
-        </superClass>
-        <saTargets>
-          <simpleAssociation Id="522d2f54-991a-4909-a7c4-07187ab2776d" sourceCollectionName="Regions" name="RegionReferencesCountry" targetFieldName="Country">
-            <xpObjectMoniker Id="82886865-cf6e-4ee7-8be8-01a7b2cda6b5" />
-          </simpleAssociation>
-        </saTargets>
-        <collectionFields>
-          <xpObjectHasCollectionFields Id="21b66aab-fdde-4929-bb5a-564d859f180e">
-            <collectionField Id="8f67388e-88c5-4864-bc13-77a61be5a0cc" name="Regions" />
-          </xpObjectHasCollectionFields>
-        </collectionFields>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="d3a76088-873a-4eb9-98ea-361719b698d6">
-      <xpObject Id="82886865-cf6e-4ee7-8be8-01a7b2cda6b5" name="SundayRegion" baseClass="PrimaryGeographicalUnit" userFileName="Region" designerFileName="Region.Designer" className="SundayRegion" virtualBaseClass="PrimaryGeographicalUnit" virtualName="SundayRegion">
-        <fields>
-          <generalXpObjectHasFields Id="ef808c0e-7dbd-46e4-b1f7-c3f64cc58f98">
-            <field Id="a51c408f-6dfe-47da-8b9e-baae0aeb718b" name="Country" virtualColumnType="SundayCountry" logicalType="SundayCountry" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="025b6ae1-102a-4ab4-86e3-94f16cfca66b">
-            <field Id="8913bc9c-3c69-40cf-9e47-c7c92cb5bc11" name="RegionID" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-        </fields>
-        <superClass>
-          <inheritance Id="b3416134-0c2d-4308-a6a5-ea3c56b12126">
-            <xpObjectMoniker Id="fe5cb9da-da23-4bd7-8655-6ea306eb39fd" />
-          </inheritance>
-        </superClass>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="00eb62c2-3e33-46cf-b464-347700175d99">
-      <xpObject Id="7512d870-43bb-40f9-99ee-d442ff02a632" name="Village" baseClass="Locality" userFileName="Village" designerFileName="Village.Designer" className="Village" virtualBaseClass="Locality" virtualName="Village">
-        <superClass>
-          <inheritance Id="b935a4ae-3723-4172-a0fb-e9f9e08ce024">
-            <xpObjectMoniker Id="d287838a-242f-4471-841b-df7f1b07302f" />
-          </inheritance>
-        </superClass>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
-    <dataBaseObjectModelHasClasses Id="8cc7c905-6692-4081-b1f5-d51107dc0a56">
-      <xpObject Id="4cef75c9-dcc2-436c-a004-6fb5d635f01d" name="AddressBase" baseClass="DevExpress.Persistent.BaseImpl.BaseObject" userFileName="Address" designerFileName="Address.Designer" className="AddressBase" virtualBaseClass="DevExpress.Persistent.BaseImpl.BaseObject" virtualName="AddressBase">
-        <fields>
-          <generalXpObjectHasFields Id="96276b97-31c0-4c8c-9da2-a063449bb8ba">
-            <field Id="289a59e2-f509-417a-92e0-67d6806570b8" name="Country" virtualColumnType="SundayCountry" logicalType="SundayCountry" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="bc38975f-322e-4044-945f-20ffc24c8176">
-            <field Id="8830ad10-2022-49b7-95dd-c0e9e10b41a5" name="Region" virtualColumnType="SundayRegion" logicalType="SundayRegion" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="f1583107-10bb-479b-9991-d8606989a51f">
-            <field Id="e8e61bf4-f455-4736-98dd-376dbe3a1dd8" name="Street" virtualColumnType="SundayStreet" logicalType="SundayStreet" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="cc7b3bb6-f687-4ced-9f64-71ccf7bb1b55">
-            <field Id="c5ef5ba1-014a-475a-9966-d897d6581ef4" name="Locality" virtualColumnType="Locality" logicalType="Locality" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="f1823ce8-b1e2-4b26-a253-aa457653f303">
-            <field Id="46cf0222-44e4-4458-9c1f-36e49eac857c" name="ZIP" columnType="Int32" virtualColumnType="Int32" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="5193f387-e714-44ae-8df7-bf279e78c4f3">
-            <persistentAlias Id="7ebbf8a4-884f-4c4f-a624-96b1bbd53b8e" name="Name" virtualColumnType="String" expression="Iif([Country] &lt;&gt; null, [Country.Name], '') + ', ' + Iif([Region] &lt;&gt; null, [Region.Name], '') + ', ' + Iif([Locality] &lt;&gt; null, [Locality.Name], '') + ', ' + Iif([Street] &lt;&gt; null, [Street.Name] + ', ' + [Street.HouseNumber], '')" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="2ae27e19-930d-435b-a3ae-15618e0768bc">
-            <field Id="69164d95-b33d-4377-8ce3-7ace9e09ddd9" name="FastAddressString" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="0d372555-9a6a-4a90-b9bd-543357e63bce">
-            <field Id="a7e9e5ee-cc04-4b9a-bf80-689df36408d3" name="Lat" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="ba347443-0fad-42c1-a0d9-6ef8bfadd2fb">
-            <field Id="997fc269-fc5e-4b29-ba27-7aa860b0cb14" name="Lon" columnType="Double" virtualColumnType="Double" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-          <generalXpObjectHasFields Id="ed88bf28-efeb-4faa-a5eb-25f44e7d2896">
-            <field Id="81277389-6d28-413c-9dde-7b0e56ad90df" name="FormattedAddress" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
-          </generalXpObjectHasFields>
-        </fields>
-      </xpObject>
-    </dataBaseObjectModelHasClasses>
     <dataBaseObjectModelHasClasses Id="a0ef369d-c177-4b12-9d5d-94d6657e7078">
       <xpObject Id="67a189a8-4eeb-4dd4-94e6-4e034fc34e2b" name="ExampleData" baseClass="XPObject" userFileName="ExampleData" designerFileName="ExampleData.Designer" className="ExampleData" virtualName="ExampleData">
         <fields>
@@ -289,7 +143,7 @@
       </xpObject>
     </dataBaseObjectModelHasClasses>
     <dataBaseObjectModelHasClasses Id="b8b66fd0-3363-4b6a-b522-64b6ad86d3fc">
-      <xpObject Id="9eab8b3b-e8c3-49f5-a217-c3b1ce0754d2" name="PhysicalCustomer" baseClass="Customer" userFileName="PhysicalCustomer" designerFileName="PhysicalCustomer.Designer" className="PhysicalCustomer" virtualBaseClass="Customer" virtualName="PhysicalCustomer">
+      <xpObject Id="9eab8b3b-e8c3-49f5-a217-c3b1ce0754d2" name="PhysicalCustomer" baseClass="Customer" userFileName="PhysicalCustomer" designerFileName="PhysicalCustomer.Designer" className="PhysicalCustomer" virtualBaseClass="Customer" mapInheritance="ParentTable" virtualName="PhysicalCustomer">
         <fields>
           <generalXpObjectHasFields Id="ebff238a-f674-432e-9d84-c9d749fc3905">
             <field Id="4619ddcf-354a-4d8e-b4b7-cd252cdc06d9" name="Name" virtualColumnType="String" delayedUpdateModifiedOnly="false" />
@@ -396,6 +250,9 @@
     </dataBaseObjectModelHasExternalTypes>
     <dataBaseObjectModelHasExternalTypes Id="ac0ab7ff-4a74-4391-8f64-45bd4d332256">
       <externalType Id="8ed257e2-8a11-4199-a645-140886456701" name="CustomPermissionPolicyRole" namespace="Sunday.Module.BusinessObjects.Security" />
+    </dataBaseObjectModelHasExternalTypes>
+    <dataBaseObjectModelHasExternalTypes Id="52689872-5da2-4db1-82ac-a6f48808ef57">
+      <externalType Id="b94f888f-52b6-4798-888d-1b41d7362b4e" name="SundayAddress" namespace="Sunday.Module.BusinessObjects.SundayDataModelCode" />
     </dataBaseObjectModelHasExternalTypes>
   </externalTypes>
 </dataBaseObjectModel>

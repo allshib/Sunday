@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="ShibAddressBase_DetailView">
+      <Items Id="Items">
+        <ActionContainerViewItem Id="Detailed Search" ActionContainer="SearchAddressContainer" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Autoe3faea57-6add-4a00-be7c-3c1447fbacb4">
+              <LayoutGroup Id="Item2">
+                <LayoutGroup Id="Auto5d012c64-1ae5-4c57-ae53-1e8597e88da9">
+                  <LayoutItem Id="Detailed Search" ViewItem="Detailed Search" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

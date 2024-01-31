@@ -2,8 +2,11 @@
 <Application>
   <ActionDesign>
     <ActionToContainerMapping>
-      <ActionContainer Id="SearchAddressContainer" IsNewNode="True">
+      <ActionContainer Id="EntitySearchAddress" IsNewNode="True">
         <ActionLink ActionId="SearchAddress" IsNewNode="True" />
+      </ActionContainer>
+      <ActionContainer Id="SearchAddressCategory">
+        <ActionLink ActionId="DetailedSearchAction" IsNewNode="True" Removed="True" />
       </ActionContainer>
       <ActionContainer Id="View">
         <ActionLink ActionId="SearchAddress" Removed="True" />
@@ -11,6 +14,11 @@
     </ActionToContainerMapping>
   </ActionDesign>
   <BOModel>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.AddressBase">
+      <OwnMembers>
+        <Member Name="ApiName" AllowEdit="False" />
+      </OwnMembers>
+    </Class>
     <Class Name="Shib.XAF.Address.BusinessObjects.NonPersistent.AddressEntity" Caption="Адрес">
       <AppearanceRules>
         <AppearanceRule Id="SelectedAddress" Context="ListView" BackColor="LightGreen" Criteria="[Selected] = True" TargetItems="*" IsNewNode="True" />
@@ -96,34 +104,115 @@
         <ColumnInfo Id="Locality" Index="-1" />
         <ColumnInfo Id="Lon" Index="-1" />
         <ColumnInfo Id="Region" Index="-1" />
+        <ColumnInfo Id="Selected" ImageForTrue="State_Validation_Valid" Index="-1" />
         <ColumnInfo Id="Street" Index="-1" />
         <ColumnInfo Id="ZIP" Index="-1" />
         <ColumnInfo Id="DisplayName" Width="675" />
-        <ColumnInfo Id="Selected" ImageForTrue="State_Validation_Valid" />
       </Columns>
     </ListView>
     <DetailView Id="AddressPicker_DetailView">
       <Items>
-        <ActionContainerViewItem Id="Search" ActionContainer="SearchAddressContainer" PaintStyle="CaptionAndImage" Caption="Search(7)" IsNewNode="True" />
+        <ActionContainerViewItem Id="Search" PaintStyle="CaptionAndImage" Caption="Search(7)" ActionContainer="EntitySearchAddress" IsNewNode="True" />
       </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="16.431924882629108">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="4.571428571428571">
             <LayoutGroup Id="AddressPicker" RelativeSize="100" Caption="My display name">
-              <LayoutGroup Id="Auto3b279675-0586-4f23-9ec7-10c45e5efb41" ShowCaption="False" Caption="Auto3b279675-0586-4f23-9ec7-10c45e5efb41(4)" Direction="Horizontal" Index="0" RelativeSize="54.285714285714285" IsNewNode="True">
-                <LayoutItem Id="SearchString" ShowCaption="False" ViewItem="SearchString" CaptionLocation="Left" Index="0" RelativeSize="85.71428571428571" IsNewNode="True" />
-                <LayoutItem Id="ApiName" ShowCaption="False" ViewItem="ApiName" Index="1" RelativeSize="14.285714285714286" SizeConstraintsType="Custom" MinSize="98, 38" MaxSize="98, 38" IsNewNode="True" />
+              <LayoutGroup Id="Auto3b279675-0586-4f23-9ec7-10c45e5efb41" ShowCaption="False" Caption="Auto3b279675-0586-4f23-9ec7-10c45e5efb41(4)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="SearchString" ShowCaption="False" ViewItem="SearchString" CaptionLocation="Left" Index="0" RelativeSize="87.8048780487805" IsNewNode="True" />
+                <LayoutItem Id="ApiName" ShowCaption="False" ViewItem="ApiName" Index="1" RelativeSize="12.195121951219512" SizeConstraintsType="Custom" MinSize="115, 40" MaxSize="115, 40" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutItem Id="Search" ViewItem="Search" Index="1" RelativeSize="45.714285714285715" IsNewNode="True" />
               <LayoutItem Id="ApiName" Removed="True" />
               <LayoutItem Id="SearchString" RelativeSize="50" CaptionLocation="Left" ShowCaption="False" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="Adresses_Group" Direction="Vertical" RelativeSize="83.5680751173709">
+          <LayoutItem Id="Search" ViewItem="Search" Index="1" RelativeSize="2.9714285714285715" IsNewNode="True" />
+          <LayoutGroup Id="Adresses_Group" Direction="Vertical" RelativeSize="92.45714285714286" Index="2">
             <LayoutItem Id="Adresses" RelativeSize="100" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
+    <DetailView Id="ShibAddressBase_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="Search" ActionContainer="SearchAddressCategory" IsNewNode="True" />
+        <PropertyEditor Id="Street.HouseNumber" PropertyName="Street.HouseNumber" IsNewNode="True" />
+        <PropertyEditor Id="Street.Name" PropertyName="Street.Name" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Autoe3faea57-6add-4a00-be7c-3c1447fbacb4" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="12.67123287671233" IsNewNode="True">
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Auto8016a67b-2f3b-472b-8b88-585c1e6f1afd" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="48.611111111111114" IsNewNode="True">
+                  <LayoutItem Id="SearchString" ShowCaption="False" ViewItem="SearchString" Index="0" RelativeSize="88.27361563517915" IsNewNode="True" />
+                  <LayoutItem Id="ApiName" ShowCaption="False" ViewItem="ApiName" SizeConstraintsType="Custom" MinSize="108, 34" MaxSize="108, 34" Index="1" RelativeSize="11.726384364820847" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto5d012c64-1ae5-4c57-ae53-1e8597e88da9" ShowCaption="False" Direction="Vertical" Index="1" RelativeSize="51.388888888888886" IsNewNode="True">
+                  <LayoutItem Id="Search" ViewItem="Search" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="87.32876712328768" Direction="Vertical" IsNewNode="True">
+              <LayoutItem Id="FullAddress" ViewItem="FullAddress" Index="0" RelativeSize="4.371584699453552" ShowCaption="False" IsNewNode="True" />
+              <LayoutGroup Id="Autoce5d6e38-08a8-4713-877a-bd75370e51ca" ShowCaption="False" Direction="Horizontal" Index="1" RelativeSize="95.62841530054645" IsNewNode="True">
+                <LayoutGroup Id="Auto22100339-5191-4d2e-8db0-cf1027a6f579" ShowCaption="False" Index="0" RelativeSize="49.6199782844734" IsNewNode="True">
+                  <LayoutItem Id="Country" ViewItem="Country" Index="0" RelativeSize="4.285714285714286" IsNewNode="True" />
+                  <LayoutItem Id="Region" ViewItem="Region" Index="1" RelativeSize="3.4285714285714284" IsNewNode="True" />
+                  <LayoutItem Id="Locality" ViewItem="Locality" Index="2" RelativeSize="3.4285714285714284" IsNewNode="True" />
+                  <LayoutItem Id="Street.Name" ViewItem="Street.Name" Index="3" RelativeSize="3.4285714285714284" IsNewNode="True" />
+                  <LayoutItem Id="Street.HouseNumber" ViewItem="Street.HouseNumber" Index="4" RelativeSize="3.4285714285714284" IsNewNode="True" />
+                  <LayoutItem Id="PostalCode" ViewItem="PostalCode" Index="5" RelativeSize="82" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autodee2dcb9-469a-44ea-8cc4-3bdf09cbd98f" ShowCaption="False" Index="1" RelativeSize="50.3800217155266" IsNewNode="True">
+                  <LayoutItem Id="Lat" ViewItem="Lat" Index="0" RelativeSize="4.285714285714286" IsNewNode="True" />
+                  <LayoutItem Id="Lon" ViewItem="Lon" Index="1" RelativeSize="3.4285714285714284" IsNewNode="True" />
+                  <LayoutItem Id="FormattedAddress" ViewItem="FormattedAddress" Index="2" RelativeSize="3.4285714285714284" IsNewNode="True" />
+                  <LayoutItem Id="Item1" Index="3" RelativeSize="88.85714285714286" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AddressBase" RelativeSize="100" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="AddressBase_col2" RelativeSize="100" Index="0" Removed="True">
+                <LayoutItem Id="FormattedAddress" RelativeSize="90.41916167664671" Removed="True" />
+                <LayoutItem Id="FullAddress" RelativeSize="87.54491017964072" Removed="True" />
+                <LayoutItem Id="Lat" RelativeSize="96.16766467065868" Removed="True" />
+                <LayoutItem Id="Lon" RelativeSize="93.2934131736527" Removed="True" />
+                <LayoutItem Id="PostalCode" RelativeSize="100" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AddressBase_col1" RelativeSize="49.946409431939976" Removed="True">
+                <LayoutItem Id="Country" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="ApiName" RelativeSize="2.874251497005988" Removed="True" />
+                <LayoutItem Id="Locality" RelativeSize="87.54491017964072" Removed="True" />
+                <LayoutItem Id="Region" RelativeSize="90.41916167664671" Removed="True" />
+                <LayoutItem Id="SearchString" RelativeSize="3.8323353293413174" Removed="True" />
+                <LayoutItem Id="Street" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ShibAddressBase_ListView">
+      <Columns>
+        <ColumnInfo Id="ApiName" Index="-1" />
+        <ColumnInfo Id="Country" Index="-1" />
+        <ColumnInfo Id="FormattedAddress" Index="-1" />
+        <ColumnInfo Id="Lat" Index="-1" />
+        <ColumnInfo Id="Locality" Index="-1" />
+        <ColumnInfo Id="Lon" Index="-1" />
+        <ColumnInfo Id="PostalCode" Index="-1" />
+        <ColumnInfo Id="Region" Index="-1" />
+        <ColumnInfo Id="SearchString" Index="-1" />
+        <ColumnInfo Id="Street" Index="-1" />
+        <ColumnInfo Id="FullAddress" Index="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="ShibAddressBase_LookupListView">
+      <Columns>
+        <ColumnInfo Id="ApiName" Index="-1" />
+        <ColumnInfo Id="FullAddress" PropertyName="FullAddress" Index="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
   </Views>
 </Application>

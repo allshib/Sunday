@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.AddressBase" ImageName="BO_Address">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="ApiName" AllowEdit="False" />
+        <Member Name="Lat" AllowEdit="False" />
+        <Member Name="Lon" AllowEdit="False" />
+        <Member Name="Name" Caption="Full Address" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Sunday.Module.BusinessObjects.SundayDataModel.SundayStreet" ImageName="Action_Search_Object_FindObjectByID" />
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="AddressBase_DetailView">
+      <Items Id="Items">
+        <ActionContainerViewItem Id="SearchAddressAction" PaintStyle="CaptionAndImage" ActionContainer="SearchAddressCategory" Caption="SearchAddressAction(11)" />
+        <PropertyEditor Id="Street.HouseNumber" PropertyName="Street.HouseNumber" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Search" ShowCaption="True" ImageName="Action_Search_Object_FindObjectByID" CaptionLocation="Top" Index="0" RelativeSize="24.28785607196402">
+              <LayoutGroup Id="Auto20b08ffa-302f-453b-ba22-08076170d399" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="27.131782945736433">
+                <LayoutItem Id="FastAddressString" ViewItem="FastAddressString" Index="0" RelativeSize="92.78017241379311" />
+                <LayoutItem Id="ApiName" ShowCaption="False" ViewItem="ApiName" CaptionLocation="Top" Index="1" RelativeSize="7.219827586206897" />
+              </LayoutGroup>
+              <LayoutGroup Id="LatLonContainer" ShowCaption="False" Index="1" RelativeSize="46.51162790697674">
+                <LayoutGroup Id="LatAndLon" ShowCaption="False" Index="0" RelativeSize="100">
+                  <LayoutItem Id="Lat" ViewItem="Lat" Index="0" RelativeSize="50" />
+                  <LayoutItem Id="Lon" ViewItem="Lon" Index="1" RelativeSize="50" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="SearchAddressAction" ViewItem="SearchAddressAction" Index="2" RelativeSize="26.356589147286822" />
+            </LayoutGroup>
+            <LayoutGroup Id="GeneralInfo" ShowCaption="True" ImageName="Actions_Info" CaptionLocation="Top" Index="1" RelativeSize="75.71214392803599">
+              <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="6.779661016949152" />
+              <LayoutItem Id="Country" ViewItem="Country" Index="1" RelativeSize="5.084745762711864" />
+              <LayoutItem Id="Region" ViewItem="Region" Index="2" RelativeSize="5.084745762711864" />
+              <LayoutItem Id="Street" ViewItem="Street" Index="3" RelativeSize="5.084745762711864" />
+              <LayoutItem Id="Street.HouseNumber" ViewItem="Street.HouseNumber" Index="4" RelativeSize="5.084745762711864" />
+              <LayoutItem Id="Locality" ViewItem="Locality" Index="5" RelativeSize="5.084745762711864" />
+              <LayoutItem Id="ZIP" ViewItem="ZIP" Index="6" RelativeSize="5.084745762711864" />
+              <LayoutItem Id="FormattedAddress" ViewItem="FormattedAddress" Index="7" RelativeSize="62.71186440677966" />
+            </LayoutGroup>
+            <LayoutGroup Id="AddressBase" RelativeSize="40.779610194902546" Direction="Vertical" Index="2" Removed="True">
+              <LayoutGroup Id="AddressBase_col2" RelativeSize="100" Index="0" Removed="True">
+                <LayoutItem Id="FastAddressString" RelativeSize="3.7166085946573753" Index="0" Removed="True" />
+                <LayoutItem Id="Lat" Index="1" RelativeSize="2.7874564459930316" Removed="True" />
+                <LayoutItem Id="Lon" Index="2" RelativeSize="2.7874564459930316" Removed="True" />
+                <LayoutItem Id="FormattedAddress" Removed="True" />
+                <LayoutItem Id="Name" RelativeSize="3.870967741935484" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AddressBase_col1" RelativeSize="72.94685990338164" Removed="True">
+                <LayoutItem Id="Country" RelativeSize="2.7874564459930316" Index="1" Removed="True" />
+                <LayoutItem Id="Region" RelativeSize="2.7874564459930316" Index="2" Removed="True" />
+                <LayoutItem Id="Street" RelativeSize="2.7874564459930316" Index="3" Removed="True" />
+                <LayoutItem Id="Locality" RelativeSize="2.7874564459930316" Index="4" Removed="True" />
+                <LayoutItem Id="ZIP" Index="5" RelativeSize="85.1335656213705" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AddressBase_ListView" FreezeColumnIndices="True">
+      <Columns Id="Columns">
+        <ColumnInfo Id="ApiName" Index="-1" />
+        <ColumnInfo Id="Country" Index="-1" />
+        <ColumnInfo Id="FastAddressString" Index="-1" />
+        <ColumnInfo Id="FormattedAddress" Index="-1" />
+        <ColumnInfo Id="Lat" Index="-1" />
+        <ColumnInfo Id="Locality" Index="-1" />
+        <ColumnInfo Id="Lon" Index="-1" />
+        <ColumnInfo Id="Oid" Index="-1" />
+        <ColumnInfo Id="Region" Index="-1" />
+        <ColumnInfo Id="Street" Index="-1" />
+        <ColumnInfo Id="ZIP" Index="-1" />
+        <ColumnInfo Id="Name" Index="0" />
+      </Columns>
+    </ListView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="ReferenceBooks">
+        <Items Id="Items">
+          <Item Id="States" ViewId="State[TestStatus]_ListView" />
+          <Item Id="Address">
+            <Items Id="Items">
+              <Item Id="Streets" ViewId="SundayStreet_ListView" />
+              <Item Id="Regions" ViewId="SundayRegion_ListView" />
+              <Item Id="Localities" ViewId="Locality_ListView" />
+              <Item Id="Countries" ViewId="SundayCountry_ListView" />
+              <Item Id="Cities" ViewId="City_ListView" />
+              <Item Id="Addresses" ViewId="AddressBase_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

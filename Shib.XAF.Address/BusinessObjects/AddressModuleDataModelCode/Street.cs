@@ -8,6 +8,7 @@ using System.Reflection;
 namespace Shib.XAF.Address.BusinessObjects.AddressModuleDataModel
 {
 
+    [System.ComponentModel.DisplayName(nameof(Name))]
     public partial class Street
     {
         public Street(Session session) : base(session) { }

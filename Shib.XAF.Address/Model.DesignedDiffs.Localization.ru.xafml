@@ -1,2 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Company="Алекс" />
+<Application Company="Алекс">
+  <BOModel>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.AddressBase" Caption="Адрес (базовый)">
+      <OwnMembers>
+        <Member Name="ApiName" Caption="API" />
+        <Member Name="Country" Caption="Страна" />
+        <Member Name="FormattedAddress" Caption="Точный адрес" />
+        <Member Name="FullAddress" Caption="Полный адрес" />
+        <Member Name="Locality" Caption="Населенный пункт" />
+        <Member Name="PostalCode" Caption="Почтовый код" />
+        <Member Name="Region" Caption="Регион" />
+        <Member Name="SearchString" Caption="Строка поиска" />
+        <Member Name="Street" Caption="Улица" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.Country" Caption="Страна">
+      <OwnMembers>
+        <Member Name="Regions" Caption="Регионы" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.Locality" Caption="Паселенный пункт">
+      <OwnMembers>
+        <Member Name="Name" Caption="Наименование" />
+        <Member Name="Streets" Caption="Улицы" />
+        <Member Name="Type" Caption="Тип" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.PrimaryGeographicalUnit">
+      <OwnMembers>
+        <Member Name="Localities" Caption="Населенный пункты" />
+        <Member Name="Name" Caption="Наименование" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.Region" Caption="Регион">
+      <OwnMembers>
+        <Member Name="Country" Caption="Страна" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Shib.XAF.Address.BusinessObjects.AddressModuleDataModel.Street" Caption="Улица">
+      <OwnMembers>
+        <Member Name="HouseNumber" Caption="Номер дома" />
+        <Member Name="Locality" Caption="Населенный пункт" />
+        <Member Name="Name" Caption="Наименование" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views>
+    <DetailView Id="ShibAddressBase_DetailView">
+      <Items>
+        <ActionContainerViewItem Id="Search" Caption="Search(17)" />
+        <PropertyEditor Id="Street.Name" Caption="Улица" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Autoe3faea57-6add-4a00-be7c-3c1447fbacb4" Caption="Autoe3faea57-6add-4a00-be7c-3c1447fbacb4(3)">
+              <LayoutGroup Id="Item2" Caption="Геокодирование">
+                <LayoutGroup Id="Auto8016a67b-2f3b-472b-8b88-585c1e6f1afd" Caption="Auto8016a67b-2f3b-472b-8b88-585c1e6f1afd(5)" />
+                <LayoutGroup Id="Auto5d012c64-1ae5-4c57-ae53-1e8597e88da9" Caption="Auto5d012c64-1ae5-4c57-ae53-1e8597e88da9(8)" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item3" Caption="Общая информация">
+              <LayoutGroup Id="Autoce5d6e38-08a8-4713-877a-bd75370e51ca" Caption="Autoce5d6e38-08a8-4713-877a-bd75370e51ca(12)">
+                <LayoutGroup Id="Auto22100339-5191-4d2e-8db0-cf1027a6f579" Caption="Auto22100339-5191-4d2e-8db0-cf1027a6f579(13)" />
+                <LayoutGroup Id="Autodee2dcb9-469a-44ea-8cc4-3bdf09cbd98f" Caption="Autodee2dcb9-469a-44ea-8cc4-3bdf09cbd98f(19)" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AddressBase">
+              <LayoutGroup Id="AddressBase_col2" Caption="AddressBase_col2" />
+              <LayoutGroup Id="AddressBase_col1" Caption="AddressBase_col1" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
