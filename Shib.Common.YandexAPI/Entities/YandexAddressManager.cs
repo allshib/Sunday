@@ -27,7 +27,7 @@ namespace Shib.Common.YandexAPI.Entities
 
         public IAddress? GetAddress(string query)
         {
-            var res = geocoderClient.GetAddressByQuery(query).Result;
+            var res = geocoderClient.GetAddressByQuery(query);
 
             var geoObject = res?.response?.GeoObjectCollection?.featureMember?.FirstOrDefault()?.GeoObject;
 
@@ -70,7 +70,7 @@ namespace Shib.Common.YandexAPI.Entities
 
         public IEnumerable<IAddress>? GetAddressList(string query)
         {
-            var res = geocoderClient.GetAddressByQuery(query).Result;
+            var res = geocoderClient.GetAddressByQuery(query);
 
             if (res?.response?.GeoObjectCollection?.featureMember == null)
                 return Enumerable.Empty<IAddress>();

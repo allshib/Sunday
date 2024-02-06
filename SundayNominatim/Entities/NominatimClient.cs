@@ -1,6 +1,7 @@
 ﻿
 using System.Net;
 using System.Runtime.Serialization.Json;
+using System.Security.Policy;
 
 namespace Nominatim.Entities
 {
@@ -24,15 +25,11 @@ namespace Nominatim.Entities
         {
             using var httpClient = new HttpClient();
 
-            var msg = new HttpRequestMessage(HttpMethod.Get, url);
-            msg.Headers.Add("Accept-Language", "ru-ru");
-            msg.Headers.Add("User-Agent", "Other");
-
 
             HttpContent? content = null;
             try
             {
-                var res = httpClient.Send(msg);
+                var res = httpClient.Send(ConfigureMessage(url));
 
                 if (res.StatusCode != HttpStatusCode.OK || res.Content == null)
                     throw new Exception("API геокодирования: Не удалось выполнить запрос");
@@ -47,6 +44,38 @@ namespace Nominatim.Entities
             return SerrializeContent(typeof(List<T>), content) as List<T>;
         }
 
+        private async Task<List<T>?> GetObjectsAsync<T>(string url)
+        {
+            using var httpClient = new HttpClient();
+
+
+            HttpContent? content = null;
+            try
+            {
+                var res = await httpClient.SendAsync(ConfigureMessage(url));
+
+                if (res.StatusCode != HttpStatusCode.OK || res.Content == null)
+                    throw new Exception("API геокодирования: Не удалось выполнить запрос");
+
+                content = res.Content;
+            }
+            catch (WebException e)
+            {
+                HandleWebException(e);
+            }
+
+            return SerrializeContent(typeof(List<T>), content) as List<T>;
+        }
+
+        private HttpRequestMessage ConfigureMessage(string url)
+        {
+
+            var msg = new HttpRequestMessage(HttpMethod.Get, url);
+            msg.Headers.Add("Accept-Language", "ru-ru");
+            msg.Headers.Add("User-Agent", "Other");
+
+            return msg;
+        }
         private object? SerrializeContent(Type type, HttpContent content)
         {
             DataContractJsonSerializer serrializer = new DataContractJsonSerializer(type);

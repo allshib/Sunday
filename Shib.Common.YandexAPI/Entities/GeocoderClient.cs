@@ -19,13 +19,13 @@ namespace Shib.Common.YandexAPI.Entities
             this.key = key;
         }
 
-        public async Task<YandexGeocoderResult?> GetAddressByUri(string Uri)
-        => await GetResult($"{uri}/?apikey={key}&format=json&uri={Uri}");
+        public YandexGeocoderResult? GetAddressByUri(string Uri)
+        => GetResult($"{uri}/?apikey={key}&format=json&uri={Uri}");
 
-        public async Task<YandexGeocoderResult?> GetAddressByQuery(string query)
-        => await GetResult($"{uri}/?apikey={key}&format=json&geocode={query}");
+        public YandexGeocoderResult? GetAddressByQuery(string query)
+        => GetResult($"{uri}/?apikey={key}&format=json&geocode={query}");
 
-        private  Task<YandexGeocoderResult?> GetResult(string uri)
+        private  YandexGeocoderResult? GetResult(string uri)
         {
             var msg = new HttpRequestMessage(HttpMethod.Get, uri);
             msg.Headers.Add("Accept-Language", "ru-ru");
@@ -40,14 +40,14 @@ namespace Shib.Common.YandexAPI.Entities
         }
 
 
-        private async Task<YandexGeocoderResult?> SerrializeContent(HttpContent? content)
+        private YandexGeocoderResult? SerrializeContent(HttpContent? content)
         {
             if (content == null) return null;
 
             DataContractJsonSerializer serrializer = new DataContractJsonSerializer(typeof(YandexGeocoderResult));
             try
             {
-                var serrializedObject = serrializer.ReadObject(await content.ReadAsStreamAsync());
+                var serrializedObject = serrializer.ReadObject(content.ReadAsStream());
                 return (YandexGeocoderResult?)serrializedObject;
             }
             catch (Exception exc)
