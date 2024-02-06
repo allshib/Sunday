@@ -364,3 +364,6 @@ FodyWeavers.xsd
 /Sunday-Documentation/docs-html
 /SundayTests/YandexAPITest.cs
 /Sunday.Blazor.Server/appsettings.json
+/Sunday.Module/Controllers/OnSavingCustomerController.cs
+/Sunday.Module/Controllers/OnSavingCustomerController.Designer.cs
+/Sunday.Module/BusinessObjects/SundayDataModelCode/Customer.cs
